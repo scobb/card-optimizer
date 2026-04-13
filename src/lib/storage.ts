@@ -46,3 +46,23 @@ export function loadWalletCards(): string[] {
     return []
   }
 }
+
+export function clearWalletCards(): void {
+  try {
+    localStorage.removeItem(WALLET_KEY)
+  } catch {
+    // Ignore
+  }
+}
+
+/** Returns true if both spending data and wallet cards are saved — i.e. a full previous analysis exists. */
+export function hasAnalysis(): boolean {
+  try {
+    const hasSpending = !!localStorage.getItem(STORAGE_KEY)
+    const walletRaw = localStorage.getItem(WALLET_KEY)
+    const hasWallet = !!walletRaw && (JSON.parse(walletRaw) as string[]).length > 0
+    return hasSpending && hasWallet
+  } catch {
+    return false
+  }
+}

@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, NavLink, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Link, useNavigate } from 'react-router-dom'
+import { clearSpendingData, clearWalletCards } from './lib/storage'
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
 import { RecommendationsPage } from './pages/RecommendationsPage'
@@ -16,6 +17,24 @@ import { BlogPostPage } from './pages/BlogPostPage'
 import { BestCards2026Page } from './pages/BestCards2026Page'
 import { VsPage } from './pages/VsPage'
 import { BeamPageview } from './lib/BeamPageview'
+
+function ClearDataButton() {
+  const navigate = useNavigate()
+  function handleClear() {
+    clearSpendingData()
+    clearWalletCards()
+    navigate('/upload')
+  }
+  return (
+    <button
+      onClick={handleClear}
+      data-clear-saved-data
+      className="hover:text-gray-900 transition-colors text-left"
+    >
+      Clear saved data
+    </button>
+  )
+}
 
 export function App() {
   return (
@@ -112,6 +131,7 @@ export function App() {
                 <Link to="/terms" className="hover:text-gray-900 transition-colors" data-footer-terms>
                   Terms of Service
                 </Link>
+                <ClearDataButton />
               </div>
             </div>
             <div className="border-t border-gray-100 pt-3" data-footer-cross-promo>

@@ -1,8 +1,8 @@
 import { useState, useRef, useCallback, useEffect, DragEvent } from 'react'
-import { Upload, FileText, X, RefreshCw, CheckCircle, Zap } from 'lucide-react'
+import { Upload, FileText, X, RefreshCw, CheckCircle, Zap, RotateCcw } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { parseCsv, parseRawCsv, parseWithMapping, type ColumnMapping } from '../lib/csvParser'
-import { saveSpendingData, loadSpendingData, clearSpendingData } from '../lib/storage'
+import { saveSpendingData, loadSpendingData, clearSpendingData, clearWalletCards, hasAnalysis } from '../lib/storage'
 import type { ParsedCsvResult, StoredSpendingData, SpendingBreakdown, RewardCategory } from '../types'
 import { CATEGORY_LABELS } from '../types'
 
@@ -405,6 +405,7 @@ export function UploadPage() {
   const [storedData, setStoredData] = useState<StoredSpendingData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [selectedPresetName, setSelectedPresetName] = useState<string | null>(null)
+  const [showWelcomeBack, setShowWelcomeBack] = useState(() => hasAnalysis())
 
   // Load persisted data on mount
   useEffect(() => {
@@ -498,13 +499,27 @@ export function UploadPage() {
 
   const handleClearData = () => {
     clearSpendingData()
+    clearWalletCards()
     setStoredData(null)
     setParseResult(null)
     setRawCsv(null)
     setFileName(null)
     setError(null)
     setSelectedPresetName(null)
+    setShowWelcomeBack(false)
   }
+
+  const handleStartFresh = useCallback(() => {
+    clearSpendingData()
+    clearWalletCards()
+    setStoredData(null)
+    setParseResult(null)
+    setRawCsv(null)
+    setFileName(null)
+    setError(null)
+    setSelectedPresetName(null)
+    setShowWelcomeBack(false)
+  }, [])
 
   // Decide what to show for breakdown
   const shownData: StoredSpendingData | null =
@@ -526,6 +541,38 @@ export function UploadPage() {
           Upload your transaction CSV to get personalized card recommendations. Your data never leaves your browser.
         </p>
       </div>
+
+      {/* Welcome back banner — shown when a previous full analysis (spending + wallet) is saved */}
+      {showWelcomeBack && (
+        <div
+          data-welcome-back
+          className="rounded-xl border border-blue-200 bg-blue-50 p-5 space-y-3"
+        >
+          <div>
+            <p className="text-sm font-semibold text-blue-900">Welcome back!</p>
+            <p className="text-xs text-blue-700 mt-0.5">
+              Your previous analysis is saved. Pick up where you left off or start fresh.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <Link
+              to="/wallet"
+              data-view-results
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors min-h-[44px]"
+            >
+              View my results →
+            </Link>
+            <button
+              data-start-fresh
+              onClick={handleStartFresh}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-blue-300 text-blue-700 text-sm font-medium hover:bg-blue-100 transition-colors min-h-[44px]"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              Start fresh
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Spending presets (shown when no data loaded) */}
       {!shownData && (
