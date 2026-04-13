@@ -13,6 +13,7 @@ import { ComparisonPage } from './pages/ComparisonPage'
 import { FaqPage } from './pages/FaqPage'
 import { BlogListingPage } from './pages/BlogListingPage'
 import { BlogPostPage } from './pages/BlogPostPage'
+import { BestCards2026Page } from './pages/BestCards2026Page'
 import { BeamPageview } from './lib/BeamPageview'
 
 export function App() {
@@ -85,6 +86,7 @@ export function App() {
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/best-cards-2026" element={<BestCards2026Page />} />
           </Routes>
         </main>
         <footer className="border-t border-gray-200 bg-white mt-8" data-footer>
