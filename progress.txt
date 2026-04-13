@@ -384,3 +384,15 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - Rate limit test sends 3 real emails (to ralph-smoke-test@keylightdigital.com) then expects 429 on 4th — this creates 3 real Resend sends per test run; use a unique timestamp-based email address for rate limit tests to avoid interfering across runs
   - VERIFIED: mobile responsive at 375px (email input and button stack vertically, all ≥44px)
 ---
+
+## 2026-04-13 - CO-024
+- Social launch kit created. All 24 stories now have passes=true.
+- What was implemented:
+  - docs/launch-kit.md (new): Show HN post (title + 300-word body explaining tool, privacy, tech stack), 5 tweet drafts (privacy angle, savings angle, data-driven, open source/dev, wallet builder), 3 Reddit drafts (r/personalfinance, r/creditcards, r/churning — each tailored to subreddit culture), Product Hunt listing (name, tagline, description, first comment, screenshots list, topics)
+  - prd.json: CO-024 passes=true
+- No deployment needed (docs-only story)
+- Files changed: docs/launch-kit.md (new), prd.json
+- **Learnings for future iterations:**
+  - CO-024 is docs-only — no smoke tests, no deploy needed. Just create the file, mark passes=true, commit.
+  - Launch kit lives in docs/ directory — check for existing docs/ before creating
+---
