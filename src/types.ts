@@ -68,3 +68,50 @@ export interface StoredSpendingData {
   uploadedAt: string
   transactionCount: number
 }
+
+export interface CardCategoryRate {
+  category: string
+  multiplier: number
+}
+
+export interface CardPerk {
+  name: string
+  annualValue: number
+}
+
+export interface SignUpBonus {
+  amount: number
+  spendRequired: number
+  timeMonths: number
+}
+
+export interface Card {
+  id: string
+  name: string
+  issuer: string
+  annualFee: number
+  firstYearFeeWaived: boolean
+  rewardType: 'cashback' | 'points'
+  baseRate: number
+  pointValue: number
+  categoryRates: CardCategoryRate[]
+  signUpBonus: SignUpBonus | null
+  perks: CardPerk[]
+  url: string
+}
+
+export interface CategoryOptimization {
+  category: RewardCategory
+  categoryLabel: string
+  bestCard: Card | null
+  effectiveRate: number
+  annualRewards: number
+  annualSpend: number
+}
+
+export interface WalletOptimization {
+  categoryBreakdown: CategoryOptimization[]
+  totalAnnualRewards: number
+  totalAnnualFees: number
+  netAnnualValue: number
+}
