@@ -364,5 +364,607 @@
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
     "url": "https://www.capitalone.com/credit-cards/quicksilver/"
+  },
+  {
+    "id": "chase-ink-unlimited",
+    "name": "Chase Ink Business Unlimited",
+    "issuer": "Chase",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 750, "spendRequired": 6000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited"
+  },
+  {
+    "id": "chase-ink-preferred",
+    "name": "Chase Ink Business Preferred",
+    "issuer": "Chase",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.25,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 3 },
+      { "category": "online_shopping", "multiplier": 3 },
+      { "category": "entertainment", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 1000, "spendRequired": 8000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/preferred"
+  },
+  {
+    "id": "amazon-prime-visa",
+    "name": "Amazon Prime Visa",
+    "issuer": "Chase",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "online_shopping", "multiplier": 5 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "gas", "multiplier": 2 },
+      { "category": "transit", "multiplier": 2 }
+    ],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.amazon.com/Amazon-Prime-Rewards-Visa-Signature-Card/dp/BT00LN946S"
+  },
+  {
+    "id": "chase-marriott-boundless",
+    "name": "Chase Marriott Bonvoy Boundless",
+    "issuer": "Chase",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 2,
+    "pointValue": 0.7,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 6 },
+      { "category": "dining", "multiplier": 3 },
+      { "category": "groceries", "multiplier": 3 },
+      { "category": "gas", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 250, "spendRequired": 3000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Free Night Award", "annualValue": 70 }
+    ],
+    "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+  },
+  {
+    "id": "chase-united-explorer",
+    "name": "Chase United Explorer",
+    "issuer": "Chase",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.1,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 2 },
+      { "category": "dining", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 600, "spendRequired": 3000, "timeMonths": 3 },
+    "perks": [
+      { "name": "First Checked Bag Free", "annualValue": 70 }
+    ],
+    "url": "https://creditcards.chase.com/travel-credit-cards/united/explorer"
+  },
+  {
+    "id": "world-of-hyatt",
+    "name": "World of Hyatt Credit Card",
+    "issuer": "Chase",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.7,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 9 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "transit", "multiplier": 2 },
+      { "category": "entertainment", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 510, "spendRequired": 3000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Free Night Award", "annualValue": 150 }
+    ],
+    "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt"
+  },
+  {
+    "id": "amex-business-gold",
+    "name": "American Express Business Gold",
+    "issuer": "American Express",
+    "annualFee": 295,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 4 },
+      { "category": "travel", "multiplier": 4 },
+      { "category": "online_shopping", "multiplier": 4 },
+      { "category": "gas", "multiplier": 4 }
+    ],
+    "signUpBonus": { "amount": 1000, "spendRequired": 10000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/business-gold/"
+  },
+  {
+    "id": "amex-business-platinum",
+    "name": "American Express Business Platinum",
+    "issuer": "American Express",
+    "annualFee": 695,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.1,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 1200, "spendRequired": 15000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Airline Fee Credit", "annualValue": 200 },
+      { "name": "Dell Technologies Credit", "annualValue": 400 },
+      { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/business-platinum/"
+  },
+  {
+    "id": "amex-delta-gold",
+    "name": "Delta SkyMiles Gold American Express",
+    "issuer": "American Express",
+    "annualFee": 150,
+    "firstYearFeeWaived": true,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.1,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 2 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "groceries", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 350, "spendRequired": 2000, "timeMonths": 6 },
+    "perks": [
+      { "name": "First Checked Bag Free", "annualValue": 60 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/"
+  },
+  {
+    "id": "amex-delta-platinum",
+    "name": "Delta SkyMiles Platinum American Express",
+    "issuer": "American Express",
+    "annualFee": 350,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.2,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 3 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "groceries", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 600, "spendRequired": 4000, "timeMonths": 6 },
+    "perks": [
+      { "name": "Annual Companion Certificate", "annualValue": 200 },
+      { "name": "First Checked Bag Free", "annualValue": 90 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/"
+  },
+  {
+    "id": "amex-hilton-honors",
+    "name": "Hilton Honors American Express Card",
+    "issuer": "American Express",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 3,
+    "pointValue": 0.5,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 7 },
+      { "category": "dining", "multiplier": 5 },
+      { "category": "groceries", "multiplier": 5 },
+      { "category": "gas", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 400, "spendRequired": 2000, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/"
+  },
+  {
+    "id": "amex-hilton-surpass",
+    "name": "Hilton Honors American Express Surpass",
+    "issuer": "American Express",
+    "annualFee": 150,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 3,
+    "pointValue": 0.5,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 12 },
+      { "category": "dining", "multiplier": 6 },
+      { "category": "groceries", "multiplier": 6 },
+      { "category": "gas", "multiplier": 6 }
+    ],
+    "signUpBonus": { "amount": 650, "spendRequired": 3000, "timeMonths": 6 },
+    "perks": [
+      { "name": "Free Weekend Night Award", "annualValue": 150 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
+  },
+  {
+    "id": "amex-blue-business-cash",
+    "name": "Blue Business Cash American Express",
+    "issuer": "American Express",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 250, "spendRequired": 3000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-business-cash/"
+  },
+  {
+    "id": "amex-everyday",
+    "name": "Amex EveryDay Credit Card",
+    "issuer": "American Express",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "groceries", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 100, "spendRequired": 2000, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday/"
+  },
+  {
+    "id": "citi-strata-premier",
+    "name": "Citi Strata Premier",
+    "issuer": "Citi",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "groceries", "multiplier": 3 },
+      { "category": "gas", "multiplier": 3 },
+      { "category": "travel", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 700, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Annual Hotel Savings", "annualValue": 100 }
+    ],
+    "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
+  },
+  {
+    "id": "costco-anywhere-visa",
+    "name": "Costco Anywhere Visa by Citi",
+    "issuer": "Citi",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "gas", "multiplier": 4 },
+      { "category": "dining", "multiplier": 3 },
+      { "category": "travel", "multiplier": 3 }
+    ],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-credit-card-by-citi"
+  },
+  {
+    "id": "citi-simplicity",
+    "name": "Citi Simplicity",
+    "issuer": "Citi",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.citi.com/credit-cards/citi-simplicity-credit-card"
+  },
+  {
+    "id": "citi-aadvantage-platinum",
+    "name": "Citi AAdvantage Platinum Select",
+    "issuer": "Citi",
+    "annualFee": 99,
+    "firstYearFeeWaived": true,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.4,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 2 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "gas", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 700, "spendRequired": 4000, "timeMonths": 4 },
+    "perks": [
+      { "name": "First Checked Bag Free", "annualValue": 70 }
+    ],
+    "url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-credit-card"
+  },
+  {
+    "id": "capital-one-spark-cash-plus",
+    "name": "Capital One Spark Cash Plus",
+    "issuer": "Capital One",
+    "annualFee": 150,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 500, "spendRequired": 5000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Annual Fee Rebate (spend $150k+)", "annualValue": 150 }
+    ],
+    "url": "https://www.capitalone.com/credit-cards/spark-cash-plus/"
+  },
+  {
+    "id": "capital-one-spark-miles",
+    "name": "Capital One Spark Miles for Business",
+    "issuer": "Capital One",
+    "annualFee": 95,
+    "firstYearFeeWaived": true,
+    "rewardType": "points",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 500, "spendRequired": 4500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.capitalone.com/credit-cards/spark-miles/"
+  },
+  {
+    "id": "capital-one-venture-one",
+    "name": "Capital One VentureOne",
+    "issuer": "Capital One",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1.25,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.capitalone.com/credit-cards/ventureone/"
+  },
+  {
+    "id": "discover-it-miles",
+    "name": "Discover it Miles",
+    "issuer": "Discover",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.discover.com/credit-cards/travel/it-miles-card.html"
+  },
+  {
+    "id": "bank-of-america-premium-rewards",
+    "name": "Bank of America Premium Rewards",
+    "issuer": "Bank of America",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 2 },
+      { "category": "dining", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 500, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Airline Incidental Fee Credit", "annualValue": 100 }
+    ],
+    "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
+  },
+  {
+    "id": "bank-of-america-unlimited-cash",
+    "name": "Bank of America Unlimited Cash Rewards",
+    "issuer": "Bank of America",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/"
+  },
+  {
+    "id": "alaska-airlines-visa",
+    "name": "Alaska Airlines Visa Signature",
+    "issuer": "Bank of America",
+    "annualFee": 75,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.7,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 3 },
+      { "category": "dining", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 680, "spendRequired": 3000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Annual Companion Fare", "annualValue": 99 }
+    ],
+    "url": "https://www.alaskaair.com/content/credit-card"
+  },
+  {
+    "id": "wells-fargo-autograph",
+    "name": "Wells Fargo Autograph",
+    "issuer": "Wells Fargo",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "travel", "multiplier": 3 },
+      { "category": "gas", "multiplier": 3 },
+      { "category": "transit", "multiplier": 3 },
+      { "category": "streaming", "multiplier": 3 },
+      { "category": "entertainment", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card"
+  },
+  {
+    "id": "wells-fargo-autograph-journey",
+    "name": "Wells Fargo Autograph Journey",
+    "issuer": "Wells Fargo",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 },
+      { "category": "dining", "multiplier": 3 },
+      { "category": "streaming", "multiplier": 1 }
+    ],
+    "signUpBonus": { "amount": 400, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Annual Airline Credit", "annualValue": 50 }
+    ],
+    "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card"
+  },
+  {
+    "id": "us-bank-cash-plus",
+    "name": "U.S. Bank Cash+",
+    "issuer": "U.S. Bank",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 5 },
+      { "category": "entertainment", "multiplier": 5 },
+      { "category": "streaming", "multiplier": 5 },
+      { "category": "groceries", "multiplier": 2 },
+      { "category": "gas", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 4 },
+    "perks": [],
+    "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html"
+  },
+  {
+    "id": "us-bank-altitude-reserve",
+    "name": "U.S. Bank Altitude Reserve Visa Infinite",
+    "issuer": "U.S. Bank",
+    "annualFee": 400,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.5,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 },
+      { "category": "online_shopping", "multiplier": 3 },
+      { "category": "dining", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 500, "spendRequired": 4500, "timeMonths": 3 },
+    "perks": [
+      { "name": "Annual Travel Credit", "annualValue": 325 },
+      { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
+    ],
+    "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
+  },
+  {
+    "id": "bilt-mastercard",
+    "name": "Bilt Mastercard",
+    "issuer": "Bilt Rewards",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "travel", "multiplier": 2 }
+    ],
+    "signUpBonus": null,
+    "perks": [
+      { "name": "Rent Rewards (no fee)", "annualValue": 0 }
+    ],
+    "url": "https://biltrewards.com/card"
+  },
+  {
+    "id": "apple-card",
+    "name": "Apple Card",
+    "issuer": "Goldman Sachs",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "online_shopping", "multiplier": 3 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "travel", "multiplier": 2 }
+    ],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.apple.com/apple-card/"
+  },
+  {
+    "id": "fidelity-rewards-visa",
+    "name": "Fidelity Rewards Visa Signature",
+    "issuer": "Fidelity",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 150, "spendRequired": 1500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.fidelity.com/cash-management/visa-signature-card"
+  },
+  {
+    "id": "target-redcard",
+    "name": "Target RedCard Mastercard",
+    "issuer": "Target",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "online_shopping", "multiplier": 5 },
+      { "category": "dining", "multiplier": 2 },
+      { "category": "gas", "multiplier": 2 }
+    ],
+    "signUpBonus": null,
+    "perks": [
+      { "name": "Free 2-day shipping on Target.com", "annualValue": 30 }
+    ],
+    "url": "https://www.target.com/redcard/main/TargetRedCard"
   }
 ]
