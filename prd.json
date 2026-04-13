@@ -354,7 +354,7 @@
       "id": "CO-023",
       "title": "Email results — send optimized wallet via Resend API",
       "priority": 15,
-      "passes": false,
+      "passes": true,
       "description": "Add an 'Email my results' button on the wallet page. Users enter their email and receive a formatted summary of their optimized wallet, projected rewards, and top recommendations. Server-side endpoint sends via Resend API. Also offers opt-in to a monthly 'card deals' digest. Builds email list for future marketing.",
       "acceptanceCriteria": [
         "'Email my results' button on wallet page (visible when wallet has cards selected)",
