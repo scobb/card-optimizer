@@ -338,7 +338,7 @@
       "id": "CO-022",
       "title": "Blog — 'Annual Fee Credit Cards: When They Are Worth It'",
       "priority": 14,
-      "passes": false,
+      "passes": true,
       "description": "Write an article at /blog/annual-fee-worth-it showing the break-even math for premium cards. Include a simple calculator or table showing how much spending is needed at each category rate to offset the fee. Targets 'is Chase Sapphire Preferred worth it' searches.",
       "acceptanceCriteria": [
         "/blog/annual-fee-worth-it renders the full article",
