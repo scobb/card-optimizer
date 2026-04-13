@@ -6,6 +6,7 @@ import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
 import { LandingPage } from './pages/LandingPage'
 import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
 import { CardDetailPage } from './pages/CardDetailPage'
 import { CategoryGuidePage } from './pages/CategoryGuidePage'
 import { ComparisonPage } from './pages/ComparisonPage'
@@ -80,6 +81,7 @@ export function App() {
             <Route path="/best-cards/:category" element={<CategoryGuidePage />} />
             <Route path="/compare/:slug" element={<ComparisonPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/blog" element={<BlogListingPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
@@ -101,6 +103,9 @@ export function App() {
             <div className="flex items-center gap-4">
               <Link to="/privacy" className="hover:text-gray-900 transition-colors" data-footer-privacy>
                 Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-gray-900 transition-colors" data-footer-terms>
+                Terms of Service
               </Link>
             </div>
           </div>
