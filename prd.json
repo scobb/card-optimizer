@@ -303,7 +303,7 @@
       "id": "CO-020",
       "title": "Blog — 'How to Choose the Best Credit Card for Your Spending'",
       "priority": 12,
-      "passes": false,
+      "passes": true,
       "description": "Write a long-form guide (2000+ words) at /blog/how-to-choose-best-credit-card. This is a foundational content piece targeting high-volume searches. Covers reward types, annual fee math, sign-up bonus strategy, category-based optimization. Links to the tool throughout. Blog infrastructure (listing page, routing) needed if not yet built.",
       "acceptanceCriteria": [
         "/blog route shows blog listing page with all posts",
