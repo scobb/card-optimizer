@@ -4,14 +4,17 @@
       "id": "CO-001",
       "blocker": "Cloudflare API token lacks Pages:Write permission — wrangler pages deploy fails with auth error 10000",
       "blockedAt": "2026-04-12",
-      "emailSent": true
+      "emailSent": true,
+      "resolved": true,
+      "resolvedAt": "2026-04-13"
     },
     {
       "id": "CO-002",
       "blocker": "Same as CO-001: Cloudflare API token lacks Pages:Edit — cannot deploy to Cloudflare Pages. Code is fully implemented and committed.",
       "blockedAt": "2026-04-13",
       "emailSent": true,
-      "note": "No new email sent — Steve was already notified of this exact issue via CO-001 blocker email. Same root cause."
+      "resolved": true,
+      "resolvedAt": "2026-04-13"
     }
   ]
 }
