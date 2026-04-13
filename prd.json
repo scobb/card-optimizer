@@ -272,7 +272,7 @@
       "id": "CO-018",
       "title": "IndexNow submission — push all URLs for Google/Bing indexing",
       "priority": 10,
-      "passes": false,
+      "passes": true,
       "description": "Submit all card-optimizer URLs to search engines via IndexNow API for faster indexing. Include all card detail pages, category guides, comparison pages, and blog posts. Create a reusable script for future URL submissions.",
       "acceptanceCriteria": [
         "IndexNow API key file served at /.well-known/ or root path",

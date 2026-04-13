@@ -2,6 +2,22 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-018
+- IndexNow submission deployed to prod. 184/184 prod smoke tests pass. 49 URLs submitted successfully (HTTP 202).
+- What was implemented:
+  - public/c7b4ca1d-7cf8-45e5-9f9a-5ee4c2caf71a.txt: IndexNow API key file served at root
+  - scripts/submit-indexnow.mjs: rerunnable Node.js script submitting 49 URLs (8 static, 20 cards, 6 category guides, 15 comparisons). Supports --dry-run flag. Reports success/failure count. Run live — IndexNow accepted with HTTP 202.
+  - public/sitemap.xml: added /privacy and /faq entries (both were missing)
+  - test/smoke/indexnow.spec.ts: 9 smoke tests (key file accessible, correct key value, plain text content-type, sitemap includes /faq, sitemap includes all static pages, 20 card pages, 6 category guides, 15+ comparisons, robots.txt not blocking all)
+- Files changed: public/c7b4ca1d-7cf8-45e5-9f9a-5ee4c2caf71a.txt (new), scripts/submit-indexnow.mjs (new), public/sitemap.xml, test/smoke/indexnow.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - IndexNow API accepts batch submissions via POST to api.indexnow.org/indexnow with JSON body {host, key, keyLocation, urlList}; returns HTTP 202 for accepted batches
+  - Key file must be at the root of the domain (e.g., /c7b4ca1d...txt), not nested under /.well-known/ — Cloudflare Pages serves public/ at root so placing it in public/ works
+  - Cloudflare Pages CDN can cache old static files for a few seconds after deploy — smoke tests for static files may need a retry window; CDN clears quickly (within ~30s)
+  - /privacy was missing from sitemap.xml despite CO-011 being complete — check sitemap for ALL routes when adding new pages
+  - Dry-run flag (--dry-run) is useful for testing script output without hitting the API
+---
+
 ## 2026-04-13 - CO-017
 - Card comparison pages deployed to prod. 175/175 prod smoke tests pass.
 - What was implemented:
