@@ -116,23 +116,25 @@ test.describe('CO-036: Error states and edge cases', () => {
   })
 
   // -------------------------------------------------------------------------
-  test('recommendations shows no-match state when wallet has spending but all high-earning cards', async ({ page }) => {
-    // Use a very low-spend profile so no card adds net positive value
-    const MINIMAL_SPENDING = JSON.stringify({
+  test('recommendations shows no-match state when all cards are already in wallet', async ({ page, request }) => {
+    // Fetch all card IDs and put them all in the wallet — leaves nothing to recommend
+    const res = await request.get('/api/cards')
+    const cards = await res.json() as Array<{ id: string }>
+    const allIds = cards.map((c) => c.id)
+
+    const SPENDING = JSON.stringify({
       breakdown: [
-        { category: 'other', monthlyAvg: 10, annualTotal: 120, transactionCount: 2 },
+        { category: 'dining', monthlyAvg: 500, annualTotal: 6000, transactionCount: 60 },
+        { category: 'other', monthlyAvg: 200, annualTotal: 2400, transactionCount: 24 },
       ],
       format: 'generic',
       formatLabel: 'Test',
       uploadedAt: new Date().toISOString(),
-      transactionCount: 2,
+      transactionCount: 84,
     })
-    // Add high-fee cards to wallet to make all remaining cards negative net value
-    // Pick top earners to ensure no card adds positive value above fees
-    const ALL_CARD_IDS = ['chase-sapphire-preferred', 'amex-gold', 'chase-freedom-unlimited', 'citi-double-cash']
     await page.goto('/upload')
-    await page.evaluate(([k, v]) => { localStorage.setItem(k, v) }, ['co_spending_data', MINIMAL_SPENDING] as const)
-    await page.evaluate(([k, v]) => { localStorage.setItem(k, v) }, ['co_wallet_cards', JSON.stringify(ALL_CARD_IDS)] as const)
+    await page.evaluate(([k, v]) => { localStorage.setItem(k, v) }, ['co_spending_data', SPENDING] as const)
+    await page.evaluate(([k, v]) => { localStorage.setItem(k, v) }, ['co_wallet_cards', JSON.stringify(allIds)] as const)
     await page.goto('/recommendations')
     await expect(page.locator('[data-no-recommendations]')).toBeVisible({ timeout: 10000 })
     const text = await page.locator('[data-no-recommendations]').textContent()
