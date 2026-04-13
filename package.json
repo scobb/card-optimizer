@@ -1,0 +1,36 @@
+{
+  "name": "card-optimizer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:backend": "npm run build && wrangler pages dev dist --persist-to .wrangler/state --port=8788 --d1=DB",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:staging": "BASE_URL=https://staging.card-optimizer.pages.dev playwright test",
+    "test:prod": "BASE_URL=https://cards.keylightdigital.com playwright test"
+  },
+  "dependencies": {
+    "lucide-react": "^0.315.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/papaparse": "^5.3.14",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "wrangler": "^3.25.0"
+  }
+}

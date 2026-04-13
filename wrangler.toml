@@ -1,0 +1,37 @@
+name = "card-optimizer"
+compatibility_date = "2024-01-15"
+pages_build_output_dir = "dist"
+
+# Production
+[env.production]
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "card-optimizer-db"
+database_id = "PLACEHOLDER_PROD_DB_ID"
+migrations_dir = "database/migrations"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+
+# Staging / Preview
+[env.preview]
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "card-optimizer-db-staging"
+database_id = "PLACEHOLDER_STAGING_DB_ID"
+migrations_dir = "database/migrations"
+
+[env.preview.vars]
+ENVIRONMENT = "staging"
+
+# Local development
+[[d1_databases]]
+binding = "DB"
+database_name = "card-optimizer-db"
+database_id = "PLACEHOLDER_PROD_DB_ID"
+migrations_dir = "database/migrations"
+
+[vars]
+ENVIRONMENT = "local"
