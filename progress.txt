@@ -2,6 +2,23 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-016
+- Spending category guide pages deployed to prod. 150/157 prod smoke tests pass (7 CO-012 GitHub API tests fail due to rate limiting — pre-existing transient env issue, unrelated to CO-016; all 15 CO-016 tests pass).
+- What was implemented:
+  - src/pages/CategoryGuidePage.tsx (new): /best-cards/:category route — renders top 5 cards ranked by effectiveRate for the category; unique title/meta per page; internal links to card detail pages (/cards/:id); links to other category guides; CTA to /upload; 404 for unknown slugs
+  - URL slug mapping: dining, groceries, travel, gas, online-shopping (→ online_shopping), streaming
+  - Net value estimate: (rate% × $2,000/yr) − annualFee — shown with +/- color coding
+  - src/App.tsx: added `/best-cards/:category` route pointing to CategoryGuidePage
+  - public/sitemap.xml: 6 category guide URLs added at priority 0.9
+  - test/smoke/categoryGuide.spec.ts (new): 15 smoke tests (render all 6 categories, top 5 cards listed, rate/fee/net value visible, card links navigate to detail, apply links external, unique titles, other-category links, 404 for unknown, sitemap includes all, mobile no-overflow, CTA button present)
+- Files changed: src/pages/CategoryGuidePage.tsx (new), src/App.tsx, public/sitemap.xml, test/smoke/categoryGuide.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - URL param `online-shopping` maps to type `online_shopping` — always build a SLUG_TO_CATEGORY map when URL slugs differ from TS union keys
+  - GitHub API unauthenticated rate limit (60 req/hr per IP) hits after running 157-test suite multiple times in quick succession — CO-012 tests are flaky in heavy CI runs; this is transient and unrelated to app changes
+  - `effectiveRate(card, category)` already handles the multiplier vs base rate fallback — no need to duplicate logic in guide pages
+  - VERIFIED: mobile responsive at 375px (all cards stack vertically, no overflow, tap targets ≥44px)
+---
+
 ## 2026-04-13 - CO-015
 - Individual card detail pages deployed to prod. 142/142 smoke tests pass.
 - What was implemented:

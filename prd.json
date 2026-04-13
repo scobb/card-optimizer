@@ -236,7 +236,7 @@
       "id": "CO-016",
       "title": "Spending category guides for SEO content",
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "description": "Create /best-cards/:category pages (e.g., /best-cards/dining, /best-cards/groceries, /best-cards/travel). These are high-intent SEO pages targeting 'best credit card for X' searches. Content is generated from the card database.",
       "acceptanceCriteria": [
         "/best-cards/:category route renders a guide page",
