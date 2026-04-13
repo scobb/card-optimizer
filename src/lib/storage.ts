@@ -55,13 +55,17 @@ export function clearWalletCards(): void {
   }
 }
 
-/** Returns true if both spending data and wallet cards are saved — i.e. a full previous analysis exists. */
+/** Returns true if both spending data and wallet cards are saved and valid — i.e. a full previous analysis exists. */
 export function hasAnalysis(): boolean {
   try {
-    const hasSpending = !!localStorage.getItem(STORAGE_KEY)
+    const spendingRaw = localStorage.getItem(STORAGE_KEY)
+    if (!spendingRaw) return false
+    const spending = JSON.parse(spendingRaw) as Record<string, unknown>
+    if (!spending || typeof spending !== 'object' || !Array.isArray(spending.breakdown)) return false
     const walletRaw = localStorage.getItem(WALLET_KEY)
-    const hasWallet = !!walletRaw && (JSON.parse(walletRaw) as string[]).length > 0
-    return hasSpending && hasWallet
+    if (!walletRaw) return false
+    const wallet = JSON.parse(walletRaw) as unknown
+    return Array.isArray(wallet) && (wallet as string[]).length > 0
   } catch {
     return false
   }

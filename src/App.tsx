@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink, Link, useNavigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Link } from 'react-router-dom'
 import { clearSpendingData, clearWalletCards } from './lib/storage'
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
@@ -19,11 +19,11 @@ import { VsPage } from './pages/VsPage'
 import { BeamPageview } from './lib/BeamPageview'
 
 function ClearDataButton() {
-  const navigate = useNavigate()
   function handleClear() {
     clearSpendingData()
     clearWalletCards()
-    navigate('/upload')
+    // Full page reload to /upload so UploadPage re-initializes its welcome-back state
+    window.location.assign('/upload')
   }
   return (
     <button
