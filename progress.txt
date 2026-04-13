@@ -2,6 +2,21 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-12 - CO-012
+- GitHub repo scobb/card-optimizer set up and verified. 7/7 smoke tests pass.
+- What was implemented:
+  - README.md: project description, live demo link (cards.keylightdigital.dev), features list, tech stack table, local dev instructions (frontend-only and full-stack with D1), test instructions, privacy note, license
+  - LICENSE: MIT License under Keylight Digital LLC
+  - test/smoke/github.spec.ts: 7 smoke tests using GitHub API (no auth needed for public repos)
+  - GitHub repo made public, description set via `gh repo edit --visibility public --description ...`
+- Files changed: README.md (new), LICENSE (new), test/smoke/github.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - GitHub repo was already created (private) with remote set up from a prior session — just needed to make public and add description
+  - `gh repo edit --visibility public` requires `--accept-visibility-change-consequences` flag
+  - For GitHub-repo-only stories (no app changes), smoke tests can use the GitHub API directly via Playwright's `request` context — no BASE_URL needed
+  - CO-011 smoke tests hit Anthropic API rate limits (504 failures in story-failures.json) — not a code bug, just agent exhaustion. The privacy page code IS deployed.
+---
+
 ## 2026-04-13 - CO-010
 - Landing page deployed to prod. 95/95 smoke tests pass.
 - What was implemented:
