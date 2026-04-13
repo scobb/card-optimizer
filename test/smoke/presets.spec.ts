@@ -30,7 +30,7 @@ test.describe('CO-030: Spending Presets', () => {
     await gotoUpload(page)
     const avgAmerican = page.locator('[data-preset-id="average-american"]')
     await expect(avgAmerican.getByText('Average American')).toBeVisible()
-    await expect(avgAmerican.getByText('$4,500/mo')).toBeVisible()
+    await expect(avgAmerican.getByText('$4,500/mo').first()).toBeVisible()
     await expect(avgAmerican.getByText(/BLS Consumer Expenditure/i)).toBeVisible()
   })
 

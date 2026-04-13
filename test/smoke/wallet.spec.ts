@@ -185,8 +185,8 @@ test.describe('CO-003: Wallet Optimization', () => {
     await input.setInputFiles(path.join(FIXTURES, 'sample-transactions.csv'))
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
 
-    // Navigate to wallet
-    await page.getByRole('link', { name: 'Wallet' }).click()
+    // Navigate to wallet (scope to nav to avoid matching "Optimize My Wallet" CTA)
+    await page.locator('nav').getByRole('link', { name: 'Wallet' }).click()
     await expect(page.getByRole('heading', { name: 'My Wallet' })).toBeVisible()
 
     // Should NOT show "no spending data" prompt
