@@ -1,0 +1,31 @@
+# Ralph Progress Log
+Started: Sun Apr 12 08:03:17 PM PDT 2026
+---
+
+## Codebase Patterns
+- Use `--env preview` when running wrangler d1 commands against `card-optimizer-db-staging` (it lives in `[env.preview]` in wrangler.toml)
+- D1 prod DB ID: 86f6b550-adcb-4955-a48a-a103998971af
+- D1 staging DB ID: bf05e6d6-cef0-4b0c-bb69-9a81ff641264
+- Seed with: `npx tsx seed/seed.ts > /tmp/seed.sql && npx wrangler d1 execute card-optimizer-db --remote --file=/tmp/seed.sql`
+- Functions in `functions/api/` are Pages Functions — they receive `context: { env: Env; params: { id: string } }`, NOT `(request, env, ctx)` like Workers
+- CLOUDFLARE_API_TOKEN needs Pages:Edit permission for deploy (currently missing — see blocked-stories.json)
+- Email domain: keylightdigital.dev works with Resend; keylightdigital.com is NOT verified on Resend
+
+## 2026-04-12 - CO-001
+- **BLOCKED** — Cloudflare API token lacks Pages:Edit permission; cannot deploy to Cloudflare Pages
+- What was implemented:
+  - D1 databases created (prod + staging) with real IDs in wrangler.toml
+  - D1 migration 0001_cards_schema.sql with cards, category_rates, sign_up_bonuses, perks tables
+  - 20 real credit cards seeded into both databases
+  - Pages Functions: GET /api/health, GET /api/cards, GET /api/cards/:id
+  - CORS + security headers middleware
+  - Playwright config, smoke tests (catalog.spec.ts), sample CSV fixture
+  - Build passes (tsc + vite)
+  - deploy.sh fixed to use --env preview for staging D1 migrations
+- Files changed: database/migrations/0001_cards_schema.sql, seed/cards.json, seed/seed.ts, functions/_middleware.ts, functions/api/health.ts, functions/api/cards/index.ts, functions/api/cards/[id].ts, wrangler.toml, playwright.config.ts, test/smoke/catalog.spec.ts, test/fixtures/sample-transactions.csv, deploy.sh
+- **Learnings for future iterations:**
+  - The CLOUDFLARE_API_TOKEN in env needs Pages:Edit added — see blockers.log for Steve instructions
+  - Pages project 'card-optimizer' also needs to be created (wrangler pages project create failed due to same token issue)
+  - Use --env preview for wrangler d1 commands targeting staging DB
+  - Email must use from: ralph@keylightdigital.dev (keylightdigital.com domain not verified on Resend)
+---
