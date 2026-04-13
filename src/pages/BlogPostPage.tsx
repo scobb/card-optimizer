@@ -3,9 +3,11 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import { BLOG_POSTS } from './BlogListingPage'
 import { HowToChooseBestCreditCard } from './blog/HowToChooseBestCreditCard'
+import { CashBackVsPointsVsMiles } from './blog/CashBackVsPointsVsMiles'
 
 const POST_COMPONENTS: Record<string, React.ComponentType> = {
   'how-to-choose-best-credit-card': HowToChooseBestCreditCard,
+  'cash-back-vs-points-vs-miles': CashBackVsPointsVsMiles,
 }
 
 export function BlogPostPage() {
@@ -17,10 +19,14 @@ export function BlogPostPage() {
     const titles: Record<string, string> = {
       'how-to-choose-best-credit-card':
         'How to Choose the Best Credit Card for Your Spending (2026 Guide) — CardOptimizer',
+      'cash-back-vs-points-vs-miles':
+        'Cash Back vs Points vs Miles: Which Is Best for You? (2026) — CardOptimizer',
     }
     const descriptions: Record<string, string> = {
       'how-to-choose-best-credit-card':
         'Learn how to pick the best credit card for your spending with our data-driven guide. Covers reward types, annual fee math, sign-up bonus strategy, and wallet optimization.',
+      'cash-back-vs-points-vs-miles':
+        'Cash back, points, or miles — which credit card reward type earns you the most? Data-driven comparison with real card examples and scenario analysis.',
     }
     document.title = titles[post.slug] ?? `${post.title} — CardOptimizer`
     const meta = document.querySelector('meta[name="description"]')

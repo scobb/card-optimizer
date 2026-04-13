@@ -21,6 +21,15 @@ export const BLOG_POSTS: BlogPost[] = [
     readingMinutes: 10,
     category: 'Card Strategy',
   },
+  {
+    slug: 'cash-back-vs-points-vs-miles',
+    title: 'Cash Back vs Points vs Miles: A Data-Driven Guide',
+    description:
+      'A quantitative comparison of the three reward types. Includes real examples from the card catalog, scenario analysis, and a simple framework for deciding which type is right for your spending habits.',
+    publishedDate: '2026-04-13',
+    readingMinutes: 8,
+    category: 'Rewards Basics',
+  },
 ]
 
 export function BlogListingPage() {
