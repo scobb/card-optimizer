@@ -163,7 +163,7 @@
       "id": "CO-011",
       "title": "Privacy policy and about page",
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "description": "Add a privacy policy page and footer with about/legal info. Essential for legitimacy of a financial tool. The privacy story is a selling point — all processing is client-side.",
       "acceptanceCriteria": [
         "/privacy route renders a privacy policy page",
@@ -192,7 +192,7 @@
       "id": "CO-013",
       "title": "PWA manifest and installability",
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "description": "Add a web app manifest so the tool is installable as a PWA on mobile. Credit card optimization is a repeat-use tool — users should be able to add it to their home screen.",
       "acceptanceCriteria": [
         "public/manifest.json with name, short_name, icons, start_url, display: standalone, theme_color",

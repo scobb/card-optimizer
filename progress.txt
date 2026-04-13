@@ -2,6 +2,21 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-12 - CO-013 + CO-011
+- CO-013: PWA manifest deployed to prod. 122/122 smoke tests pass.
+- CO-011: Privacy page smoke tests also verified passing on prod — removing from blocked-stories.json and marking passes=true (code was already deployed in commit 79f53f6)
+- What was implemented (CO-013):
+  - public/manifest.json: name="Card Optimizer", short_name="CardOpt", display=standalone, theme_color=#1d4ed8, icons for 192x192 and 512x512
+  - public/icon-192.png and public/icon-512.png: SVG credit card icons rasterized to PNG with ImageMagick (same design as favicon.svg but at scale)
+  - index.html already had <link rel="manifest"> and <meta name="theme-color"> from CO-009 — no changes needed there
+  - test/smoke/pwa.spec.ts: 7 smoke tests (manifest accessible, required fields, icon sizes listed, icons accessible, manifest link in HTML, theme-color in HTML)
+- Files changed: public/manifest.json (new), public/icon-192.png (new), public/icon-512.png (new), test/smoke/pwa.spec.ts (new), prd.json, blocked-stories.json
+- **Learnings for future iterations:**
+  - index.html manifest link and theme-color were already added in CO-009 — check for pre-existing setup before adding again
+  - magick /tmp/icon.svg /path/to/icon.png converts SVG to PNG at native SVG size — scale viewBox dimensions to target size in the SVG itself
+  - PWA icons should be PNG for Chrome installability; SVG references in manifest are less reliable
+---
+
 ## 2026-04-12 - CO-012
 - GitHub repo scobb/card-optimizer set up and verified. 7/7 smoke tests pass.
 - What was implemented:

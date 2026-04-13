@@ -54,6 +54,6 @@
       "blockedAt": "2026-04-12",
       "emailSent": true,
       "note": "No new email — same SSL root cause as CO-003."
-    }
+    },
   ]
 }

@@ -1,14 +1,15 @@
 ## Last completed
-CO-012 - Push to GitHub and create README
+CO-013 - PWA manifest and installability (+ CO-011 verified and unblocked)
 
 ## Next up
-CO-013 - PWA manifest and installability — add public/manifest.json with icons, link it in index.html, add theme-color meta tag
+CO-014 - Add Beam analytics — add Beam tracking script to index.html, register site in Beam dashboard (cards.keylightdigital.dev), verify page views tracked on SPA navigation. Need to check how Beam's tracking script works (is it a standard script tag or custom?).
 
 ## Active issues
-- CO-011 (Privacy policy) is blocked (auto-blocked due to Anthropic API rate limits — 504 failures). The privacy page CODE is committed and deployed (79f53f6: feat(co-011)). Blocker is agent-level exhaustion, not a code issue. Steve may want to remove from blocked-stories.json and re-run to verify.
-- CO-001 through CO-008 are blocked on prod SSL (cards.keylightdigital.com HTTP 526). cards.keylightdigital.dev works fine.
+- CO-014 (Beam analytics): Need to know what Beam is/how to integrate — this is an internal tool we built. Check if there's a Beam project or docs in the ralph-bootstrap repo.
+- CO-001 through CO-008 marked passes=true (prod SSL fixed via keylightdigital.dev)
+- CO-011 was auto-blocked but code was actually deployed — verified 13/13 privacy smoke tests pass on prod, now passes=true
 
 ## Key decisions this session
-- CO-012 smoke tests use GitHub API directly (no BASE_URL needed) — `request` context in Playwright works without a browser for API calls
-- GitHub smoke tests: Buffer.from(data.content, 'base64').toString('utf-8') to decode GitHub API file content
-- No staging/prod deploy needed for CO-012 — no deployable app code changed
+- CO-013: icons generated from SVG via ImageMagick (magick icon.svg icon.png); viewBox dimensions must match target pixel size
+- CO-011 removal from blocked-stories.json: blocker was agent rate limits, not code — verified smoke tests pass before unblocking
+- Prod URL: https://cards.keylightdigital.dev (keylightdigital.dev zone is in the Cloudflare account)
