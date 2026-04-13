@@ -420,7 +420,7 @@
       "id": "CO-027",
       "title": "Best Credit Cards of 2026 — evergreen roundup page",
       "priority": 19,
-      "passes": false,
+      "passes": true,
       "description": "Create a comprehensive roundup page at /best-cards-2026 targeting the highest-volume credit card search query. Pick top cards from the database across categories (best overall, best cash back, best travel, best dining, best no annual fee, best for students). Each pick includes why it wins, key stats, and a CTA to try the optimizer with that card. Links internally to card detail pages and category guides. Include Article structured data.",
       "acceptanceCriteria": [
         "/best-cards-2026 route renders the roundup page",
