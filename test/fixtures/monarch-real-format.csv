@@ -1,0 +1,47 @@
+Date,Merchant,Category,Account,Original Statement,Notes,Amount,Tags,Owner
+2025-03-15,Whole Foods Market,Groceries,Sapphire Reserve (...4521),WHOLE FOODS MKT #10234,,-87.23,,Shared
+2025-03-14,Starbucks,Restaurants & Bars,American Express Gold Card (...1009),STARBUCKS #08371,,-5.75,,Shared
+2025-03-13,Shell Oil,Gas & Fuel,Venture (...0359),SHELL SERVICE STATION,,-45.00,,
+2025-03-12,Amazon,Shopping,Amazon Card,AMZN Mktp US*AB1CD2EF3,,-129.99,,
+2025-03-11,Uber Eats,Restaurants & Bars,Sapphire Reserve (...4521),UBER EATS,,-32.50,,Shared
+2025-03-10,Netflix,Subscription,American Express Gold Card (...1009),NETFLIX.COM,,-15.99,,Shared
+2025-03-09,Delta Air Lines,Travel & Vacation,Sapphire Reserve (...4521),DELTA AIR 00612345678,,-385.00,,
+2025-03-08,Trader Joe's,Groceries,American Express Gold Card (...1009),TRADER JOE'S #123,,-62.40,,Shared
+2025-03-07,CVS Pharmacy,Medical,Sapphire Reserve (...4521),CVS/PHARMACY #04832,,-23.15,,
+2025-03-06,Home Depot,Home Improvement,Venture (...0359),THE HOME DEPOT #4521,,-156.78,,
+2025-03-05,Chipotle,Restaurants & Bars,Sapphire Reserve (...4521),CHIPOTLE ONLINE,,-12.95,,
+2025-03-04,Costco,Groceries,Venture (...0359),COSTCO WHSE #1234,,-215.00,,Shared
+2025-03-03,Lyft,Parking & Tolls,Sapphire Reserve (...4521),LYFT *RIDE,,-18.50,,
+2025-03-02,Spotify,Subscription,Amazon Card,SPOTIFY USA,,-10.99,,
+2025-03-01,Kroger,Groceries,American Express Gold Card (...1009),KROGER #531,,-94.67,,Shared
+2025-02-28,Peloton,Fitness,Sapphire Reserve (...4521),PELOTON* MEMBERSHIP,,-55.26,,Shared
+2025-02-27,Pacific Science Center,Entertainment & Recreation,Sapphire Reserve (...4521),Pacific Science Center,,-32.95,,Shared
+2025-02-26,Target,Shopping,Venture (...0359),TARGET 00012345,,-67.43,,
+2025-02-25,Marriott,Travel & Vacation,Sapphire Reserve (...4521),MARRIOTT SEATTLE WA,,-425.00,,
+2025-02-24,Hulu,Subscription,Amazon Card,HULU *LIVE,,-17.99,,
+2025-02-23,Safeway,Groceries,American Express Gold Card (...1009),SAFEWAY #3214,,-105.30,,Shared
+2025-02-22,DoorDash,Restaurants & Bars,Sapphire Reserve (...4521),DOORDASH*DASHPASS,,-28.75,,
+2025-02-20,Best Buy,Shopping,Amazon Card,BEST BUY 00012345,,-299.99,,
+2025-02-18,Nordstrom,Clothing,Nordstrom Visa (...3743),NORDSTROM #0123,,-142.50,,
+2025-02-15,Chevron,Gas & Fuel,Venture (...0359),CHEVRON 0012345,,-52.30,,
+2025-01-15,Employer Inc,Paychecks,TOTAL CHECKING (...6519),EMPLOYER INC DIRECT DEP,,4250.00,,
+2025-01-14,Employer Inc,Paychecks,TOTAL CHECKING (...6519),EMPLOYER INC DIRECT DEP,,4250.00,,
+2025-01-13,Transfer,Transfer,TOTAL CHECKING (...6519),Online Transfer to SAV,,500.00,,
+2025-01-12,Transfer,Transfer,Regular Savings (...8015),Online Transfer from CHK,,-500.00,,
+2025-01-11,Chase,Credit Card Payment,TOTAL CHECKING (...6519),CHASE CREDIT CRD AUTOPAY,,2150.00,,
+2025-01-10,Amex,Credit Card Payment,TOTAL CHECKING (...6519),AMEX EPAYMENT ACH PMT,,875.00,,
+2025-01-09,Capital One,Credit Card Payment,TOTAL CHECKING (...6519),CAPITAL ONE MOBILE PMT,,420.00,,
+2025-01-08,Interest,Interest,Regular Savings (...8015),INTEREST PAYMENT,,-1.23,,
+2025-01-07,Student Loan,Student Loans,TOTAL CHECKING (...6519),MOHELA STUDENT LOAN,,385.00,,
+2025-01-06,Refund,Shopping,Amazon Card,AMZN Mktp US*REFUND,,45.99,,
+2025-01-05,Cash Withdrawal,Cash & ATM,TOTAL CHECKING (...6519),ATM WITHDRAWAL,,200.00,,
+2025-01-04,Venmo,Transfer,TOTAL CHECKING (...6519),VENMO PAYMENT,,50.00,,
+2025-01-03,Zelle,Transfer,TOTAL CHECKING (...6519),ZELLE TO JOHN D,,100.00,,
+2025-01-02,Statement Credit,Other Income,Sapphire Reserve (...4521),SAPPHIRE REWARD REDEMP,,125.00,,
+2025-01-01,Electric Utility,Gas & Electric,TOTAL CHECKING (...6519),SEATTLE CITY LIGHT,,87.45,,
+2024-12-31,Water Utility,Utilities,TOTAL CHECKING (...6519),SPU WATER,,65.20,,
+2024-12-30,Internet,Internet & Phone,TOTAL CHECKING (...6519),COMCAST CABLE COMM,,79.99,,
+2024-12-29,HSA Contribution,Transfer,HSA,HSA CONTRIBUTION,,-125.00,,
+2024-12-28,Tesla,Auto & Transport,Tesla loan,TESLA FINANCE PAYMENT,,487.00,,
+2024-12-27,Insurance,Insurance,TOTAL CHECKING (...6519),GEICO AUTO INSURANCE,,156.00,,
+2024-12-26,Charity,Charity,Sapphire Reserve (...4521),SEATTLE CHILDRENS HOSP,,-50.00,,
