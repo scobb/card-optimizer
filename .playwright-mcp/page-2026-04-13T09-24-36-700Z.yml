@@ -1,0 +1,392 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Recommendations" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Cards ranked by net annual value added to your current 2-card wallet. Sign-up bonuses amortized over 2 years.
+      - generic [ref=e19]:
+        - generic [ref=e20]: Estimated Annual Savings
+        - generic [ref=e21]: $323/year
+        - generic [ref=e22]: your current wallet vs. a 1% flat cashback baseline
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]: "1"
+            - generic [ref=e27]:
+              - generic [ref=e28]:
+                - generic [ref=e29]:
+                  - heading "Capital One Venture" [level=3] [ref=e30]
+                  - paragraph [ref=e31]: Capital One · $95/yr
+                - generic [ref=e32]:
+                  - generic [ref=e33]: +$394
+                  - generic [ref=e34]: net annual value
+              - paragraph [ref=e35]: "\"5.0% on Travel beats your current 2.5% + $375/yr sign-up bonus\""
+              - generic [ref=e36]:
+                - generic [ref=e37]: +$114 extra rewards/yr
+                - generic [ref=e38]: +$375/yr sign-up bonus
+                - generic [ref=e39]: −$95 annual fee
+          - generic [ref=e40]:
+            - button "Show category breakdown" [ref=e41] [cursor=pointer]:
+              - img [ref=e42]
+              - text: Show category breakdown
+            - link "Apply" [ref=e44] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/venture/
+              - text: Apply
+              - img [ref=e45]
+        - generic [ref=e49]:
+          - generic [ref=e50]:
+            - generic [ref=e51]: "2"
+            - generic [ref=e52]:
+              - generic [ref=e53]:
+                - generic [ref=e54]:
+                  - heading "Chase Ink Business Cash" [level=3] [ref=e55]
+                  - paragraph [ref=e56]: Chase · No annual fee
+                - generic [ref=e57]:
+                  - generic [ref=e58]: +$384
+                  - generic [ref=e59]: net annual value
+              - paragraph [ref=e60]: "\"2.0% on Gas beats your current 1.3% + $375/yr sign-up bonus\""
+              - generic [ref=e61]:
+                - generic [ref=e62]: +$9 extra rewards/yr
+                - generic [ref=e63]: +$375/yr sign-up bonus
+          - generic [ref=e64]:
+            - button "Show category breakdown" [ref=e65] [cursor=pointer]:
+              - img [ref=e66]
+              - text: Show category breakdown
+            - link "Apply" [ref=e68] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/business-credit-cards/ink/cash
+              - text: Apply
+              - img [ref=e69]
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]: "3"
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - heading "Citi Custom Cash" [level=3] [ref=e79]
+                  - paragraph [ref=e80]: Citi · No annual fee
+                - generic [ref=e81]:
+                  - generic [ref=e82]: +$297
+                  - generic [ref=e83]: net annual value
+              - paragraph [ref=e84]: "\"5.0% on Travel beats your current 2.5% + $100/yr sign-up bonus\""
+              - generic [ref=e85]:
+                - generic [ref=e86]: +$197 extra rewards/yr
+                - generic [ref=e87]: +$100/yr sign-up bonus
+          - generic [ref=e88]:
+            - button "Show category breakdown" [ref=e89] [cursor=pointer]:
+              - img [ref=e90]
+              - text: Show category breakdown
+            - link "Apply" [ref=e92] [cursor=pointer]:
+              - /url: https://www.citi.com/credit-cards/citi-custom-cash-credit-card
+              - text: Apply
+              - img [ref=e93]
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - generic [ref=e99]: "4"
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - generic [ref=e102]:
+                  - heading "Capital One Venture X" [level=3] [ref=e103]
+                  - paragraph [ref=e104]: Capital One · $395/yr
+                - generic [ref=e105]:
+                  - generic [ref=e106]: +$214
+                  - generic [ref=e107]: net annual value
+              - paragraph [ref=e108]: "\"10.0% on Travel beats your current 2.5% + $375/yr sign-up bonus\""
+              - generic [ref=e109]:
+                - generic [ref=e110]: +$234 extra rewards/yr
+                - generic [ref=e111]: +$375/yr sign-up bonus
+                - generic [ref=e112]: −$395 annual fee
+          - generic [ref=e113]:
+            - button "Show category breakdown" [ref=e114] [cursor=pointer]:
+              - img [ref=e115]
+              - text: Show category breakdown
+            - link "Apply" [ref=e117] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/venture-x/
+              - text: Apply
+              - img [ref=e118]
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "5"
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e127]:
+                  - heading "Chase Freedom Unlimited" [level=3] [ref=e128]
+                  - paragraph [ref=e129]: Chase · No annual fee
+                - generic [ref=e130]:
+                  - generic [ref=e131]: +$178
+                  - generic [ref=e132]: net annual value
+              - paragraph [ref=e133]: "\"5.0% on Travel beats your current 2.5% + $100/yr sign-up bonus\""
+              - generic [ref=e134]:
+                - generic [ref=e135]: +$78 extra rewards/yr
+                - generic [ref=e136]: +$100/yr sign-up bonus
+          - generic [ref=e137]:
+            - button "Show category breakdown" [ref=e138] [cursor=pointer]:
+              - img [ref=e139]
+              - text: Show category breakdown
+            - link "Apply" [ref=e141] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+              - text: Apply
+              - img [ref=e142]
+        - generic [ref=e146]:
+          - generic [ref=e147]:
+            - generic [ref=e148]: "6"
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]:
+                  - heading "Chase Freedom Flex" [level=3] [ref=e152]
+                  - paragraph [ref=e153]: Chase · No annual fee
+                - generic [ref=e154]:
+                  - generic [ref=e155]: +$160
+                  - generic [ref=e156]: net annual value
+              - paragraph [ref=e157]: "\"5.0% on Travel beats your current 2.5% + $100/yr sign-up bonus\""
+              - generic [ref=e158]:
+                - generic [ref=e159]: +$60 extra rewards/yr
+                - generic [ref=e160]: +$100/yr sign-up bonus
+          - generic [ref=e161]:
+            - button "Show category breakdown" [ref=e162] [cursor=pointer]:
+              - img [ref=e163]
+              - text: Show category breakdown
+            - link "Apply" [ref=e165] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+              - text: Apply
+              - img [ref=e166]
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]: "7"
+            - generic [ref=e173]:
+              - generic [ref=e174]:
+                - generic [ref=e175]:
+                  - heading "Citi Double Cash" [level=3] [ref=e176]
+                  - paragraph [ref=e177]: Citi · No annual fee
+                - generic [ref=e178]:
+                  - generic [ref=e179]: +$154
+                  - generic [ref=e180]: net annual value
+              - paragraph [ref=e181]: "\"2.0% on Other beats your current 1.3% + $100/yr sign-up bonus\""
+              - generic [ref=e182]:
+                - generic [ref=e183]: +$54 extra rewards/yr
+                - generic [ref=e184]: +$100/yr sign-up bonus
+          - generic [ref=e185]:
+            - button "Show category breakdown" [ref=e186] [cursor=pointer]:
+              - img [ref=e187]
+              - text: Show category breakdown
+            - link "Apply" [ref=e189] [cursor=pointer]:
+              - /url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
+              - text: Apply
+              - img [ref=e190]
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]: "8"
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - generic [ref=e199]:
+                  - heading "Wells Fargo Active Cash" [level=3] [ref=e200]
+                  - paragraph [ref=e201]: Wells Fargo · No annual fee
+                - generic [ref=e202]:
+                  - generic [ref=e203]: +$154
+                  - generic [ref=e204]: net annual value
+              - paragraph [ref=e205]: "\"2.0% on Other beats your current 1.3% + $100/yr sign-up bonus\""
+              - generic [ref=e206]:
+                - generic [ref=e207]: +$54 extra rewards/yr
+                - generic [ref=e208]: +$100/yr sign-up bonus
+          - generic [ref=e209]:
+            - button "Show category breakdown" [ref=e210] [cursor=pointer]:
+              - img [ref=e211]
+              - text: Show category breakdown
+            - link "Apply" [ref=e213] [cursor=pointer]:
+              - /url: https://creditcards.wellsfargo.com/active-cash-credit-card
+              - text: Apply
+              - img [ref=e214]
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - generic [ref=e220]: "9"
+            - generic [ref=e221]:
+              - generic [ref=e222]:
+                - generic [ref=e223]:
+                  - heading "Blue Cash Preferred" [level=3] [ref=e224]
+                  - paragraph [ref=e225]: American Express · $95/yr
+                - generic [ref=e226]:
+                  - generic [ref=e227]: +$137
+                  - generic [ref=e228]: net annual value
+              - paragraph [ref=e229]: "\"6.0% on Groceries beats your current 4.0% + $125/yr sign-up bonus\""
+              - generic [ref=e230]:
+                - generic [ref=e231]: +$107 extra rewards/yr
+                - generic [ref=e232]: +$125/yr sign-up bonus
+                - generic [ref=e233]: −$95 annual fee
+          - generic [ref=e234]:
+            - button "Show category breakdown" [ref=e235] [cursor=pointer]:
+              - img [ref=e236]
+              - text: Show category breakdown
+            - link "Apply" [ref=e238] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+              - text: Apply
+              - img [ref=e239]
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - generic [ref=e245]: "10"
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - generic [ref=e248]:
+                  - heading "Blue Cash Everyday" [level=3] [ref=e249]
+                  - paragraph [ref=e250]: American Express · No annual fee
+                - generic [ref=e251]:
+                  - generic [ref=e252]: +$121
+                  - generic [ref=e253]: net annual value
+              - paragraph [ref=e254]: "\"3.0% on Gas beats your current 1.3% + $100/yr sign-up bonus\""
+              - generic [ref=e255]:
+                - generic [ref=e256]: +$21 extra rewards/yr
+                - generic [ref=e257]: +$100/yr sign-up bonus
+          - generic [ref=e258]:
+            - button "Show category breakdown" [ref=e259] [cursor=pointer]:
+              - img [ref=e260]
+              - text: Show category breakdown
+            - link "Apply" [ref=e262] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/
+              - text: Apply
+              - img [ref=e263]
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - generic [ref=e269]: "11"
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - heading "Capital One Quicksilver" [level=3] [ref=e273]
+                  - paragraph [ref=e274]: Capital One · No annual fee
+                - generic [ref=e275]:
+                  - generic [ref=e276]: +$118
+                  - generic [ref=e277]: net annual value
+              - paragraph [ref=e278]: "\"1.5% on Other beats your current 1.3% + $100/yr sign-up bonus\""
+              - generic [ref=e279]:
+                - generic [ref=e280]: +$18 extra rewards/yr
+                - generic [ref=e281]: +$100/yr sign-up bonus
+          - generic [ref=e282]:
+            - button "Show category breakdown" [ref=e283] [cursor=pointer]:
+              - img [ref=e284]
+              - text: Show category breakdown
+            - link "Apply" [ref=e286] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/quicksilver/
+              - text: Apply
+              - img [ref=e287]
+        - generic [ref=e291]:
+          - generic [ref=e292]:
+            - generic [ref=e293]: "12"
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - generic [ref=e296]:
+                  - heading "U.S. Bank Altitude Go" [level=3] [ref=e297]
+                  - paragraph [ref=e298]: U.S. Bank · No annual fee
+                - generic [ref=e299]:
+                  - generic [ref=e300]: +$109
+                  - generic [ref=e301]: net annual value
+              - paragraph [ref=e302]: "\"2.0% on Gas beats your current 1.3% + $100/yr sign-up bonus\""
+              - generic [ref=e303]:
+                - generic [ref=e304]: +$9 extra rewards/yr
+                - generic [ref=e305]: +$100/yr sign-up bonus
+          - generic [ref=e306]:
+            - button "Show category breakdown" [ref=e307] [cursor=pointer]:
+              - img [ref=e308]
+              - text: Show category breakdown
+            - link "Apply" [ref=e310] [cursor=pointer]:
+              - /url: https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html
+              - text: Apply
+              - img [ref=e311]
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - generic [ref=e317]: "13"
+            - generic [ref=e318]:
+              - generic [ref=e319]:
+                - generic [ref=e320]:
+                  - heading "Capital One SavorOne" [level=3] [ref=e321]
+                  - paragraph [ref=e322]: Capital One · No annual fee
+                - generic [ref=e323]:
+                  - generic [ref=e324]: +$100
+                  - generic [ref=e325]: net annual value
+              - paragraph [ref=e326]: "\"$100/yr sign-up bonus offset its $0 annual fee\""
+              - generic [ref=e328]: +$100/yr sign-up bonus
+          - generic [ref=e329]:
+            - button "Show category breakdown" [ref=e330] [cursor=pointer]:
+              - img [ref=e331]
+              - text: Show category breakdown
+            - link "Apply" [ref=e333] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/savorone-dining-rewards/
+              - text: Apply
+              - img [ref=e334]
+        - generic [ref=e338]:
+          - generic [ref=e339]:
+            - generic [ref=e340]: "14"
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - heading "Bank of America Customized Cash Rewards" [level=3] [ref=e344]
+                  - paragraph [ref=e345]: Bank of America · No annual fee
+                - generic [ref=e346]:
+                  - generic [ref=e347]: +$100
+                  - generic [ref=e348]: net annual value
+              - paragraph [ref=e349]: "\"$100/yr sign-up bonus offset its $0 annual fee\""
+              - generic [ref=e351]: +$100/yr sign-up bonus
+          - generic [ref=e352]:
+            - button "Show category breakdown" [ref=e353] [cursor=pointer]:
+              - img [ref=e354]
+              - text: Show category breakdown
+            - link "Apply" [ref=e356] [cursor=pointer]:
+              - /url: https://www.bankofamerica.com/credit-cards/products/customized-cash-back-credit-card/
+              - text: Apply
+              - img [ref=e357]
+        - generic [ref=e361]:
+          - generic [ref=e362]:
+            - generic [ref=e363]: "15"
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - generic [ref=e366]:
+                  - heading "American Express Green Card" [level=3] [ref=e367]
+                  - paragraph [ref=e368]: American Express · $150/yr
+                - generic [ref=e369]:
+                  - generic [ref=e370]: +$62
+                  - generic [ref=e371]: net annual value
+              - paragraph [ref=e372]: "\"3.0% on Travel beats your current 2.5% + $200/yr sign-up bonus\""
+              - generic [ref=e373]:
+                - generic [ref=e374]: +$12 extra rewards/yr
+                - generic [ref=e375]: +$200/yr sign-up bonus
+                - generic [ref=e376]: −$150 annual fee
+          - generic [ref=e377]:
+            - button "Show category breakdown" [ref=e378] [cursor=pointer]:
+              - img [ref=e379]
+              - text: Show category breakdown
+            - link "Apply" [ref=e381] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/green/
+              - text: Apply
+              - img [ref=e382]
+  - contentinfo [ref=e386]:
+    - generic [ref=e387]:
+      - generic [ref=e388]:
+        - generic [ref=e389]:
+          - text: Built by
+          - link "Keylight Digital" [ref=e390] [cursor=pointer]:
+            - /url: https://keylightdigital.com
+        - generic [ref=e391]:
+          - link "Privacy Policy" [ref=e392] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e393] [cursor=pointer]:
+            - /url: /terms
+      - generic [ref=e394]:
+        - paragraph [ref=e395]: Also from Keylight Digital
+        - generic [ref=e396]:
+          - link "Beam — Privacy-first analytics" [ref=e397] [cursor=pointer]:
+            - /url: https://beam-privacy.com
+          - link "Nexus — AI command center" [ref=e398] [cursor=pointer]:
+            - /url: https://nexus.keylightdigital.dev
+          - link "ProfitTracker — Business profit analytics" [ref=e399] [cursor=pointer]:
+            - /url: https://profittracker.io

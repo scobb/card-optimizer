@@ -89,13 +89,13 @@ function RecommendationCard({ rec, rank }: RecommendationCardProps) {
           {expanded ? 'Hide' : 'Show'} category breakdown
         </button>
         <a
-          href={card.url}
+          href={card.learnMoreUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 font-medium min-h-[44px]"
-          data-apply-link={card.id}
+          data-learn-more-link={card.id}
         >
-          Apply
+          Learn More
           <ExternalLink size={14} />
         </a>
       </div>
@@ -241,6 +241,12 @@ export function RecommendationsPage() {
           <RecommendationCard key={rec.card.id} rec={rec} rank={i + 1} />
         ))}
       </div>
+
+      {recommendations.length > 0 && (
+        <p className="text-xs text-gray-400 text-center pt-2" data-apply-disclosure>
+          We link to card issuer websites. We are not compensated for referrals.
+        </p>
+      )}
     </div>
   )
 }

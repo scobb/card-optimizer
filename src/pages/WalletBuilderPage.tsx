@@ -159,7 +159,7 @@ export function WalletBuilderPage() {
               {result.cards.map((card) => (
                 <a
                   key={card.id}
-                  href={card.url}
+                  href={card.learnMoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 font-medium min-h-[44px]"

@@ -1,0 +1,285 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "My Wallet" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Select the cards you hold and we'll show you the optimal card for each spending category.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - img [ref=e22]
+            - text: Select Your Cards
+          - generic [ref=e24]: 2 cards selected
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - button "American Express 1 selected 5 cards" [expanded] [ref=e27] [cursor=pointer]:
+              - generic [ref=e28]:
+                - generic [ref=e29]: American Express
+                - generic [ref=e30]: 1 selected
+              - generic [ref=e31]:
+                - generic [ref=e32]: 5 cards
+                - img [ref=e33]
+            - generic [ref=e35]:
+              - button "American Express Gold Card $250/yr · Points 1x base" [ref=e36] [cursor=pointer]:
+                - img [ref=e38]
+                - generic [ref=e40]:
+                  - generic [ref=e41]: American Express Gold Card
+                  - generic [ref=e42]: $250/yr · Points
+                - generic [ref=e43]: 1x base
+              - button "American Express Platinum $695/yr · Points 1x base" [ref=e44] [cursor=pointer]:
+                - generic [ref=e46]:
+                  - generic [ref=e47]: American Express Platinum
+                  - generic [ref=e48]: $695/yr · Points
+                - generic [ref=e49]: 1x base
+              - button "Blue Cash Preferred $95/yr · Cash back 1% base" [ref=e50] [cursor=pointer]:
+                - generic [ref=e52]:
+                  - generic [ref=e53]: Blue Cash Preferred
+                  - generic [ref=e54]: $95/yr · Cash back
+                - generic [ref=e55]: 1% base
+              - button "Blue Cash Everyday No annual fee · Cash back 1% base" [ref=e56] [cursor=pointer]:
+                - generic [ref=e58]:
+                  - generic [ref=e59]: Blue Cash Everyday
+                  - generic [ref=e60]: No annual fee · Cash back
+                - generic [ref=e61]: 1% base
+              - button "American Express Green Card $150/yr · Points 1x base" [ref=e62] [cursor=pointer]:
+                - generic [ref=e64]:
+                  - generic [ref=e65]: American Express Green Card
+                  - generic [ref=e66]: $150/yr · Points
+                - generic [ref=e67]: 1x base
+          - button "Bank of America 1 cards" [ref=e69] [cursor=pointer]:
+            - generic [ref=e71]: Bank of America
+            - generic [ref=e72]:
+              - generic [ref=e73]: 1 cards
+              - img [ref=e74]
+          - generic [ref=e76]:
+            - button "Capital One 4 cards" [expanded] [ref=e77] [cursor=pointer]:
+              - generic [ref=e79]: Capital One
+              - generic [ref=e80]:
+                - generic [ref=e81]: 4 cards
+                - img [ref=e82]
+            - generic [ref=e84]:
+              - button "Capital One Venture X $395/yr · Points 2x base" [ref=e85] [cursor=pointer]:
+                - generic [ref=e87]:
+                  - generic [ref=e88]: Capital One Venture X
+                  - generic [ref=e89]: $395/yr · Points
+                - generic [ref=e90]: 2x base
+              - button "Capital One SavorOne No annual fee · Cash back 1% base" [ref=e91] [cursor=pointer]:
+                - generic [ref=e93]:
+                  - generic [ref=e94]: Capital One SavorOne
+                  - generic [ref=e95]: No annual fee · Cash back
+                - generic [ref=e96]: 1% base
+              - button "Capital One Venture $95/yr · Points 2x base" [ref=e97] [cursor=pointer]:
+                - generic [ref=e99]:
+                  - generic [ref=e100]: Capital One Venture
+                  - generic [ref=e101]: $95/yr · Points
+                - generic [ref=e102]: 2x base
+              - button "Capital One Quicksilver No annual fee · Cash back 1.5% base" [ref=e103] [cursor=pointer]:
+                - generic [ref=e105]:
+                  - generic [ref=e106]: Capital One Quicksilver
+                  - generic [ref=e107]: No annual fee · Cash back
+                - generic [ref=e108]: 1.5% base
+          - generic [ref=e109]:
+            - button "Chase 1 selected 5 cards" [expanded] [ref=e110] [cursor=pointer]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: Chase
+                - generic [ref=e113]: 1 selected
+              - generic [ref=e114]:
+                - generic [ref=e115]: 5 cards
+                - img [ref=e116]
+            - generic [ref=e118]:
+              - button "Chase Sapphire Preferred $95/yr · Points 1x base" [ref=e119] [cursor=pointer]:
+                - img [ref=e121]
+                - generic [ref=e123]:
+                  - generic [ref=e124]: Chase Sapphire Preferred
+                  - generic [ref=e125]: $95/yr · Points
+                - generic [ref=e126]: 1x base
+              - button "Chase Freedom Unlimited No annual fee · Cash back 1.5% base" [ref=e127] [cursor=pointer]:
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Chase Freedom Unlimited
+                  - generic [ref=e131]: No annual fee · Cash back
+                - generic [ref=e132]: 1.5% base
+              - button "Chase Freedom Flex No annual fee · Cash back 1% base" [ref=e133] [cursor=pointer]:
+                - generic [ref=e135]:
+                  - generic [ref=e136]: Chase Freedom Flex
+                  - generic [ref=e137]: No annual fee · Cash back
+                - generic [ref=e138]: 1% base
+              - button "Chase Sapphire Reserve $550/yr · Points 1x base" [ref=e139] [cursor=pointer]:
+                - generic [ref=e141]:
+                  - generic [ref=e142]: Chase Sapphire Reserve
+                  - generic [ref=e143]: $550/yr · Points
+                - generic [ref=e144]: 1x base
+              - button "Chase Ink Business Cash No annual fee · Cash back 1% base" [ref=e145] [cursor=pointer]:
+                - generic [ref=e147]:
+                  - generic [ref=e148]: Chase Ink Business Cash
+                  - generic [ref=e149]: No annual fee · Cash back
+                - generic [ref=e150]: 1% base
+          - generic [ref=e151]:
+            - button "Citi 2 cards" [expanded] [ref=e152] [cursor=pointer]:
+              - generic [ref=e154]: Citi
+              - generic [ref=e155]:
+                - generic [ref=e156]: 2 cards
+                - img [ref=e157]
+            - generic [ref=e159]:
+              - button "Citi Double Cash No annual fee · Cash back 2% base" [ref=e160] [cursor=pointer]:
+                - generic [ref=e162]:
+                  - generic [ref=e163]: Citi Double Cash
+                  - generic [ref=e164]: No annual fee · Cash back
+                - generic [ref=e165]: 2% base
+              - button "Citi Custom Cash No annual fee · Cash back 1% base" [ref=e166] [cursor=pointer]:
+                - generic [ref=e168]:
+                  - generic [ref=e169]: Citi Custom Cash
+                  - generic [ref=e170]: No annual fee · Cash back
+                - generic [ref=e171]: 1% base
+          - button "Discover 1 cards" [ref=e173] [cursor=pointer]:
+            - generic [ref=e175]: Discover
+            - generic [ref=e176]:
+              - generic [ref=e177]: 1 cards
+              - img [ref=e178]
+          - button "U.S. Bank 1 cards" [ref=e181] [cursor=pointer]:
+            - generic [ref=e183]: U.S. Bank
+            - generic [ref=e184]:
+              - generic [ref=e185]: 1 cards
+              - img [ref=e186]
+          - button "Wells Fargo 1 cards" [ref=e189] [cursor=pointer]:
+            - generic [ref=e191]: Wells Fargo
+            - generic [ref=e192]:
+              - generic [ref=e193]: 1 cards
+              - img [ref=e194]
+      - generic [ref=e196]:
+        - generic [ref=e198]:
+          - generic [ref=e199]: Estimated Annual Savings
+          - generic [ref=e200]: $323/year
+          - generic [ref=e201]: vs. a 1% flat cashback baseline
+          - button "Show category breakdown" [ref=e202] [cursor=pointer]:
+            - img [ref=e203]
+            - text: Show category breakdown
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - generic [ref=e207]: Annual Rewards
+            - generic [ref=e208]: $509
+          - generic [ref=e209]:
+            - generic [ref=e210]: Annual Fees
+            - generic [ref=e211]: $345
+          - generic [ref=e212]:
+            - generic [ref=e213]: Net Value
+            - generic [ref=e214]: +$164
+        - generic [ref=e215]:
+          - generic [ref=e216]:
+            - img [ref=e217]
+            - generic [ref=e220]: Per-Category Optimization
+          - table [ref=e222]:
+            - rowgroup [ref=e223]:
+              - row "Category Best Card Rate Annual Spend Rewards" [ref=e224]:
+                - columnheader "Category" [ref=e225]
+                - columnheader "Best Card" [ref=e226]
+                - columnheader "Rate" [ref=e227]
+                - columnheader "Annual Spend" [ref=e228]
+                - columnheader "Rewards" [ref=e229]
+            - rowgroup [ref=e230]:
+              - row "Dining American Express Gold Card 4.00% $4,800 $192" [ref=e231]:
+                - cell "Dining" [ref=e232]
+                - cell "American Express Gold Card" [ref=e233]
+                - cell "4.00%" [ref=e234]
+                - cell "$4,800" [ref=e235]
+                - cell "$192" [ref=e236]
+              - row "Groceries American Express Gold Card 4.00% $3,600 $144" [ref=e237]:
+                - cell "Groceries" [ref=e238]
+                - cell "American Express Gold Card" [ref=e239]
+                - cell "4.00%" [ref=e240]
+                - cell "$3,600" [ref=e241]
+                - cell "$144" [ref=e242]
+              - row "Everything Else Chase Sapphire Preferred 1.25% $6,000 $75" [ref=e243]:
+                - cell "Everything Else" [ref=e244]
+                - cell "Chase Sapphire Preferred" [ref=e245]
+                - cell "1.25%" [ref=e246]
+                - cell "$6,000" [ref=e247]
+                - cell "$75" [ref=e248]
+              - row "Travel Chase Sapphire Preferred 2.50% $2,400 $60" [ref=e249]:
+                - cell "Travel" [ref=e250]
+                - cell "Chase Sapphire Preferred" [ref=e251]
+                - cell "2.50%" [ref=e252]
+                - cell "$2,400" [ref=e253]
+                - cell "$60" [ref=e254]
+              - row "Streaming Chase Sapphire Preferred 3.75% $600 $23" [ref=e255]:
+                - cell "Streaming" [ref=e256]
+                - cell "Chase Sapphire Preferred" [ref=e257]
+                - cell "3.75%" [ref=e258]
+                - cell "$600" [ref=e259]
+                - cell "$23" [ref=e260]
+              - row "Gas Chase Sapphire Preferred 1.25% $1,200 $15" [ref=e261]:
+                - cell "Gas" [ref=e262]
+                - cell "Chase Sapphire Preferred" [ref=e263]
+                - cell "1.25%" [ref=e264]
+                - cell "$1,200" [ref=e265]
+                - cell "$15" [ref=e266]
+            - rowgroup [ref=e267]:
+              - row "Total Rewards $509" [ref=e268]:
+                - cell "Total Rewards" [ref=e269]
+                - cell "$509" [ref=e270]
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - generic [ref=e273]: Cards in Wallet
+            - button "Share" [ref=e274] [cursor=pointer]:
+              - img [ref=e275]
+              - text: Share
+          - generic [ref=e281]:
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - generic [ref=e284]: Chase Sapphire Preferred
+                - generic [ref=e285]: Chase · $95/yr
+              - button "Remove" [ref=e286] [cursor=pointer]
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: American Express Gold Card
+                - generic [ref=e290]: American Express · $250/yr
+              - button "Remove" [ref=e291] [cursor=pointer]
+        - generic [ref=e292]:
+          - generic [ref=e293]:
+            - img [ref=e294]
+            - generic [ref=e297]: Email My Results
+          - generic [ref=e299]:
+            - paragraph [ref=e300]: Get a formatted summary of your wallet, per-category assignments, and projected rewards sent to your inbox.
+            - generic [ref=e301]:
+              - textbox "your@email.com" [ref=e302]
+              - button "Send Results" [ref=e303] [cursor=pointer]:
+                - img [ref=e304]
+                - text: Send Results
+            - generic [ref=e307] [cursor=pointer]:
+              - checkbox "Send me monthly card deals and rewards tips" [ref=e308]
+              - text: Send me monthly card deals and rewards tips
+  - contentinfo [ref=e309]:
+    - generic [ref=e310]:
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - text: Built by
+          - link "Keylight Digital" [ref=e313] [cursor=pointer]:
+            - /url: https://keylightdigital.com
+        - generic [ref=e314]:
+          - link "Privacy Policy" [ref=e315] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e316] [cursor=pointer]:
+            - /url: /terms
+      - generic [ref=e317]:
+        - paragraph [ref=e318]: Also from Keylight Digital
+        - generic [ref=e319]:
+          - link "Beam — Privacy-first analytics" [ref=e320] [cursor=pointer]:
+            - /url: https://beam-privacy.com
+          - link "Nexus — AI command center" [ref=e321] [cursor=pointer]:
+            - /url: https://nexus.keylightdigital.dev
+          - link "ProfitTracker — Business profit analytics" [ref=e322] [cursor=pointer]:
+            - /url: https://profittracker.io

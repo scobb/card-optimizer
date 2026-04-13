@@ -27,7 +27,7 @@ export async function onRequestGet(context: { env: Env; params: { id: string } }
     rewardType: card.reward_type,
     baseRate: card.base_rate,
     pointValue: card.point_value,
-    url: card.url,
+    learnMoreUrl: card.url,
     imageUrl: card.image_url,
     categoryRates: categoryRates.results.map((r) => ({
       category: r.category,

@@ -1,0 +1,452 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "Card Catalog" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Browse all 20 cards with full reward details.
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - img
+          - textbox "Search cards…" [ref=e21]
+        - combobox [ref=e22]:
+          - option "All issuers" [selected]
+          - option "American Express"
+          - option "Bank of America"
+          - option "Capital One"
+          - option "Chase"
+          - option "Citi"
+          - option "Discover"
+          - option "U.S. Bank"
+          - option "Wells Fargo"
+      - paragraph [ref=e23]: 20 cards
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]:
+              - link "Chase Sapphire Preferred" [ref=e28] [cursor=pointer]:
+                - /url: /cards/chase-sapphire-preferred
+              - paragraph [ref=e29]: Chase · $95/yr
+            - link "Apply" [ref=e30] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
+              - img [ref=e31]
+              - text: Apply
+          - generic [ref=e33]:
+            - paragraph [ref=e34]: Reward Rates
+            - generic [ref=e35]:
+              - generic [ref=e36]: Base 1.25%
+              - generic [ref=e37]: Dining 3.8%
+              - generic [ref=e38]: Online Shopping 3.8%
+              - generic [ref=e39]: Travel 2.5%
+              - generic [ref=e40]: Streaming 3.8%
+          - generic [ref=e41]: "Sign-up bonus: $750 after spending $4,000 in 3 months"
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - link "Chase Freedom Unlimited" [ref=e45] [cursor=pointer]:
+                - /url: /cards/chase-freedom-unlimited
+              - paragraph [ref=e46]: Chase · No annual fee
+            - link "Apply" [ref=e47] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+              - img [ref=e48]
+              - text: Apply
+          - generic [ref=e50]:
+            - paragraph [ref=e51]: Reward Rates
+            - generic [ref=e52]:
+              - generic [ref=e53]: Base 1.5%
+              - generic [ref=e54]: Dining 3.0%
+              - generic [ref=e55]: drugstores 3.0%
+              - generic [ref=e56]: Travel 5.0%
+          - generic [ref=e57]: "Sign-up bonus: $200 after spending $500 in 3 months"
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - link "Chase Freedom Flex" [ref=e61] [cursor=pointer]:
+                - /url: /cards/chase-freedom-flex
+              - paragraph [ref=e62]: Chase · No annual fee
+            - link "Apply" [ref=e63] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+              - img [ref=e64]
+              - text: Apply
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: Reward Rates
+            - generic [ref=e68]:
+              - generic [ref=e69]: Base 1%
+              - generic [ref=e70]: Dining 3.0%
+              - generic [ref=e71]: drugstores 3.0%
+              - generic [ref=e72]: Travel 5.0%
+          - generic [ref=e73]: "Sign-up bonus: $200 after spending $500 in 3 months"
+        - generic [ref=e74]:
+          - generic [ref=e75]:
+            - generic [ref=e76]:
+              - link "American Express Gold Card" [ref=e77] [cursor=pointer]:
+                - /url: /cards/amex-gold
+              - paragraph [ref=e78]: American Express · $250/yr
+            - link "Apply" [ref=e79] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
+              - img [ref=e80]
+              - text: Apply
+          - generic [ref=e82]:
+            - paragraph [ref=e83]: Reward Rates
+            - generic [ref=e84]:
+              - generic [ref=e85]: Base 1%
+              - generic [ref=e86]: Dining 4.0%
+              - generic [ref=e87]: Groceries 4.0%
+          - generic [ref=e88]: "Sign-up bonus: $600 after spending $6,000 in 6 months"
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: Perks
+            - list [ref=e91]:
+              - listitem [ref=e92]:
+                - generic [ref=e93]: Dining Credit
+                - generic [ref=e94]: +$120
+              - listitem [ref=e95]:
+                - generic [ref=e96]: Uber Cash
+                - generic [ref=e97]: +$120
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]:
+              - link "American Express Platinum" [ref=e101] [cursor=pointer]:
+                - /url: /cards/amex-platinum
+              - paragraph [ref=e102]: American Express · $695/yr
+            - link "Apply" [ref=e103] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/platinum/
+              - img [ref=e104]
+              - text: Apply
+          - generic [ref=e106]:
+            - paragraph [ref=e107]: Reward Rates
+            - generic [ref=e108]:
+              - generic [ref=e109]: Base 1.1%
+              - generic [ref=e110]: Travel 5.5%
+          - generic [ref=e111]: "Sign-up bonus: $800 after spending $8,000 in 6 months"
+          - generic [ref=e112]:
+            - paragraph [ref=e113]: Perks
+            - list [ref=e114]:
+              - listitem [ref=e115]:
+                - generic [ref=e116]: Airline Fee Credit
+                - generic [ref=e117]: +$200
+              - listitem [ref=e118]:
+                - generic [ref=e119]: Hotel Credit
+                - generic [ref=e120]: +$200
+              - listitem [ref=e121]:
+                - generic [ref=e122]: Digital Entertainment Credit
+                - generic [ref=e123]: +$240
+              - listitem [ref=e124]:
+                - generic [ref=e125]: Uber Cash
+                - generic [ref=e126]: +$200
+              - listitem [ref=e127]:
+                - generic [ref=e128]: Saks Credit
+                - generic [ref=e129]: +$100
+              - listitem [ref=e130]:
+                - generic [ref=e131]: Global Entry/TSA PreCheck
+                - generic [ref=e132]: +$17
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e135]:
+              - link "Blue Cash Preferred" [ref=e136] [cursor=pointer]:
+                - /url: /cards/amex-blue-cash-preferred
+              - paragraph [ref=e137]: American Express · $95/yr
+            - link "Apply" [ref=e138] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/
+              - img [ref=e139]
+              - text: Apply
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Reward Rates
+            - generic [ref=e143]:
+              - generic [ref=e144]: Base 1%
+              - generic [ref=e145]: Groceries 6.0%
+              - generic [ref=e146]: Streaming 6.0%
+              - generic [ref=e147]: Transit 3.0%
+              - generic [ref=e148]: Gas 3.0%
+          - generic [ref=e149]: "Sign-up bonus: $250 after spending $3,000 in 6 months"
+        - generic [ref=e150]:
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - link "Citi Double Cash" [ref=e153] [cursor=pointer]:
+                - /url: /cards/citi-double-cash
+              - paragraph [ref=e154]: Citi · No annual fee
+            - link "Apply" [ref=e155] [cursor=pointer]:
+              - /url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
+              - img [ref=e156]
+              - text: Apply
+          - generic [ref=e158]:
+            - paragraph [ref=e159]: Reward Rates
+            - generic [ref=e161]: Base 2%
+          - generic [ref=e162]: "Sign-up bonus: $200 after spending $1,500 in 6 months"
+        - generic [ref=e163]:
+          - generic [ref=e164]:
+            - generic [ref=e165]:
+              - link "Citi Custom Cash" [ref=e166] [cursor=pointer]:
+                - /url: /cards/citi-custom-cash
+              - paragraph [ref=e167]: Citi · No annual fee
+            - link "Apply" [ref=e168] [cursor=pointer]:
+              - /url: https://www.citi.com/credit-cards/citi-custom-cash-credit-card
+              - img [ref=e169]
+              - text: Apply
+          - generic [ref=e171]:
+            - paragraph [ref=e172]: Reward Rates
+            - generic [ref=e173]:
+              - generic [ref=e174]: Base 1%
+              - generic [ref=e175]: Dining 5.0%
+              - generic [ref=e176]: Groceries 5.0%
+              - generic [ref=e177]: Gas 5.0%
+              - generic [ref=e178]: Travel 5.0%
+              - generic [ref=e179]: Transit 5.0%
+              - generic [ref=e180]: Streaming 5.0%
+              - generic [ref=e181]: drugstores 5.0%
+              - generic [ref=e182]: home_improvement 5.0%
+              - generic [ref=e183]: Entertainment 5.0%
+          - generic [ref=e184]: "Sign-up bonus: $200 after spending $1,500 in 6 months"
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - link "Capital One Venture X" [ref=e188] [cursor=pointer]:
+                - /url: /cards/capital-one-venture-x
+              - paragraph [ref=e189]: Capital One · $395/yr
+            - link "Apply" [ref=e190] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/venture-x/
+              - img [ref=e191]
+              - text: Apply
+          - generic [ref=e193]:
+            - paragraph [ref=e194]: Reward Rates
+            - generic [ref=e195]:
+              - generic [ref=e196]: Base 2%
+              - generic [ref=e197]: Travel 10.0%
+          - generic [ref=e198]: "Sign-up bonus: $750 after spending $4,000 in 3 months"
+          - generic [ref=e199]:
+            - paragraph [ref=e200]: Perks
+            - list [ref=e201]:
+              - listitem [ref=e202]:
+                - generic [ref=e203]: Travel Credit
+                - generic [ref=e204]: +$300
+              - listitem [ref=e205]:
+                - generic [ref=e206]: Anniversary Bonus
+                - generic [ref=e207]: +$100
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - link "Capital One SavorOne" [ref=e211] [cursor=pointer]:
+                - /url: /cards/capital-one-savor-one
+              - paragraph [ref=e212]: Capital One · No annual fee
+            - link "Apply" [ref=e213] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/savorone-dining-rewards/
+              - img [ref=e214]
+              - text: Apply
+          - generic [ref=e216]:
+            - paragraph [ref=e217]: Reward Rates
+            - generic [ref=e218]:
+              - generic [ref=e219]: Base 1%
+              - generic [ref=e220]: Dining 3.0%
+              - generic [ref=e221]: Entertainment 3.0%
+              - generic [ref=e222]: Streaming 3.0%
+              - generic [ref=e223]: Groceries 3.0%
+          - generic [ref=e224]: "Sign-up bonus: $200 after spending $500 in 3 months"
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - link "Discover it Cash Back" [ref=e228] [cursor=pointer]:
+                - /url: /cards/discover-it-cash-back
+              - paragraph [ref=e229]: Discover · No annual fee
+            - link "Apply" [ref=e230] [cursor=pointer]:
+              - /url: https://www.discover.com/credit-cards/cash-back/it-card.html
+              - img [ref=e231]
+              - text: Apply
+          - generic [ref=e233]:
+            - paragraph [ref=e234]: Reward Rates
+            - generic [ref=e236]: Base 1%
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - link "Wells Fargo Active Cash" [ref=e240] [cursor=pointer]:
+                - /url: /cards/wells-fargo-active-cash
+              - paragraph [ref=e241]: Wells Fargo · No annual fee
+            - link "Apply" [ref=e242] [cursor=pointer]:
+              - /url: https://creditcards.wellsfargo.com/active-cash-credit-card
+              - img [ref=e243]
+              - text: Apply
+          - generic [ref=e245]:
+            - paragraph [ref=e246]: Reward Rates
+            - generic [ref=e248]: Base 2%
+          - generic [ref=e249]: "Sign-up bonus: $200 after spending $500 in 3 months"
+        - generic [ref=e250]:
+          - generic [ref=e251]:
+            - generic [ref=e252]:
+              - link "Capital One Venture" [ref=e253] [cursor=pointer]:
+                - /url: /cards/capital-one-venture
+              - paragraph [ref=e254]: Capital One · $95/yr
+            - link "Apply" [ref=e255] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/venture/
+              - img [ref=e256]
+              - text: Apply
+          - generic [ref=e258]:
+            - paragraph [ref=e259]: Reward Rates
+            - generic [ref=e260]:
+              - generic [ref=e261]: Base 2%
+              - generic [ref=e262]: Travel 5.0%
+          - generic [ref=e263]: "Sign-up bonus: $750 after spending $4,000 in 3 months"
+          - generic [ref=e264]:
+            - paragraph [ref=e265]: Perks
+            - list [ref=e266]:
+              - listitem [ref=e267]:
+                - generic [ref=e268]: Global Entry/TSA PreCheck
+                - generic [ref=e269]: +$17
+        - generic [ref=e270]:
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - link "Chase Sapphire Reserve" [ref=e273] [cursor=pointer]:
+                - /url: /cards/chase-sapphire-reserve
+              - paragraph [ref=e274]: Chase · $550/yr
+            - link "Apply" [ref=e275] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve
+              - img [ref=e276]
+              - text: Apply
+          - generic [ref=e278]:
+            - paragraph [ref=e279]: Reward Rates
+            - generic [ref=e280]:
+              - generic [ref=e281]: Base 1.5%
+              - generic [ref=e282]: Dining 4.5%
+              - generic [ref=e283]: Travel 4.5%
+          - generic [ref=e284]: "Sign-up bonus: $600 after spending $4,000 in 3 months"
+          - generic [ref=e285]:
+            - paragraph [ref=e286]: Perks
+            - list [ref=e287]:
+              - listitem [ref=e288]:
+                - generic [ref=e289]: Travel Credit
+                - generic [ref=e290]: +$300
+              - listitem [ref=e291]:
+                - generic [ref=e292]: DoorDash DashPass
+                - generic [ref=e293]: +$96
+              - listitem [ref=e294]:
+                - generic [ref=e295]: Global Entry/TSA PreCheck
+                - generic [ref=e296]: +$17
+        - generic [ref=e297]:
+          - generic [ref=e298]:
+            - generic [ref=e299]:
+              - link "Blue Cash Everyday" [ref=e300] [cursor=pointer]:
+                - /url: /cards/amex-blue-cash-everyday
+              - paragraph [ref=e301]: American Express · No annual fee
+            - link "Apply" [ref=e302] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/
+              - img [ref=e303]
+              - text: Apply
+          - generic [ref=e305]:
+            - paragraph [ref=e306]: Reward Rates
+            - generic [ref=e307]:
+              - generic [ref=e308]: Base 1%
+              - generic [ref=e309]: Groceries 3.0%
+              - generic [ref=e310]: Online Shopping 3.0%
+              - generic [ref=e311]: Gas 3.0%
+          - generic [ref=e312]: "Sign-up bonus: $200 after spending $2,000 in 6 months"
+        - generic [ref=e313]:
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - link "Bank of America Customized Cash Rewards" [ref=e316] [cursor=pointer]:
+                - /url: /cards/bank-of-america-customized-cash
+              - paragraph [ref=e317]: Bank of America · No annual fee
+            - link "Apply" [ref=e318] [cursor=pointer]:
+              - /url: https://www.bankofamerica.com/credit-cards/products/customized-cash-back-credit-card/
+              - img [ref=e319]
+              - text: Apply
+          - generic [ref=e321]:
+            - paragraph [ref=e322]: Reward Rates
+            - generic [ref=e323]:
+              - generic [ref=e324]: Base 1%
+              - generic [ref=e325]: Dining 3.0%
+              - generic [ref=e326]: Groceries 2.0%
+          - generic [ref=e327]: "Sign-up bonus: $200 after spending $1,000 in 3 months"
+        - generic [ref=e328]:
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - link "U.S. Bank Altitude Go" [ref=e331] [cursor=pointer]:
+                - /url: /cards/us-bank-altitude-go
+              - paragraph [ref=e332]: U.S. Bank · No annual fee
+            - link "Apply" [ref=e333] [cursor=pointer]:
+              - /url: https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html
+              - img [ref=e334]
+              - text: Apply
+          - generic [ref=e336]:
+            - paragraph [ref=e337]: Reward Rates
+            - generic [ref=e338]:
+              - generic [ref=e339]: Base 1%
+              - generic [ref=e340]: Dining 4.0%
+              - generic [ref=e341]: Groceries 2.0%
+              - generic [ref=e342]: Streaming 2.0%
+              - generic [ref=e343]: Gas 2.0%
+          - generic [ref=e344]: "Sign-up bonus: $200 after spending $1,000 in 3 months"
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - generic [ref=e347]:
+              - link "American Express Green Card" [ref=e348] [cursor=pointer]:
+                - /url: /cards/amex-green
+              - paragraph [ref=e349]: American Express · $150/yr
+            - link "Apply" [ref=e350] [cursor=pointer]:
+              - /url: https://www.americanexpress.com/us/credit-cards/card/green/
+              - img [ref=e351]
+              - text: Apply
+          - generic [ref=e353]:
+            - paragraph [ref=e354]: Reward Rates
+            - generic [ref=e355]:
+              - generic [ref=e356]: Base 1%
+              - generic [ref=e357]: Dining 3.0%
+              - generic [ref=e358]: Travel 3.0%
+              - generic [ref=e359]: Transit 3.0%
+          - generic [ref=e360]: "Sign-up bonus: $400 after spending $3,000 in 6 months"
+          - generic [ref=e361]:
+            - paragraph [ref=e362]: Perks
+            - list [ref=e363]:
+              - listitem [ref=e364]:
+                - generic [ref=e365]: CLEAR Plus Credit
+                - generic [ref=e366]: +$100
+        - generic [ref=e367]:
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - link "Chase Ink Business Cash" [ref=e370] [cursor=pointer]:
+                - /url: /cards/chase-ink-cash
+              - paragraph [ref=e371]: Chase · No annual fee
+            - link "Apply" [ref=e372] [cursor=pointer]:
+              - /url: https://creditcards.chase.com/business-credit-cards/ink/cash
+              - img [ref=e373]
+              - text: Apply
+          - generic [ref=e375]:
+            - paragraph [ref=e376]: Reward Rates
+            - generic [ref=e377]:
+              - generic [ref=e378]: Base 1%
+              - generic [ref=e379]: Online Shopping 5.0%
+              - generic [ref=e380]: Gas 2.0%
+              - generic [ref=e381]: Dining 2.0%
+          - generic [ref=e382]: "Sign-up bonus: $750 after spending $6,000 in 3 months"
+        - generic [ref=e383]:
+          - generic [ref=e384]:
+            - generic [ref=e385]:
+              - link "Capital One Quicksilver" [ref=e386] [cursor=pointer]:
+                - /url: /cards/capital-one-quicksilver
+              - paragraph [ref=e387]: Capital One · No annual fee
+            - link "Apply" [ref=e388] [cursor=pointer]:
+              - /url: https://www.capitalone.com/credit-cards/quicksilver/
+              - img [ref=e389]
+              - text: Apply
+          - generic [ref=e391]:
+            - paragraph [ref=e392]: Reward Rates
+            - generic [ref=e394]: Base 1.5%
+          - generic [ref=e395]: "Sign-up bonus: $200 after spending $500 in 3 months"
+  - contentinfo [ref=e396]:
+    - generic [ref=e397]:
+      - generic [ref=e398]:
+        - text: Built by
+        - link "Keylight Digital" [ref=e399] [cursor=pointer]:
+          - /url: https://keylightdigital.com
+      - link "Privacy Policy" [ref=e401] [cursor=pointer]:
+        - /url: /privacy

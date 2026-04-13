@@ -1,0 +1,366 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - link "Back to Card Catalog" [ref=e16] [cursor=pointer]:
+        - /url: /catalog
+        - img [ref=e17]
+        - text: Back to Card Catalog
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - img [ref=e21]
+          - paragraph [ref=e24]: Editors' Picks
+        - heading "Best Credit Cards of 2026" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Our data-driven picks for the best credit cards this year — selected based on real reward rates, annual fee math, and sign-up bonus value from our database of 20+ cards.
+        - paragraph [ref=e27]: "Last updated: April 2026. Reward rates reflect effective cash-back percentage including point valuations. Not financial advice."
+      - generic [ref=e28]:
+        - heading "How We Pick the Best Cards" [level=2] [ref=e29]
+        - generic [ref=e30]:
+          - paragraph [ref=e31]:
+            - text: The best credit card is the one that earns the most rewards
+            - emphasis [ref=e32]: for your specific spending pattern
+            - text: "— not the one with the flashiest marketing or the highest headline bonus. Our picks are grounded in data: we pull reward rates directly from our card database, compute effective cash-back percentages (including point valuations), and model realistic annual reward totals based on average U.S. household spending."
+          - paragraph [ref=e33]:
+            - text: "We evaluate each card across four dimensions:"
+            - strong [ref=e34]: earning rate
+            - text: (how much you earn per dollar spent in key categories),
+            - strong [ref=e35]: annual fee math
+            - text: (whether the fee is truly offset by rewards and credits),
+            - strong [ref=e36]: welcome bonus value
+            - text: (amortized over two years at conservative redemption values), and
+            - strong [ref=e37]: flexibility
+            - text: (can you actually use the rewards without complex transfer gymnastics?).
+          - paragraph [ref=e38]:
+            - text: No card on this list pays us for inclusion. These are the cards that win on the numbers — backed by the same engine that powers our
+            - link "personalized card optimizer" [ref=e39] [cursor=pointer]:
+              - /url: /upload
+            - text: .
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: "1"
+            - generic [ref=e44]:
+              - img [ref=e45]
+              - generic [ref=e47]: Best Overall
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - paragraph [ref=e51]: Chase
+                - link "Chase Sapphire Preferred" [ref=e52] [cursor=pointer]:
+                  - /url: /cards/chase-sapphire-preferred
+                - generic [ref=e53]:
+                  - generic [ref=e54]:
+                    - paragraph [ref=e55]: Annual Fee
+                    - paragraph [ref=e56]: $95
+                  - generic [ref=e57]:
+                    - paragraph [ref=e58]: Top Rate
+                    - paragraph [ref=e59]: 3.75% on dining & streaming
+                  - generic [ref=e60]:
+                    - paragraph [ref=e61]: Welcome Bonus
+                    - paragraph [ref=e62]: $750 after $4,000 spend in 3 months
+              - generic [ref=e63]:
+                - link "Apply" [ref=e64] [cursor=pointer]:
+                  - /url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
+                  - text: Apply
+                  - img [ref=e65]
+                - link "Full Review" [ref=e69] [cursor=pointer]:
+                  - /url: /cards/chase-sapphire-preferred
+            - generic [ref=e70]:
+              - paragraph [ref=e71]: Why It Wins
+              - paragraph [ref=e72]: "The Chase Sapphire Preferred has earned its reputation as the gold-standard starter travel card for good reason. It delivers elevated rewards across the categories most people actually spend on — dining, streaming, and travel — without requiring premium-card-level annual fee commitment. Chase Ultimate Rewards points are among the most flexible in the industry: you can redeem them at 1.25¢/pt through Chase Travel, transfer them to United, Hyatt, Southwest, and other partners, or simply cash out. For most people optimizing a single card, the Sapphire Preferred is still the answer in 2026."
+            - generic [ref=e73]:
+              - img [ref=e74]
+              - paragraph [ref=e77]: 3.75% effective on dining and streaming (3× points at 1.25¢/pt)
+            - generic [ref=e78]:
+              - paragraph [ref=e79]: Pro Tip
+              - paragraph [ref=e80]: Pair with Chase Freedom Unlimited to earn 1.5% on all other purchases, then pool points into the Sapphire Preferred for 1.25× travel redemptions.
+            - link "See if this card fits your spending →" [ref=e82] [cursor=pointer]:
+              - /url: /upload
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e85]: "2"
+            - generic [ref=e86]:
+              - img [ref=e87]
+              - generic [ref=e89]: Best Cash Back
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - generic [ref=e92]:
+                - paragraph [ref=e93]: Citi
+                - link "Citi Double Cash" [ref=e94] [cursor=pointer]:
+                  - /url: /cards/citi-double-cash
+                - generic [ref=e95]:
+                  - generic [ref=e96]:
+                    - paragraph [ref=e97]: Annual Fee
+                    - paragraph [ref=e98]: None
+                  - generic [ref=e99]:
+                    - paragraph [ref=e100]: Top Rate
+                    - paragraph [ref=e101]: 2% on all purchases
+                  - generic [ref=e102]:
+                    - paragraph [ref=e103]: Welcome Bonus
+                    - paragraph [ref=e104]: $200 after $1,500 spend in 6 months
+              - generic [ref=e105]:
+                - link "Apply" [ref=e106] [cursor=pointer]:
+                  - /url: https://www.citi.com/credit-cards/citi-double-cash-credit-card
+                  - text: Apply
+                  - img [ref=e107]
+                - link "Full Review" [ref=e111] [cursor=pointer]:
+                  - /url: /cards/citi-double-cash
+            - generic [ref=e112]:
+              - paragraph [ref=e113]: Why It Wins
+              - paragraph [ref=e114]: "If you want strong, reliable rewards without tracking categories or juggling multiple cards, the Citi Double Cash is the best cash back card available at no annual fee. Its structure is elegantly simple: 1% back when you make a purchase, 1% back when you pay it off — effectively 2% on everything. No rotating categories to activate, no spending caps, no tiered structures to memorize. For the majority of everyday spenders, a 2% flat rate beats most category-based cards once you average across all spending."
+            - generic [ref=e115]:
+              - img [ref=e116]
+              - paragraph [ref=e119]: 2% effective on every purchase — the highest unlimited flat rate at $0 fee
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: Pro Tip
+              - paragraph [ref=e122]: Convert your cash back to Citi ThankYou points and transfer to travel partners like Turkish Airlines or Singapore KrisFlyer for potentially higher value.
+            - link "See if this card fits your spending →" [ref=e124] [cursor=pointer]:
+              - /url: /upload
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]: "3"
+            - generic [ref=e128]:
+              - img [ref=e129]
+              - generic [ref=e131]: Best Travel
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - paragraph [ref=e135]: Capital One
+                - link "Capital One Venture X" [ref=e136] [cursor=pointer]:
+                  - /url: /cards/capital-one-venture-x
+                - generic [ref=e137]:
+                  - generic [ref=e138]:
+                    - paragraph [ref=e139]: Annual Fee
+                    - paragraph [ref=e140]: $395
+                  - generic [ref=e141]:
+                    - paragraph [ref=e142]: Top Rate
+                    - paragraph [ref=e143]: 10× on hotels, 5× on flights (Capital One Travel)
+                  - generic [ref=e144]:
+                    - paragraph [ref=e145]: Welcome Bonus
+                    - paragraph [ref=e146]: $750 after $4,000 spend in 3 months
+              - generic [ref=e147]:
+                - link "Apply" [ref=e148] [cursor=pointer]:
+                  - /url: https://www.capitalone.com/credit-cards/venture-x/
+                  - text: Apply
+                  - img [ref=e149]
+                - link "Full Review" [ref=e153] [cursor=pointer]:
+                  - /url: /cards/capital-one-venture-x
+            - generic [ref=e154]:
+              - paragraph [ref=e155]: Why It Wins
+              - paragraph [ref=e156]: "The Capital One Venture X redefines what a premium travel card should cost. The headline $395 annual fee is almost entirely offset by two annual benefits: a $300 Capital One Travel credit (usable on any booking) and 10,000 anniversary bonus miles worth $100. That brings the effective net fee to roughly $0 for anyone who travels even a few times a year. Add unlimited Priority Pass lounge access, a 2× baseline on all purchases, 10× on hotels through Capital One Travel, 5× on flights, and you have a card that competes directly with the Amex Platinum at less than two-thirds the price."
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - paragraph [ref=e161]: 10× on hotels, 5× on flights via Capital One Travel; 2× on everything else
+            - generic [ref=e162]:
+              - paragraph [ref=e163]: Pro Tip
+              - paragraph [ref=e164]: Book hotels and flights through Capital One Travel to hit the 10×/5× bonus rates and make the most of the $300 annual credit.
+            - generic [ref=e165]:
+              - link "See if this card fits your spending →" [ref=e166] [cursor=pointer]:
+                - /url: /upload
+              - link "See all best travel cards →" [ref=e167] [cursor=pointer]:
+                - /url: /best-cards/travel
+        - generic [ref=e168]:
+          - generic [ref=e169]:
+            - generic [ref=e170]: "4"
+            - generic [ref=e171]:
+              - img [ref=e172]
+              - generic [ref=e174]: Best Dining
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e177]:
+                - paragraph [ref=e178]: American Express
+                - link "American Express Gold Card" [ref=e179] [cursor=pointer]:
+                  - /url: /cards/amex-gold
+                - generic [ref=e180]:
+                  - generic [ref=e181]:
+                    - paragraph [ref=e182]: Annual Fee
+                    - paragraph [ref=e183]: $250
+                  - generic [ref=e184]:
+                    - paragraph [ref=e185]: Top Rate
+                    - paragraph [ref=e186]: 4% on dining & groceries
+                  - generic [ref=e187]:
+                    - paragraph [ref=e188]: Welcome Bonus
+                    - paragraph [ref=e189]: $600 after $6,000 spend in 6 months
+              - generic [ref=e190]:
+                - link "Apply" [ref=e191] [cursor=pointer]:
+                  - /url: https://www.americanexpress.com/us/credit-cards/card/gold-card/
+                  - text: Apply
+                  - img [ref=e192]
+                - link "Full Review" [ref=e196] [cursor=pointer]:
+                  - /url: /cards/amex-gold
+            - generic [ref=e197]:
+              - paragraph [ref=e198]: Why It Wins
+              - paragraph [ref=e199]: No card rewards food spending more generously than the American Express Gold Card, full stop. The 4× Membership Rewards on dining and U.S. supermarkets is the highest category rate available for those two categories from any major issuer. For a household spending $600/month on groceries and $500/month dining out, that is approximately $1,344/year in rewards (at 1¢/pt). Subtract the $120 annual dining credit ($10/month at eligible restaurants) and $120 Uber Cash, and your effective net cost is as low as $10/year — a nearly unbeatable value for food-heavy spenders.
+            - generic [ref=e200]:
+              - img [ref=e201]
+              - paragraph [ref=e204]: 4% effective on dining and groceries — highest in class for both categories
+            - generic [ref=e205]:
+              - paragraph [ref=e206]: Pro Tip
+              - paragraph [ref=e207]: Set up the $10/month dining credit on Grubhub to spend automatically — it disappears if unused. Activate $10/month Uber Cash for Uber Eats orders.
+            - generic [ref=e208]:
+              - link "See if this card fits your spending →" [ref=e209] [cursor=pointer]:
+                - /url: /upload
+              - link "See all best dining cards →" [ref=e210] [cursor=pointer]:
+                - /url: /best-cards/dining
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e213]: "5"
+            - generic [ref=e214]:
+              - img [ref=e215]
+              - generic [ref=e217]: Best No Annual Fee
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - paragraph [ref=e221]: Wells Fargo
+                - link "Wells Fargo Active Cash" [ref=e222] [cursor=pointer]:
+                  - /url: /cards/wells-fargo-active-cash
+                - generic [ref=e223]:
+                  - generic [ref=e224]:
+                    - paragraph [ref=e225]: Annual Fee
+                    - paragraph [ref=e226]: None
+                  - generic [ref=e227]:
+                    - paragraph [ref=e228]: Top Rate
+                    - paragraph [ref=e229]: 2% on all purchases
+                  - generic [ref=e230]:
+                    - paragraph [ref=e231]: Welcome Bonus
+                    - paragraph [ref=e232]: $200 after $500 spend in 3 months
+              - generic [ref=e233]:
+                - link "Apply" [ref=e234] [cursor=pointer]:
+                  - /url: https://creditcards.wellsfargo.com/active-cash-credit-card
+                  - text: Apply
+                  - img [ref=e235]
+                - link "Full Review" [ref=e239] [cursor=pointer]:
+                  - /url: /cards/wells-fargo-active-cash
+            - generic [ref=e240]:
+              - paragraph [ref=e241]: Why It Wins
+              - paragraph [ref=e242]: "The Wells Fargo Active Cash delivers 2% cash rewards on every purchase with no annual fee and no hoops to jump through. What sets it apart from other 2% cards is the combination of simplicity and added perks: the $200 welcome bonus requires only $500 in purchases — one of the lowest thresholds available for a reward this size. Cardholders also receive cell phone protection (up to $600) when they pay their monthly phone bill with the card, a tangible benefit most competitors at this fee level simply do not offer."
+            - generic [ref=e243]:
+              - img [ref=e244]
+              - paragraph [ref=e247]: 2% cash rewards on all purchases; $200 bonus after just $500 spend
+            - generic [ref=e248]:
+              - paragraph [ref=e249]: Pro Tip
+              - paragraph [ref=e250]: Pay your cell phone bill with this card every month to activate $600 cell phone theft and damage protection (subject to a $25 deductible).
+            - link "See if this card fits your spending →" [ref=e252] [cursor=pointer]:
+              - /url: /upload
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - generic [ref=e255]: "6"
+            - generic [ref=e256]:
+              - img [ref=e257]
+              - generic [ref=e259]: Best Sign-Up Bonus
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - generic [ref=e262]:
+                - paragraph [ref=e263]: American Express
+                - link "American Express Platinum" [ref=e264] [cursor=pointer]:
+                  - /url: /cards/amex-platinum
+                - generic [ref=e265]:
+                  - generic [ref=e266]:
+                    - paragraph [ref=e267]: Annual Fee
+                    - paragraph [ref=e268]: $695
+                  - generic [ref=e269]:
+                    - paragraph [ref=e270]: Top Rate
+                    - paragraph [ref=e271]: 5.5% on flights booked directly
+                  - generic [ref=e272]:
+                    - paragraph [ref=e273]: Welcome Bonus
+                    - paragraph [ref=e274]: $800 after $8,000 spend in 6 months
+              - generic [ref=e275]:
+                - link "Apply" [ref=e276] [cursor=pointer]:
+                  - /url: https://www.americanexpress.com/us/credit-cards/card/platinum/
+                  - text: Apply
+                  - img [ref=e277]
+                - link "Full Review" [ref=e281] [cursor=pointer]:
+                  - /url: /cards/amex-platinum
+            - generic [ref=e282]:
+              - paragraph [ref=e283]: Why It Wins
+              - paragraph [ref=e284]: The American Express Platinum carries the largest welcome bonus in our database — $800 in statement credits — and pairs it with over $1,500/year in ongoing annual credits that can significantly offset the $695 fee. For frequent travelers willing to engage with the card's benefit ecosystem (airline fees, hotel stays, digital entertainment, Uber Cash, Saks credits, Global Entry reimbursement), the net annual value can easily turn positive. The card also unlocks premium lounge access at Centurion Lounges, Delta Sky Clubs (on Delta flights), and Priority Pass locations worldwide.
+            - generic [ref=e285]:
+              - img [ref=e286]
+              - paragraph [ref=e289]: 5.5% effective on flights (5× Membership Rewards at ~1.1¢/pt)
+            - generic [ref=e290]:
+              - paragraph [ref=e291]: Pro Tip
+              - paragraph [ref=e292]: "To hit the $8,000 spend requirement in 6 months (~$1,333/month), use the card for large planned purchases: insurance premiums, property taxes, home repairs, or business expenses."
+            - generic [ref=e293]:
+              - link "See if this card fits your spending →" [ref=e294] [cursor=pointer]:
+                - /url: /upload
+              - link "See all best travel cards →" [ref=e295] [cursor=pointer]:
+                - /url: /best-cards/travel
+      - generic [ref=e296]:
+        - heading "Our Methodology" [level=2] [ref=e297]:
+          - img [ref=e298]
+          - text: Our Methodology
+        - generic [ref=e301]:
+          - paragraph [ref=e302]:
+            - text: Every card in our database is evaluated using the same transparent formula. We compute an
+            - strong [ref=e303]: effective cash-back percentage
+            - text: for each spending category by multiplying the category reward multiplier by the card's point value (in cents per point for rewards cards, or face value for cash-back cards). A 3× multiplier on a card with 1.25¢/pt valuation yields 3.75% effective — higher than most competing cash-back cards at first glance.
+          - paragraph [ref=e304]:
+            - text: For
+            - strong [ref=e305]: annual fee analysis
+            - text: ", we model a realistic portfolio of annual credits and subtract them from the stated fee to arrive at a net effective cost. We use conservative estimates: we only count credits you are likely to use naturally, not ones that require unusual spending behavior."
+          - paragraph [ref=e306]:
+            - strong [ref=e307]: Sign-up bonuses
+            - text: are amortized over two years at conservative redemption values (1¢/pt for most rewards currencies, slightly higher for programs with documented transfer partner value). This gives us a levelized annual bonus value that makes it fair to compare cards across different bonus sizes and spend requirements.
+          - paragraph [ref=e308]:
+            - text: The best way to apply this methodology to your own situation is to
+            - link "upload your transaction history" [ref=e309] [cursor=pointer]:
+              - /url: /upload
+            - text: and let CardOptimizer compute exact projections based on your actual spending mix — not the averages we use here.
+      - generic [ref=e310]:
+        - heading "Explore by Spending Category" [level=2] [ref=e311]
+        - paragraph [ref=e312]: See the top 5 cards ranked by effective reward rate for each major spending category.
+        - generic [ref=e313]:
+          - link "Best for Dining" [ref=e314] [cursor=pointer]:
+            - /url: /best-cards/dining
+          - link "Best for Groceries" [ref=e315] [cursor=pointer]:
+            - /url: /best-cards/groceries
+          - link "Best for Travel" [ref=e316] [cursor=pointer]:
+            - /url: /best-cards/travel
+          - link "Best for Gas" [ref=e317] [cursor=pointer]:
+            - /url: /best-cards/gas
+          - link "Best for Online Shopping" [ref=e318] [cursor=pointer]:
+            - /url: /best-cards/online-shopping
+          - link "Best for Streaming" [ref=e319] [cursor=pointer]:
+            - /url: /best-cards/streaming
+      - generic [ref=e320]:
+        - heading "Find the Best Card for YOUR Spending" [level=2] [ref=e321]
+        - paragraph [ref=e322]: Our picks are based on average spending patterns. Upload your real transaction history and CardOptimizer will show you exactly which cards — from our full catalog of 20+ — would earn the most for how you actually spend money.
+        - link "Optimize My Rewards" [ref=e323] [cursor=pointer]:
+          - /url: /upload
+        - paragraph [ref=e324]: Free. Private. No account required. All analysis happens in your browser.
+      - paragraph [ref=e325]: Reward rates and sign-up bonuses are based on publicly available card terms as of April 2026. Annual benefits and credits are subject to change. This page is for informational purposes only and does not constitute financial advice. CardOptimizer may earn referral fees from card applications — this does not influence our rankings.
+  - contentinfo [ref=e326]:
+    - generic [ref=e327]:
+      - generic [ref=e328]:
+        - generic [ref=e329]:
+          - text: Built by
+          - link "Keylight Digital" [ref=e330] [cursor=pointer]:
+            - /url: https://keylightdigital.com
+        - generic [ref=e331]:
+          - link "Privacy Policy" [ref=e332] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e333] [cursor=pointer]:
+            - /url: /terms
+      - generic [ref=e334]:
+        - paragraph [ref=e335]: Also from Keylight Digital
+        - generic [ref=e336]:
+          - link "Beam — Privacy-first analytics" [ref=e337] [cursor=pointer]:
+            - /url: https://beam-privacy.com
+          - link "Nexus — AI command center" [ref=e338] [cursor=pointer]:
+            - /url: https://nexus.keylightdigital.dev
+          - link "ProfitTracker — Business profit analytics" [ref=e339] [cursor=pointer]:
+            - /url: https://profittracker.io

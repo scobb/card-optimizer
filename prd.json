@@ -533,7 +533,7 @@
       "id": "CO-033",
       "title": "Expand card database to 50+ cards",
       "priority": 25,
-      "passes": false,
+      "passes": true,
       "description": "20 cards is thin for meaningful recommendations. Add 30+ more cards from major issuers: Chase (Freedom Unlimited, Freedom Flex, Ink Business), Amex (Platinum, Blue Cash Everyday, Delta cards), Citi (Custom Cash, Premier), Capital One (SavorOne, Quicksilver, Spark), Discover (it Miles), Bank of America (Customized Cash, Premium Rewards, Unlimited Cash), Wells Fargo (Active Cash, Autograph), US Bank (Altitude Go, Cash+). Include at least 5 business cards and 3 store cards (Amazon Prime Visa, Target RedCard, Costco). Ensure reward rates are current as of April 2026.",
       "acceptanceCriteria": [
         "GET /api/cards returns 50+ cards",

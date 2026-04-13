@@ -43,7 +43,7 @@ export async function onRequestGet(context: { env: Env }) {
     rewardType: c.reward_type,
     baseRate: c.base_rate,
     pointValue: c.point_value,
-    url: c.url,
+    learnMoreUrl: c.url,
     imageUrl: c.image_url,
     categoryRates: ratesByCard.get(c.id as string) || [],
     signUpBonus: bonusByCard.get(c.id as string) || null,

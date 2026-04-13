@@ -108,7 +108,7 @@ export function CatalogPage() {
                   </p>
                 </div>
                 <a
-                  href={card.url}
+                  href={card.learnMoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-shrink-0 text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 min-h-[44px] px-2"

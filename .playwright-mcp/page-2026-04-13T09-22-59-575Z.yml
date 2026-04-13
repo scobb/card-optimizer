@@ -1,0 +1,181 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - heading "My Wallet" [level=1] [ref=e17]
+        - paragraph [ref=e18]: Select the cards you hold and we'll show you the optimal card for each spending category.
+      - generic [ref=e19]:
+        - generic [ref=e21]:
+          - img [ref=e22]
+          - text: Select Your Cards
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - button "American Express 5 cards" [expanded] [ref=e26] [cursor=pointer]:
+              - generic [ref=e28]: American Express
+              - generic [ref=e29]:
+                - generic [ref=e30]: 5 cards
+                - img [ref=e31]
+            - generic [ref=e33]:
+              - button "American Express Gold Card $250/yr · Points 1x base" [ref=e34] [cursor=pointer]:
+                - generic [ref=e36]:
+                  - generic [ref=e37]: American Express Gold Card
+                  - generic [ref=e38]: $250/yr · Points
+                - generic [ref=e39]: 1x base
+              - button "American Express Platinum $695/yr · Points 1x base" [ref=e40] [cursor=pointer]:
+                - generic [ref=e42]:
+                  - generic [ref=e43]: American Express Platinum
+                  - generic [ref=e44]: $695/yr · Points
+                - generic [ref=e45]: 1x base
+              - button "Blue Cash Preferred $95/yr · Cash back 1% base" [ref=e46] [cursor=pointer]:
+                - generic [ref=e48]:
+                  - generic [ref=e49]: Blue Cash Preferred
+                  - generic [ref=e50]: $95/yr · Cash back
+                - generic [ref=e51]: 1% base
+              - button "Blue Cash Everyday No annual fee · Cash back 1% base" [ref=e52] [cursor=pointer]:
+                - generic [ref=e54]:
+                  - generic [ref=e55]: Blue Cash Everyday
+                  - generic [ref=e56]: No annual fee · Cash back
+                - generic [ref=e57]: 1% base
+              - button "American Express Green Card $150/yr · Points 1x base" [ref=e58] [cursor=pointer]:
+                - generic [ref=e60]:
+                  - generic [ref=e61]: American Express Green Card
+                  - generic [ref=e62]: $150/yr · Points
+                - generic [ref=e63]: 1x base
+          - button "Bank of America 1 cards" [ref=e65] [cursor=pointer]:
+            - generic [ref=e67]: Bank of America
+            - generic [ref=e68]:
+              - generic [ref=e69]: 1 cards
+              - img [ref=e70]
+          - generic [ref=e72]:
+            - button "Capital One 4 cards" [expanded] [ref=e73] [cursor=pointer]:
+              - generic [ref=e75]: Capital One
+              - generic [ref=e76]:
+                - generic [ref=e77]: 4 cards
+                - img [ref=e78]
+            - generic [ref=e80]:
+              - button "Capital One Venture X $395/yr · Points 2x base" [ref=e81] [cursor=pointer]:
+                - generic [ref=e83]:
+                  - generic [ref=e84]: Capital One Venture X
+                  - generic [ref=e85]: $395/yr · Points
+                - generic [ref=e86]: 2x base
+              - button "Capital One SavorOne No annual fee · Cash back 1% base" [ref=e87] [cursor=pointer]:
+                - generic [ref=e89]:
+                  - generic [ref=e90]: Capital One SavorOne
+                  - generic [ref=e91]: No annual fee · Cash back
+                - generic [ref=e92]: 1% base
+              - button "Capital One Venture $95/yr · Points 2x base" [ref=e93] [cursor=pointer]:
+                - generic [ref=e95]:
+                  - generic [ref=e96]: Capital One Venture
+                  - generic [ref=e97]: $95/yr · Points
+                - generic [ref=e98]: 2x base
+              - button "Capital One Quicksilver No annual fee · Cash back 1.5% base" [ref=e99] [cursor=pointer]:
+                - generic [ref=e101]:
+                  - generic [ref=e102]: Capital One Quicksilver
+                  - generic [ref=e103]: No annual fee · Cash back
+                - generic [ref=e104]: 1.5% base
+          - generic [ref=e105]:
+            - button "Chase 5 cards" [expanded] [ref=e106] [cursor=pointer]:
+              - generic [ref=e108]: Chase
+              - generic [ref=e109]:
+                - generic [ref=e110]: 5 cards
+                - img [ref=e111]
+            - generic [ref=e113]:
+              - button "Chase Sapphire Preferred $95/yr · Points 1x base" [ref=e114] [cursor=pointer]:
+                - generic [ref=e116]:
+                  - generic [ref=e117]: Chase Sapphire Preferred
+                  - generic [ref=e118]: $95/yr · Points
+                - generic [ref=e119]: 1x base
+              - button "Chase Freedom Unlimited No annual fee · Cash back 1.5% base" [ref=e120] [cursor=pointer]:
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Chase Freedom Unlimited
+                  - generic [ref=e124]: No annual fee · Cash back
+                - generic [ref=e125]: 1.5% base
+              - button "Chase Freedom Flex No annual fee · Cash back 1% base" [ref=e126] [cursor=pointer]:
+                - generic [ref=e128]:
+                  - generic [ref=e129]: Chase Freedom Flex
+                  - generic [ref=e130]: No annual fee · Cash back
+                - generic [ref=e131]: 1% base
+              - button "Chase Sapphire Reserve $550/yr · Points 1x base" [ref=e132] [cursor=pointer]:
+                - generic [ref=e134]:
+                  - generic [ref=e135]: Chase Sapphire Reserve
+                  - generic [ref=e136]: $550/yr · Points
+                - generic [ref=e137]: 1x base
+              - button "Chase Ink Business Cash No annual fee · Cash back 1% base" [ref=e138] [cursor=pointer]:
+                - generic [ref=e140]:
+                  - generic [ref=e141]: Chase Ink Business Cash
+                  - generic [ref=e142]: No annual fee · Cash back
+                - generic [ref=e143]: 1% base
+          - generic [ref=e144]:
+            - button "Citi 2 cards" [expanded] [ref=e145] [cursor=pointer]:
+              - generic [ref=e147]: Citi
+              - generic [ref=e148]:
+                - generic [ref=e149]: 2 cards
+                - img [ref=e150]
+            - generic [ref=e152]:
+              - button "Citi Double Cash No annual fee · Cash back 2% base" [ref=e153] [cursor=pointer]:
+                - generic [ref=e155]:
+                  - generic [ref=e156]: Citi Double Cash
+                  - generic [ref=e157]: No annual fee · Cash back
+                - generic [ref=e158]: 2% base
+              - button "Citi Custom Cash No annual fee · Cash back 1% base" [ref=e159] [cursor=pointer]:
+                - generic [ref=e161]:
+                  - generic [ref=e162]: Citi Custom Cash
+                  - generic [ref=e163]: No annual fee · Cash back
+                - generic [ref=e164]: 1% base
+          - button "Discover 1 cards" [ref=e166] [cursor=pointer]:
+            - generic [ref=e168]: Discover
+            - generic [ref=e169]:
+              - generic [ref=e170]: 1 cards
+              - img [ref=e171]
+          - button "U.S. Bank 1 cards" [ref=e174] [cursor=pointer]:
+            - generic [ref=e176]: U.S. Bank
+            - generic [ref=e177]:
+              - generic [ref=e178]: 1 cards
+              - img [ref=e179]
+          - button "Wells Fargo 1 cards" [ref=e182] [cursor=pointer]:
+            - generic [ref=e184]: Wells Fargo
+            - generic [ref=e185]:
+              - generic [ref=e186]: 1 cards
+              - img [ref=e187]
+      - generic [ref=e189]:
+        - paragraph [ref=e190]: No spending data uploaded yet.
+        - paragraph [ref=e191]:
+          - link "Upload your transaction CSV" [ref=e192] [cursor=pointer]:
+            - /url: /upload
+          - text: to see per-category optimization.
+  - contentinfo [ref=e193]:
+    - generic [ref=e194]:
+      - generic [ref=e195]:
+        - generic [ref=e196]:
+          - text: Built by
+          - link "Keylight Digital" [ref=e197] [cursor=pointer]:
+            - /url: https://keylightdigital.com
+        - generic [ref=e198]:
+          - link "Privacy Policy" [ref=e199] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e200] [cursor=pointer]:
+            - /url: /terms
+      - generic [ref=e201]:
+        - paragraph [ref=e202]: Also from Keylight Digital
+        - generic [ref=e203]:
+          - link "Beam — Privacy-first analytics" [ref=e204] [cursor=pointer]:
+            - /url: https://beam-privacy.com
+          - link "Nexus — AI command center" [ref=e205] [cursor=pointer]:
+            - /url: https://nexus.keylightdigital.dev
+          - link "ProfitTracker — Business profit analytics" [ref=e206] [cursor=pointer]:
+            - /url: https://profittracker.io

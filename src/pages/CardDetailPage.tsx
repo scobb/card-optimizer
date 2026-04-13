@@ -92,7 +92,7 @@ export function CardDetailPage() {
           priceCurrency: 'USD',
           name: 'Annual Fee',
         },
-        url: card.url,
+        url: card.learnMoreUrl,
       }
       const script = document.createElement('script')
       script.id = 'card-detail-jsonld'
@@ -181,16 +181,19 @@ export function CardDetailPage() {
               Add to Wallet
             </button>
             <a
-              href={card.url}
+              href={card.learnMoreUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-blue-800/60 text-white font-semibold text-sm px-4 py-2.5 rounded-lg hover:bg-blue-800/80 transition-colors min-h-[44px]"
-              data-apply-link
+              data-learn-more-link
             >
               <ExternalLink size={14} />
-              Apply Now
+              Learn More at {card.issuer}
             </a>
           </div>
+          <p className="text-xs text-blue-200/70 mt-2" data-apply-disclosure>
+            We link to card issuer websites. We are not compensated for referrals.
+          </p>
         </div>
       </div>
 

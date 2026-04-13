@@ -187,7 +187,7 @@ export function CategoryGuidePage() {
                 {/* Actions */}
                 <div className="flex flex-row sm:flex-col gap-2 sm:items-end flex-shrink-0">
                   <a
-                    href={card.url}
+                    href={card.learnMoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors min-h-[44px]"

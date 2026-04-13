@@ -16,7 +16,7 @@
     ],
     "signUpBonus": { "amount": 750, "spendRequired": 4000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"
+    "learnMoreUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"
   },
   {
     "id": "chase-freedom-unlimited",
@@ -34,7 +34,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited"
+    "learnMoreUrl": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited"
   },
   {
     "id": "chase-freedom-flex",
@@ -52,7 +52,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"
+    "learnMoreUrl": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"
   },
   {
     "id": "amex-gold",
@@ -72,7 +72,7 @@
       { "name": "Dining Credit", "annualValue": 120 },
       { "name": "Uber Cash", "annualValue": 120 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
   },
   {
     "id": "amex-platinum",
@@ -95,7 +95,7 @@
       { "name": "Saks Credit", "annualValue": 100 },
       { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
   },
   {
     "id": "amex-blue-cash-preferred",
@@ -114,7 +114,7 @@
     ],
     "signUpBonus": { "amount": 250, "spendRequired": 3000, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"
   },
   {
     "id": "citi-double-cash",
@@ -128,7 +128,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 200, "spendRequired": 1500, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
   },
   {
     "id": "citi-custom-cash",
@@ -152,7 +152,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 1500, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
   },
   {
     "id": "capital-one-venture-x",
@@ -171,7 +171,7 @@
       { "name": "Travel Credit", "annualValue": 300 },
       { "name": "Anniversary Bonus", "annualValue": 100 }
     ],
-    "url": "https://www.capitalone.com/credit-cards/venture-x/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/venture-x/"
   },
   {
     "id": "capital-one-savor-one",
@@ -190,7 +190,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.capitalone.com/credit-cards/savorone-dining-rewards/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/savorone-dining-rewards/"
   },
   {
     "id": "discover-it-cash-back",
@@ -204,7 +204,7 @@
     "categoryRates": [],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.discover.com/credit-cards/cash-back/it-card.html"
+    "learnMoreUrl": "https://www.discover.com/credit-cards/cash-back/it-card.html"
   },
   {
     "id": "wells-fargo-active-cash",
@@ -218,7 +218,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.wellsfargo.com/active-cash-credit-card"
+    "learnMoreUrl": "https://creditcards.wellsfargo.com/active-cash-credit-card"
   },
   {
     "id": "capital-one-venture",
@@ -236,7 +236,7 @@
     "perks": [
       { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
     ],
-    "url": "https://www.capitalone.com/credit-cards/venture/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/venture/"
   },
   {
     "id": "chase-sapphire-reserve",
@@ -257,7 +257,7 @@
       { "name": "DoorDash DashPass", "annualValue": 96 },
       { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
     ],
-    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"
+    "learnMoreUrl": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"
   },
   {
     "id": "amex-blue-cash-everyday",
@@ -275,7 +275,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 2000, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
   },
   {
     "id": "bank-of-america-customized-cash",
@@ -292,7 +292,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.bankofamerica.com/credit-cards/products/customized-cash-back-credit-card/"
+    "learnMoreUrl": "https://www.bankofamerica.com/credit-cards/products/customized-cash-back-credit-card/"
   },
   {
     "id": "us-bank-altitude-go",
@@ -311,7 +311,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html"
+    "learnMoreUrl": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html"
   },
   {
     "id": "amex-green",
@@ -331,7 +331,7 @@
     "perks": [
       { "name": "CLEAR Plus Credit", "annualValue": 100 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/green/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/green/"
   },
   {
     "id": "chase-ink-cash",
@@ -349,7 +349,7 @@
     ],
     "signUpBonus": { "amount": 750, "spendRequired": 6000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/business-credit-cards/ink/cash"
+    "learnMoreUrl": "https://creditcards.chase.com/business-credit-cards/ink/cash"
   },
   {
     "id": "capital-one-quicksilver",
@@ -363,7 +363,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.capitalone.com/credit-cards/quicksilver/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/quicksilver/"
   },
   {
     "id": "chase-ink-unlimited",
@@ -377,7 +377,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 750, "spendRequired": 6000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/business-credit-cards/ink/unlimited"
+    "learnMoreUrl": "https://creditcards.chase.com/business-credit-cards/ink/unlimited"
   },
   {
     "id": "chase-ink-preferred",
@@ -395,7 +395,7 @@
     ],
     "signUpBonus": { "amount": 1000, "spendRequired": 8000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.chase.com/business-credit-cards/ink/preferred"
+    "learnMoreUrl": "https://creditcards.chase.com/business-credit-cards/ink/preferred"
   },
   {
     "id": "amazon-prime-visa",
@@ -414,7 +414,7 @@
     ],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.amazon.com/Amazon-Prime-Rewards-Visa-Signature-Card/dp/BT00LN946S"
+    "learnMoreUrl": "https://www.amazon.com/Amazon-Prime-Rewards-Visa-Signature-Card/dp/BT00LN946S"
   },
   {
     "id": "chase-marriott-boundless",
@@ -435,7 +435,7 @@
     "perks": [
       { "name": "Free Night Award", "annualValue": 70 }
     ],
-    "url": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
+    "learnMoreUrl": "https://creditcards.chase.com/travel-credit-cards/marriott-bonvoy/boundless"
   },
   {
     "id": "chase-united-explorer",
@@ -454,7 +454,7 @@
     "perks": [
       { "name": "First Checked Bag Free", "annualValue": 70 }
     ],
-    "url": "https://creditcards.chase.com/travel-credit-cards/united/explorer"
+    "learnMoreUrl": "https://creditcards.chase.com/travel-credit-cards/united/explorer"
   },
   {
     "id": "world-of-hyatt",
@@ -475,7 +475,7 @@
     "perks": [
       { "name": "Free Night Award", "annualValue": 150 }
     ],
-    "url": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt"
+    "learnMoreUrl": "https://creditcards.chase.com/travel-credit-cards/world-of-hyatt"
   },
   {
     "id": "amex-business-gold",
@@ -494,7 +494,7 @@
     ],
     "signUpBonus": { "amount": 1000, "spendRequired": 10000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/business-gold/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/business-gold/"
   },
   {
     "id": "amex-business-platinum",
@@ -514,7 +514,7 @@
       { "name": "Dell Technologies Credit", "annualValue": 400 },
       { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/business-platinum/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/business-platinum/"
   },
   {
     "id": "amex-delta-gold",
@@ -534,7 +534,7 @@
     "perks": [
       { "name": "First Checked Bag Free", "annualValue": 60 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-gold-american-express-card/"
   },
   {
     "id": "amex-delta-platinum",
@@ -555,7 +555,7 @@
       { "name": "Annual Companion Certificate", "annualValue": 200 },
       { "name": "First Checked Bag Free", "annualValue": 90 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/delta-skymiles-platinum-american-express-card/"
   },
   {
     "id": "amex-hilton-honors",
@@ -574,7 +574,7 @@
     ],
     "signUpBonus": { "amount": 400, "spendRequired": 2000, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors/"
   },
   {
     "id": "amex-hilton-surpass",
@@ -595,7 +595,7 @@
     "perks": [
       { "name": "Free Weekend Night Award", "annualValue": 150 }
     ],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/"
   },
   {
     "id": "amex-blue-business-cash",
@@ -609,7 +609,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 250, "spendRequired": 3000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-business-cash/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/blue-business-cash/"
   },
   {
     "id": "amex-everyday",
@@ -625,7 +625,7 @@
     ],
     "signUpBonus": { "amount": 100, "spendRequired": 2000, "timeMonths": 6 },
     "perks": [],
-    "url": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday/"
+    "learnMoreUrl": "https://www.americanexpress.com/us/credit-cards/card/amex-everyday/"
   },
   {
     "id": "citi-strata-premier",
@@ -646,7 +646,7 @@
     "perks": [
       { "name": "Annual Hotel Savings", "annualValue": 100 }
     ],
-    "url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card"
   },
   {
     "id": "costco-anywhere-visa",
@@ -664,7 +664,7 @@
     ],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.citi.com/credit-cards/costco-anywhere-visa-credit-card-by-citi"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/costco-anywhere-visa-credit-card-by-citi"
   },
   {
     "id": "citi-simplicity",
@@ -678,7 +678,7 @@
     "categoryRates": [],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.citi.com/credit-cards/citi-simplicity-credit-card"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/citi-simplicity-credit-card"
   },
   {
     "id": "citi-aadvantage-platinum",
@@ -698,7 +698,7 @@
     "perks": [
       { "name": "First Checked Bag Free", "annualValue": 70 }
     ],
-    "url": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-credit-card"
+    "learnMoreUrl": "https://www.citi.com/credit-cards/citi-aadvantage-platinum-select-credit-card"
   },
   {
     "id": "capital-one-spark-cash-plus",
@@ -714,7 +714,7 @@
     "perks": [
       { "name": "Annual Fee Rebate (spend $150k+)", "annualValue": 150 }
     ],
-    "url": "https://www.capitalone.com/credit-cards/spark-cash-plus/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/spark-cash-plus/"
   },
   {
     "id": "capital-one-spark-miles",
@@ -730,7 +730,7 @@
     ],
     "signUpBonus": { "amount": 500, "spendRequired": 4500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.capitalone.com/credit-cards/spark-miles/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/spark-miles/"
   },
   {
     "id": "capital-one-venture-one",
@@ -746,7 +746,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.capitalone.com/credit-cards/ventureone/"
+    "learnMoreUrl": "https://www.capitalone.com/credit-cards/ventureone/"
   },
   {
     "id": "discover-it-miles",
@@ -760,7 +760,7 @@
     "categoryRates": [],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.discover.com/credit-cards/travel/it-miles-card.html"
+    "learnMoreUrl": "https://www.discover.com/credit-cards/travel/it-miles-card.html"
   },
   {
     "id": "bank-of-america-premium-rewards",
@@ -779,7 +779,7 @@
     "perks": [
       { "name": "Airline Incidental Fee Credit", "annualValue": 100 }
     ],
-    "url": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
+    "learnMoreUrl": "https://www.bankofamerica.com/credit-cards/products/premium-rewards-credit-card/"
   },
   {
     "id": "bank-of-america-unlimited-cash",
@@ -793,7 +793,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/"
+    "learnMoreUrl": "https://www.bankofamerica.com/credit-cards/products/unlimited-cash-back-credit-card/"
   },
   {
     "id": "alaska-airlines-visa",
@@ -812,7 +812,7 @@
     "perks": [
       { "name": "Annual Companion Fare", "annualValue": 99 }
     ],
-    "url": "https://www.alaskaair.com/content/credit-card"
+    "learnMoreUrl": "https://www.alaskaair.com/content/credit-card"
   },
   {
     "id": "wells-fargo-autograph",
@@ -833,7 +833,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
     "perks": [],
-    "url": "https://creditcards.wellsfargo.com/autograph-visa-credit-card"
+    "learnMoreUrl": "https://creditcards.wellsfargo.com/autograph-visa-credit-card"
   },
   {
     "id": "wells-fargo-autograph-journey",
@@ -853,7 +853,7 @@
     "perks": [
       { "name": "Annual Airline Credit", "annualValue": 50 }
     ],
-    "url": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card"
+    "learnMoreUrl": "https://creditcards.wellsfargo.com/autograph-journey-visa-credit-card"
   },
   {
     "id": "us-bank-cash-plus",
@@ -873,7 +873,7 @@
     ],
     "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 4 },
     "perks": [],
-    "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html"
+    "learnMoreUrl": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html"
   },
   {
     "id": "us-bank-altitude-reserve",
@@ -894,7 +894,7 @@
       { "name": "Annual Travel Credit", "annualValue": 325 },
       { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
     ],
-    "url": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
+    "learnMoreUrl": "https://www.usbank.com/credit-cards/altitude-reserve-visa-infinite-credit-card.html"
   },
   {
     "id": "bilt-mastercard",
@@ -913,7 +913,7 @@
     "perks": [
       { "name": "Rent Rewards (no fee)", "annualValue": 0 }
     ],
-    "url": "https://biltrewards.com/card"
+    "learnMoreUrl": "https://biltrewards.com/card"
   },
   {
     "id": "apple-card",
@@ -931,7 +931,7 @@
     ],
     "signUpBonus": null,
     "perks": [],
-    "url": "https://www.apple.com/apple-card/"
+    "learnMoreUrl": "https://www.apple.com/apple-card/"
   },
   {
     "id": "fidelity-rewards-visa",
@@ -945,7 +945,7 @@
     "categoryRates": [],
     "signUpBonus": { "amount": 150, "spendRequired": 1500, "timeMonths": 3 },
     "perks": [],
-    "url": "https://www.fidelity.com/cash-management/visa-signature-card"
+    "learnMoreUrl": "https://www.fidelity.com/cash-management/visa-signature-card"
   },
   {
     "id": "target-redcard",
@@ -965,6 +965,6 @@
     "perks": [
       { "name": "Free 2-day shipping on Target.com", "annualValue": 30 }
     ],
-    "url": "https://www.target.com/redcard/main/TargetRedCard"
+    "learnMoreUrl": "https://www.target.com/redcard/main/TargetRedCard"
   }
 ]

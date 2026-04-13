@@ -196,7 +196,7 @@ export function ComparisonPage() {
         <p className="text-blue-100 text-sm mt-2">2026 head-to-head comparison — reward rates, fees, and perks.</p>
         <div className="flex flex-col sm:flex-row gap-3 mt-4">
           <a
-            href={cardA.url}
+            href={cardA.learnMoreUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 bg-white/20 hover:bg-white/30 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors min-h-[44px]"
@@ -205,7 +205,7 @@ export function ComparisonPage() {
             Apply for {cardA.name} <ExternalLink size={13} />
           </a>
           <a
-            href={cardB.url}
+            href={cardB.learnMoreUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-1.5 bg-white/20 hover:bg-white/30 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors min-h-[44px]"

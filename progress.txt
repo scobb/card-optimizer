@@ -508,3 +508,20 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - For presets where the description contains the same dollar amount as the badge (e.g. "$4,500/mo"), use `.first()` in tests to avoid strict mode violation when `getByText('$4,500/mo')` matches both the badge span and the description paragraph
   - VERIFIED: mobile responsive at 375px — presets stack in single column, all 4 buttons visible, tap targets ≥44px, no overflow, CTA visible after selecting preset
 ---
+
+## 2026-04-13 - CO-033
+- Expanded card database from 20 to 53 cards across 12+ issuers
+- Added 33 new cards to seed/cards.json including business, travel, co-branded, and store cards
+- New issuers: Bilt Rewards, Goldman Sachs (Apple Card), Fidelity, Target
+- Created database/migrations/0003_expand_cards.sql with INSERT OR REPLACE + DELETE perks pattern
+- Updated public/sitemap.xml with 33 new /cards/:slug entries
+- Updated catalogPage.spec.ts to use >=50 assertions instead of hardcoded 20
+- Wrote test/smoke/expandedCatalog.spec.ts (20 tests) verifying database, catalog, detail pages, sitemap
+- Fixed: expandedCatalog tests used [data-card-id] but catalog page uses [data-catalog-card]
+- 32/32 catalog tests pass on staging and prod
+- **Learnings for future iterations:**
+  - Catalog page uses [data-catalog-card] attribute (not [data-card-id]) for card elements
+  - perks table has no UNIQUE constraint — use DELETE FROM perks WHERE card_id = X before INSERT
+  - src/lib/cards.ts imports directly from seed/cards.json, so updating JSON auto-updates the frontend
+  - D1 migrations applied automatically via bash deploy.sh (no manual steps needed)
+---

@@ -1,0 +1,10 @@
+{
+  "failures": {
+    "CO-001": {
+      "count": 2,
+      "lastFailedAt": "2026-04-13T03:19:14Z",
+      "lastError": "wport\n- CSV fixtures for Monarch, Chase, and Capital One formats\n\n**Blocked:** Deploy fails with `auth error 10000` — same Cloudflare Pages:Edit token issue as CO-001. CO-002 added to `blocked-stories.json`. No duplicate email sent (Steve already notified via CO-001).\n\n**Resolving:** Steve needs to add `Account > Cloudflare Pages > Edit` to the API token at `https://dash.cloudflare.com/6e5befe432d81faf80d02f9c825d9453/api-tokens`, then remove both CO-001 and CO-002 from `blocked-stories.json`.",
+      "firstFailedAt": "2026-04-13T03:10:16Z"
+    }
+  }
+}

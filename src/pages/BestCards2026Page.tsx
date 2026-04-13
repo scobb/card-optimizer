@@ -228,7 +228,7 @@ export function BestCards2026Page() {
       <div className="space-y-6" data-picks-list>
         {PICKS.map((pick, index) => {
           const card = ALL_CARDS.find((c) => c.id === pick.cardId)
-          const cardUrl = card?.url ?? '#'
+          const cardUrl = card?.learnMoreUrl ?? '#'
 
           return (
             <div

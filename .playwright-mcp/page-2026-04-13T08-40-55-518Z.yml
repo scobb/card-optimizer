@@ -1,0 +1,228 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - link "Back to Card Catalog" [ref=e16] [cursor=pointer]:
+        - /url: /catalog
+        - img [ref=e17]
+        - text: Back to Card Catalog
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - img [ref=e21]
+          - paragraph [ref=e24]: Tool Comparison
+        - 'heading "CardOptimizer vs NerdWallet: A Different Approach to Card Recommendations" [level=1] [ref=e25]'
+        - paragraph [ref=e26]: CardOptimizer and NerdWallet both help you find the best credit cards — but they take fundamentally different approaches. Here is an honest comparison.
+      - generic [ref=e27]:
+        - heading "Feature Comparison" [level=2] [ref=e29]
+        - table [ref=e31]:
+          - rowgroup [ref=e32]:
+            - row "Feature CardOptimizer NerdWallet" [ref=e33]:
+              - columnheader "Feature" [ref=e34]
+              - columnheader "CardOptimizer" [ref=e35]
+              - columnheader "NerdWallet" [ref=e36]
+          - rowgroup [ref=e37]:
+            - row "Personalized to your spending Yes — upload your CSV No — generic editorial picks" [ref=e38]:
+              - cell "Personalized to your spending" [ref=e39]
+              - cell "Yes — upload your CSV" [ref=e40]:
+                - img [ref=e41]
+                - text: Yes — upload your CSV
+              - cell "No — generic editorial picks" [ref=e44]
+            - row "Data privacy All processing in your browser, zero server upload Account required, data collected for targeting" [ref=e45]:
+              - cell "Data privacy" [ref=e46]
+              - cell "All processing in your browser, zero server upload" [ref=e47]:
+                - img [ref=e48]
+                - text: All processing in your browser, zero server upload
+              - cell "Account required, data collected for targeting" [ref=e51]
+            - row "Sign-up required None — fully anonymous Account recommended for personalization" [ref=e52]:
+              - cell "Sign-up required" [ref=e53]
+              - cell "None — fully anonymous" [ref=e54]:
+                - img [ref=e55]
+                - text: None — fully anonymous
+              - cell "Account recommended for personalization" [ref=e58]
+            - row "Editorial card reviews Basic card detail pages Thousands of in-depth reviews" [ref=e59]:
+              - cell "Editorial card reviews" [ref=e60]
+              - cell "Basic card detail pages" [ref=e61]
+              - cell "Thousands of in-depth reviews" [ref=e62]:
+                - img [ref=e63]
+                - text: Thousands of in-depth reviews
+            - row "Wallet optimizer (per-category) Yes — optimize your full card stack No" [ref=e66]:
+              - cell "Wallet optimizer (per-category)" [ref=e67]
+              - cell "Yes — optimize your full card stack" [ref=e68]:
+                - img [ref=e69]
+                - text: Yes — optimize your full card stack
+              - cell "No" [ref=e72]
+            - row "Cards in database 20+ top reward cards 500+ including niche/secured cards" [ref=e73]:
+              - cell "Cards in database" [ref=e74]
+              - cell "20+ top reward cards" [ref=e75]
+              - cell "500+ including niche/secured cards" [ref=e76]:
+                - img [ref=e77]
+                - text: 500+ including niche/secured cards
+            - row "Affiliate influence on rankings None in optimizer math Possible — affiliate relationships exist" [ref=e80]:
+              - cell "Affiliate influence on rankings" [ref=e81]
+              - cell "None in optimizer math" [ref=e82]:
+                - img [ref=e83]
+                - text: None in optimizer math
+              - cell "Possible — affiliate relationships exist" [ref=e86]
+            - row "Financial product coverage Credit cards only Cards, loans, banking, mortgages, investing" [ref=e87]:
+              - cell "Financial product coverage" [ref=e88]
+              - cell "Credit cards only" [ref=e89]
+              - cell "Cards, loans, banking, mortgages, investing" [ref=e90]:
+                - img [ref=e91]
+                - text: Cards, loans, banking, mortgages, investing
+            - row "Cost to use Free, no account Free, but account required for some features" [ref=e94]:
+              - cell "Cost to use" [ref=e95]
+              - cell "Free, no account" [ref=e96]:
+                - img [ref=e97]
+                - text: Free, no account
+              - cell "Free, but account required for some features" [ref=e100]
+            - row "Open source / auditable Yes No" [ref=e101]:
+              - cell "Open source / auditable" [ref=e102]
+              - cell "Yes" [ref=e103]:
+                - img [ref=e104]
+                - text: "Yes"
+              - cell "No" [ref=e107]
+      - paragraph [ref=e109]: NerdWallet is the dominant player in personal finance content. Millions of people visit it every month for credit card advice, and for good reason — its editorial team produces thorough, well-researched reviews. But the way NerdWallet recommends cards is fundamentally different from CardOptimizer, and for a meaningful subset of users, that difference matters a lot.
+      - generic [ref=e111]:
+        - 'heading "The Core Difference: Generic vs. Personalized" [level=2] [ref=e112]'
+        - paragraph [ref=e113]:
+          - text: NerdWallet's card recommendations are
+          - strong [ref=e114]: generic
+          - text: . When you visit a page like "Best Travel Credit Cards," you see the same list whether you spend $200/month on travel or $2,000/month. The rankings reflect NerdWallet's editorial judgment — a combination of reward rates, bonus sizes, affiliate relationships, and editorial criteria — not your personal spending pattern.
+        - paragraph [ref=e115]:
+          - text: "CardOptimizer takes the opposite approach:"
+          - strong [ref=e116]: upload your actual transaction history
+          - text: (from Monarch, Copilot, Chase, Amex, or any CSV export) and the tool calculates exactly which cards would earn the most for your specific spending mix. If you spend $800/month on groceries and $150/month on dining, CardOptimizer tells you the Amex Gold earns you $1,140/year on those two categories alone — not a generalized "great for foodies" editorial take.
+        - 'heading "Privacy: A Fundamental Architectural Difference" [level=2] [ref=e117]'
+        - paragraph [ref=e118]: To get personalized recommendations on NerdWallet, you typically need to create an account, provide your email, and in some cases connect financial accounts. NerdWallet collects this data to improve its product and target you with relevant financial offers.
+        - paragraph [ref=e119]:
+          - text: "CardOptimizer was built on a different premise:"
+          - strong [ref=e120]: your transaction data never leaves your browser
+          - text: . The CSV you upload is parsed entirely client-side using JavaScript. No data is sent to our servers. We have no database of your transactions. We cannot see your spending even if we wanted to. You can verify this by opening your browser's Network tab while uploading — you'll see zero outbound requests containing your transaction data.
+        - paragraph [ref=e121]: For many users — especially those wary of sharing financial data with ad-supported platforms — this is a meaningful distinction. Your spending patterns are some of the most sensitive personal data that exists. CardOptimizer's architecture means that data never exists anywhere except your local browser session.
+        - heading "What NerdWallet Does Better" [level=2] [ref=e122]
+        - paragraph [ref=e123]: Honesty requires acknowledging where NerdWallet excels. Its editorial depth is unmatched — if you want a 3,000-word review of the Chase Sapphire Reserve covering lounge access, foreign transaction fees, primary vs. secondary rental car insurance, and year-over-year changes to the card's benefits, NerdWallet has that content. We don't.
+        - paragraph [ref=e124]: "NerdWallet also covers a much broader financial product universe: savings accounts, mortgages, student loans, investment accounts, insurance. CardOptimizer is focused exclusively on credit card reward optimization. If you need broader financial guidance, NerdWallet is a better starting point."
+        - paragraph [ref=e125]: Their database includes more cards than ours — particularly secured cards, student cards, and niche issuer products. Our catalog of 20+ cards covers the most popular reward-optimizing cards used by the majority of consumers, but we don't have every card in existence.
+        - heading "The Bottom Line" [level=2] [ref=e126]
+        - paragraph [ref=e127]:
+          - strong [ref=e128]: Use NerdWallet
+          - text: when you want comprehensive editorial coverage, a broad financial product universe, or detailed long-form card reviews.
+        - paragraph [ref=e129]:
+          - strong [ref=e130]: Use CardOptimizer
+          - text: when you want to know — based on your actual spending — exactly how much you'd earn with each card, which card to use for each spending category, and what the optimal combination of 2-4 cards is for your wallet. Especially if privacy matters to you.
+        - paragraph [ref=e131]: They are not mutually exclusive. Many users read NerdWallet for editorial context, then come to CardOptimizer to run the actual math on their own spending before applying.
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - heading "Where CardOptimizer Wins" [level=2] [ref=e134]:
+            - img [ref=e135]
+            - text: Where CardOptimizer Wins
+          - list [ref=e137]:
+            - listitem [ref=e138]:
+              - img [ref=e139]
+              - text: Personalized to YOUR actual spending — upload your CSV and see real numbers
+            - listitem [ref=e142]:
+              - img [ref=e143]
+              - text: All analysis runs in your browser — zero data sent to servers
+            - listitem [ref=e146]:
+              - img [ref=e147]
+              - text: No account, email, or sign-up required to use any feature
+            - listitem [ref=e150]:
+              - img [ref=e151]
+              - text: No affiliate bias in rankings — cards ranked purely by math
+            - listitem [ref=e154]:
+              - img [ref=e155]
+              - text: Wallet optimizer shows per-category card assignment for your exact spending mix
+            - listitem [ref=e158]:
+              - img [ref=e159]
+              - text: Wallet Builder finds the optimal 2-4 card combination from the full catalog
+            - listitem [ref=e162]:
+              - img [ref=e163]
+              - text: Open source — inspect exactly how recommendations are calculated
+            - listitem [ref=e166]:
+              - img [ref=e167]
+              - text: No ads, no tracking pixels, no cookie banners
+        - generic [ref=e170]:
+          - heading "Where NerdWallet Wins" [level=2] [ref=e171]:
+            - img [ref=e172]
+            - text: Where NerdWallet Wins
+          - list [ref=e175]:
+            - listitem [ref=e176]:
+              - img [ref=e177]
+              - text: Extensive editorial content — thousands of long-form card reviews
+            - listitem [ref=e180]:
+              - img [ref=e181]
+              - text: Broader financial product coverage (loans, mortgages, banking)
+            - listitem [ref=e184]:
+              - img [ref=e185]
+              - text: Large editorial team with dedicated credit card experts
+            - listitem [ref=e188]:
+              - img [ref=e189]
+              - text: Established brand with 10+ years of consumer trust
+            - listitem [ref=e192]:
+              - img [ref=e193]
+              - text: More cards in database including secured and student cards
+            - listitem [ref=e196]:
+              - img [ref=e197]
+              - text: Community reviews and user ratings for cards
+      - generic [ref=e200]:
+        - heading "Explore CardOptimizer" [level=2] [ref=e201]
+        - generic [ref=e202]:
+          - link "Optimize My Rewards" [ref=e203] [cursor=pointer]:
+            - /url: /upload
+          - link "Browse All Cards" [ref=e204] [cursor=pointer]:
+            - /url: /catalog
+          - link "Best for Dining" [ref=e205] [cursor=pointer]:
+            - /url: /best-cards/dining
+          - link "Best for Travel" [ref=e206] [cursor=pointer]:
+            - /url: /best-cards/travel
+          - link "Best for Groceries" [ref=e207] [cursor=pointer]:
+            - /url: /best-cards/groceries
+          - link "Wallet Builder" [ref=e208] [cursor=pointer]:
+            - /url: /builder
+      - generic [ref=e209]:
+        - heading "Try CardOptimizer — Free, No Account Required" [level=2] [ref=e210]
+        - paragraph [ref=e211]: Upload your transaction history and see personalized card recommendations based on your actual spending. All analysis stays in your browser.
+        - link "Optimize My Rewards" [ref=e212] [cursor=pointer]:
+          - /url: /upload
+      - paragraph [ref=e213]:
+        - text: This page is for informational purposes only.
+        - link "Visit NerdWallet" [ref=e214] [cursor=pointer]:
+          - /url: https://www.nerdwallet.com
+          - text: Visit NerdWallet
+          - img [ref=e215]
+        - text: for their own product information. CardOptimizer is not affiliated with NerdWallet.
+  - contentinfo [ref=e219]:
+    - generic [ref=e220]:
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - text: Built by
+          - link "Keylight Digital" [ref=e223] [cursor=pointer]:
+            - /url: https://keylightdigital.com
+        - generic [ref=e224]:
+          - link "Privacy Policy" [ref=e225] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e226] [cursor=pointer]:
+            - /url: /terms
+      - generic [ref=e227]:
+        - paragraph [ref=e228]: Also from Keylight Digital
+        - generic [ref=e229]:
+          - link "Beam — Privacy-first analytics" [ref=e230] [cursor=pointer]:
+            - /url: https://beam-privacy.com
+          - link "Nexus — AI command center" [ref=e231] [cursor=pointer]:
+            - /url: https://nexus.keylightdigital.dev
+          - link "ProfitTracker — Business profit analytics" [ref=e232] [cursor=pointer]:
+            - /url: https://profittracker.io

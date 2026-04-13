@@ -97,7 +97,7 @@ export interface Card {
   categoryRates: CardCategoryRate[]
   signUpBonus: SignUpBonus | null
   perks: CardPerk[]
-  url: string
+  learnMoreUrl: string
 }
 
 export interface CategoryOptimization {

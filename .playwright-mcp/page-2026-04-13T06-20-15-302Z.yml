@@ -1,0 +1,99 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "CardOptimizer" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - link "Upload" [ref=e9] [cursor=pointer]:
+          - /url: /upload
+        - link "Wallet" [ref=e10] [cursor=pointer]:
+          - /url: /wallet
+        - link "Recommendations" [ref=e11] [cursor=pointer]:
+          - /url: /recommendations
+        - link "Builder" [ref=e12] [cursor=pointer]:
+          - /url: /builder
+        - link "Cards" [ref=e13] [cursor=pointer]:
+          - /url: /catalog
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - link "Back to Card Catalog" [ref=e16] [cursor=pointer]:
+        - /url: /catalog
+        - img [ref=e17]
+        - text: Back to Card Catalog
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: Chase
+          - heading "Chase Sapphire Preferred" [level=1] [ref=e23]
+          - generic [ref=e24]:
+            - generic [ref=e25]: $95/yr
+            - generic [ref=e26]: Points
+        - generic [ref=e27]:
+          - button "Add to Wallet" [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+            - text: Add to Wallet
+          - link "Apply Now" [ref=e31] [cursor=pointer]:
+            - /url: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
+            - img [ref=e32]
+            - text: Apply Now
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Sign-Up Bonus
+        - paragraph [ref=e38]: $750
+        - paragraph [ref=e39]: After spending $4,000 in 3 months
+      - generic [ref=e40]:
+        - heading "Reward Rates" [level=2] [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Base rate (everything else)
+            - generic [ref=e45]: 1.25%
+          - generic [ref=e46]:
+            - generic [ref=e47]: Dining
+            - generic [ref=e48]: 3.75%
+          - generic [ref=e49]:
+            - generic [ref=e50]: Streaming
+            - generic [ref=e51]: 3.75%
+          - generic [ref=e52]:
+            - generic [ref=e53]: Online Shopping
+            - generic [ref=e54]: 3.75%
+          - generic [ref=e55]:
+            - generic [ref=e56]: Travel
+            - generic [ref=e57]: 2.5%
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - heading "Pros" [level=2] [ref=e60]
+          - list [ref=e61]:
+            - listitem [ref=e62]:
+              - img [ref=e63]
+              - text: "Strong sign-up bonus: $750"
+            - listitem [ref=e66]:
+              - img [ref=e67]
+              - text: 3.75% back on dining
+            - listitem [ref=e70]:
+              - img [ref=e71]
+              - text: 3.75% back on online shopping
+            - listitem [ref=e74]:
+              - img [ref=e75]
+              - text: 3.75% back on streaming
+        - generic [ref=e78]:
+          - heading "Cons" [level=2] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - img [ref=e82]
+              - text: "Annual fee: $95/yr"
+            - listitem [ref=e86]:
+              - img [ref=e87]
+              - text: Spend $4,000 in 3 months to earn sign-up bonus
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - paragraph [ref=e93]: Ready to optimize your wallet?
+          - paragraph [ref=e94]: See how Chase Sapphire Preferred stacks up against your actual spending.
+        - button "Add to My Wallet" [ref=e95] [cursor=pointer]:
+          - img [ref=e96]
+          - text: Add to My Wallet
+  - contentinfo [ref=e98]:
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - text: Built by
+        - link "Keylight Digital" [ref=e101] [cursor=pointer]:
+          - /url: https://keylightdigital.com
+      - link "Privacy Policy" [ref=e103] [cursor=pointer]:
+        - /url: /privacy
