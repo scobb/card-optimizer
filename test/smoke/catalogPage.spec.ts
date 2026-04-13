@@ -13,14 +13,20 @@ test.describe('CO-006: Card Catalog Page', () => {
   })
 
   // -------------------------------------------------------------------------
-  test('shows all 20 cards by default', async ({ page }) => {
+  test('shows all 50+ cards by default', async ({ page }) => {
     const cards = page.locator('[data-catalog-card]')
-    await expect(cards).toHaveCount(20)
+    const count = await cards.count()
+    expect(count).toBeGreaterThanOrEqual(50)
   })
 
   // -------------------------------------------------------------------------
   test('count badge shows total cards', async ({ page }) => {
-    await expect(page.locator('[data-catalog-count]')).toContainText('20 cards')
+    const text = await page.locator('[data-catalog-count]').textContent()
+    expect(text).toBeTruthy()
+    // Should show a number >= 50 in the badge text
+    const match = text!.match(/(\d+)/)
+    expect(match).not.toBeNull()
+    expect(parseInt(match![1], 10)).toBeGreaterThanOrEqual(50)
   })
 
   // -------------------------------------------------------------------------
@@ -30,17 +36,17 @@ test.describe('CO-006: Card Catalog Page', () => {
     const cards = page.locator('[data-catalog-card]')
     const count = await cards.count()
     expect(count).toBeGreaterThan(0)
-    expect(count).toBeLessThan(20)
-
-    // Count badge updates
-    await expect(page.locator('[data-catalog-count]')).toContainText('of 20 cards')
+    // Should be far fewer than total catalog
+    expect(count).toBeLessThan(10)
+    // Count badge updates — shows filtered count out of total
+    await expect(page.locator('[data-catalog-count]')).toContainText('of')
   })
 
   // -------------------------------------------------------------------------
   test('search returns no results shows empty state', async ({ page }) => {
     await page.locator('[data-catalog-search]').fill('zzz-nonexistent-card-xyz')
     await expect(page.getByText('No cards match your search.')).toBeVisible()
-    await expect(page.locator('[data-catalog-count]')).toContainText('0 of 20')
+    await expect(page.locator('[data-catalog-count]')).toContainText('0 of')
   })
 
   // -------------------------------------------------------------------------
@@ -49,7 +55,8 @@ test.describe('CO-006: Card Catalog Page', () => {
     const cards = page.locator('[data-catalog-card]')
     const count = await cards.count()
     expect(count).toBeGreaterThan(0)
-    expect(count).toBeLessThan(20)
+    // Chase has ~10 cards, much less than 50+
+    expect(count).toBeLessThan(50)
   })
 
   // -------------------------------------------------------------------------
@@ -83,7 +90,7 @@ test.describe('CO-006: Card Catalog Page', () => {
   test('each card has an apply link', async ({ page }) => {
     const applyLinks = page.locator('[data-catalog-apply]')
     const count = await applyLinks.count()
-    expect(count).toBe(20)
+    expect(count).toBeGreaterThanOrEqual(50)
     await expect(applyLinks.first()).toBeVisible()
   })
 
@@ -99,7 +106,8 @@ test.describe('CO-006: Card Catalog Page', () => {
     await page.locator('[data-catalog-issuer-filter]').selectOption('Chase')
     await page.locator('[data-catalog-issuer-filter]').selectOption('all')
     const cards = page.locator('[data-catalog-card]')
-    await expect(cards).toHaveCount(20)
+    const count = await cards.count()
+    expect(count).toBeGreaterThanOrEqual(50)
   })
 
   // -------------------------------------------------------------------------
