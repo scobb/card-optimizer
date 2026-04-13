@@ -61,6 +61,7 @@ test.describe('CO-008: Share Link', () => {
     await seedSpendingAndWallet(page)
     await page.reload()
 
+    await expect(page.locator('[data-share-button]')).toBeVisible()
     await page.locator('[data-share-button]').click()
     await expect(page.locator('[data-share-button]')).toContainText('Copied!')
 
@@ -148,6 +149,7 @@ test.describe('CO-008: Share Link', () => {
     await seedSpendingAndWallet(page)
     await page.reload()
 
+    await expect(page.locator('[data-share-button]')).toBeVisible()
     await page.locator('[data-share-button]').click()
     const clipText = await page.evaluate(() => navigator.clipboard.readText())
 

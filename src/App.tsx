@@ -1,52 +1,13 @@
-import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-dom'
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
 import { RecommendationsPage } from './pages/RecommendationsPage'
 import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
-import { decodeShareHash } from './lib/shareState'
-import { saveSpendingData } from './lib/storage'
-import { saveWalletCards } from './lib/storage'
-import type { SpendingBreakdown, RewardCategory } from './types'
-
-function ShareRestorer() {
-  useEffect(() => {
-    const hash = window.location.hash
-    if (!hash.startsWith('#share=')) return
-    const payload = decodeShareHash(hash)
-    if (!payload) return
-
-    // Restore spending summary (category totals only — no PII)
-    const breakdown: SpendingBreakdown[] = payload.spending.map((s) => ({
-      category: s.cat as RewardCategory,
-      monthlyAvg: s.total / 12,
-      annualTotal: s.total,
-      transactionCount: 0,
-    }))
-    const annualTotal = breakdown.reduce((sum, b) => sum + b.annualTotal, 0)
-    saveSpendingData({
-      breakdown,
-      format: 'generic',
-      formatLabel: 'Shared link',
-      uploadedAt: new Date().toISOString(),
-      transactionCount: annualTotal > 0 ? 1 : 0,
-    })
-
-    // Restore wallet card selection
-    saveWalletCards(payload.wallet)
-
-    // Remove hash from URL without triggering navigation
-    history.replaceState(null, '', window.location.pathname + window.location.search)
-  }, [])
-
-  return null
-}
 
 export function App() {
   return (
     <BrowserRouter>
-      <ShareRestorer />
       <div className="min-h-screen bg-gray-50">
         <nav className="bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4">
