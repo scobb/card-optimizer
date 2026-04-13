@@ -553,7 +553,7 @@
       "id": "CO-034",
       "title": "Card application links — make recommendations actionable",
       "priority": 26,
-      "passes": false,
+      "passes": true,
       "description": "Add card issuer application/learn-more URLs to card data. Render 'Learn More' buttons on card detail pages and in recommendation results. Links open in new tab and go to the card's official page on the issuer website. Include a disclosure ('We link to card issuer websites. We are not compensated for referrals.') to build trust. Even without affiliate revenue, application links make the tool actionable — users can apply for recommended cards.",
       "acceptanceCriteria": [
         "Card data includes 'learnMoreUrl' field linking to issuer card page",

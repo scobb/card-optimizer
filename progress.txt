@@ -525,3 +525,19 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - src/lib/cards.ts imports directly from seed/cards.json, so updating JSON auto-updates the frontend
   - D1 migrations applied automatically via bash deploy.sh (no manual steps needed)
 ---
+
+## 2026-04-13 - CO-034
+- Renamed Card.url to Card.learnMoreUrl across types, API, seed data, and all 8 frontend pages
+- CardDetailPage: "Apply Now" → "Learn More at {card.issuer}", attribute data-apply-link → data-learn-more-link
+- RecommendationsPage: "Apply" → "Learn More", added disclosure text when recommendations shown
+- CardDetailPage: added disclosure text "We link to card issuer websites. We are not compensated for referrals."
+- DB column stays named `url`, API maps it to `learnMoreUrl` in the response
+- Updated cardDetail.spec.ts and recommendations.spec.ts to use data-learn-more-link
+- Wrote test/smoke/applicationLinks.spec.ts (13 tests)
+- 427/435 tests pass on prod (8 pre-existing failures)
+- **Learnings for future iterations:**
+  - When renaming a data attribute on a page element, also update all existing smoke tests that reference that attribute
+  - DB column names don't need to match TypeScript field names; API layer maps them
+  - prod deployment sometimes has edge propagation delay; wait ~30s before running smoke tests
+  - Cache-Control max-age=3600 on API causes edge caching; initial tests right after deploy may see old cache
+---

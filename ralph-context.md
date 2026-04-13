@@ -1,17 +1,23 @@
 ## Last completed
-CO-032 - LocalStorage wallet persistence — save and restore analysis
+CO-034 - Card application links — make recommendations actionable
 
 ## Next up
-CO-033 - Expand card database to 50+ cards
+CO-035 - Quick results preview on landing page — instant value for visitors
+- Show pre-computed optimization for Average American spending ($4,500/mo) on landing page
+- Top 3 recommended cards with names, reward rates, why recommended
+- Estimated annual savings (from CO-031 calculator)
+- CTA: "Try with your spending" links to upload page
+- Section: below hero, above how-it-works
+- Use optimizer.ts logic with preset spending breakdown; SPENDING_PRESETS from UploadPage.tsx
 
 ## Active issues
-- email.spec.ts "POST /api/email-results sends email and returns 200" fails on staging/prod with HTTP 429 when rate limit (3 emails/day) is exhausted; pre-existing transient
-- github.spec.ts CO-012 tests fail on prod with GitHub API rate limits (7 tests); pre-existing
+- Pre-existing failures (not blocking): CO-012 (GitHub repo tests), CO-023 (email rate limit)
+- prod edge propagation: wait ~30s after deploy before running smoke tests
 
 ## Key decisions this session
+- Card.url renamed to Card.learnMoreUrl everywhere (types, API, seed, all pages)
+- DB column stays `url`; API maps to `learnMoreUrl` in response (no migration needed)
+- data-apply-link renamed to data-learn-more-link on CardDetailPage and RecommendationsPage
+- Catalog cards use [data-catalog-card] attribute (not [data-card-id])
 - hasAnalysis() validates JSON shape (checks .breakdown is array) — not just key existence
-- ClearDataButton uses window.location.assign('/upload') for full page reload (React Router navigate to same route doesn't remount components)
-- Welcome back banner is above all other upload page content; shown only when BOTH spending + valid wallet cards exist
-- "Start fresh" clears both co_spending_data and co_wallet_cards keys
-- Existing keys (co_spending_data, co_wallet_cards) are kept — renaming would silently break existing users
-- SPENDING_PRESETS export from UploadPage.tsx is available for CO-035 (landing page preview)
+- ClearDataButton uses window.location.assign('/upload') for full page reload
