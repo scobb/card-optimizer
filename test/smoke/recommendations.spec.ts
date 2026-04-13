@@ -58,7 +58,7 @@ test.describe('CO-004: Card Recommendations', () => {
     await expect(page.locator('[data-testid="recommendations-list"]')).toBeVisible()
 
     // At least one card recommended
-    const recs = page.locator('[data-apply-link]')
+    const recs = page.locator('[data-learn-more-link]')
     await expect(recs.first()).toBeVisible()
 
     // Net value shown
@@ -90,7 +90,7 @@ test.describe('CO-004: Card Recommendations', () => {
     await expect(recs).toBeVisible()
 
     // Get all apply links — none should link to amex-gold
-    const applyLinks = page.locator('[data-apply-link="amex-gold"]')
+    const applyLinks = page.locator('[data-learn-more-link="amex-gold"]')
     await expect(applyLinks).toHaveCount(0)
   })
 
@@ -133,7 +133,7 @@ test.describe('CO-004: Card Recommendations', () => {
     await page.reload()
 
     // Either recommendations exist OR "no cards" message shown
-    const hasList = await page.locator('[data-testid="recommendations-list"] [data-apply-link]').count()
+    const hasList = await page.locator('[data-testid="recommendations-list"] [data-learn-more-link]').count()
     if (hasList === 0) {
       await expect(page.getByText('No cards found with positive net value')).toBeVisible()
     } else {
@@ -150,17 +150,17 @@ test.describe('CO-004: Card Recommendations', () => {
     await page.reload()
 
     // Count initial recommendations
-    const initialCount = await page.locator('[data-apply-link]').count()
+    const initialCount = await page.locator('[data-learn-more-link]').count()
 
     // Add a card to wallet (navigate to wallet, select, come back)
     await seedWalletCards(page, ['amex-gold', 'chase-sapphire-preferred'])
     await page.reload()
 
-    const newCount = await page.locator('[data-apply-link]').count()
+    const newCount = await page.locator('[data-learn-more-link]').count()
     // Adding cards should reduce or maintain recommendation count (never add amex-gold or chase-sapphire-preferred)
     expect(newCount).toBeLessThanOrEqual(initialCount)
-    const amexGoldRec = page.locator('[data-apply-link="amex-gold"]')
-    const cspRec = page.locator('[data-apply-link="chase-sapphire-preferred"]')
+    const amexGoldRec = page.locator('[data-learn-more-link="amex-gold"]')
+    const cspRec = page.locator('[data-learn-more-link="chase-sapphire-preferred"]')
     await expect(amexGoldRec).toHaveCount(0)
     await expect(cspRec).toHaveCount(0)
   })

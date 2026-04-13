@@ -43,7 +43,7 @@ test.describe('CO-015: Card Detail Pages', () => {
 
   // -------------------------------------------------------------------------
   test('apply link is present and opens externally', async ({ page }) => {
-    const applyLink = page.locator('[data-apply-link]')
+    const applyLink = page.locator('[data-learn-more-link]')
     await expect(applyLink).toBeVisible()
     const target = await applyLink.getAttribute('target')
     expect(target).toBe('_blank')
