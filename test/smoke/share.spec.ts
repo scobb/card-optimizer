@@ -82,7 +82,8 @@ test.describe('CO-008: Share Link', () => {
       baseUrl + '/wallet',
     )
 
-    // Clear storage, then navigate to the share URL
+    // Navigate away first so going to shareUrl is a full page load (not hash navigation)
+    await page.goto('/catalog')
     await page.evaluate(() => localStorage.clear())
     await page.goto(shareUrl)
 
@@ -101,15 +102,14 @@ test.describe('CO-008: Share Link', () => {
       baseUrl + '/wallet',
     )
 
+    await page.goto('/catalog')
     await page.evaluate(() => localStorage.clear())
     await page.goto(shareUrl)
 
-    // Citi Double Cash should be selected (its checkbox)
-    const citiBtn = page.locator('[data-card-id="citi-double-cash"]')
-    await expect(citiBtn).toBeVisible()
-    // The button should have blue background indicating selected state
-    const cls = await citiBtn.getAttribute('class')
-    expect(cls).toContain('bg-blue-50')
+    // With spending data + wallet cards restored, optimization results should appear
+    await expect(page.getByText('Annual Rewards')).toBeVisible()
+    // Check that 2 cards are selected (shown in the selected count badge)
+    await expect(page.getByText('2 cards selected')).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -122,6 +122,7 @@ test.describe('CO-008: Share Link', () => {
       baseUrl + '/wallet',
     )
 
+    await page.goto('/catalog')
     await page.evaluate(() => localStorage.clear())
     await page.goto(shareUrl)
 
