@@ -247,7 +247,7 @@ export async function onRequestPost(context: { request: Request; env: Env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'CardOptimizer <ralph@keylightdigital.com>',
+      from: 'CardOptimizer <ralph@keylightdigital.dev>',
       to: email,
       subject: `Your Optimized Wallet — ${fmt(netAnnualValue >= 0 ? netAnnualValue : 0)} net annual value`,
       html,
