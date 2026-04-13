@@ -321,7 +321,7 @@
       "id": "CO-021",
       "title": "Blog — 'Cash Back vs Points vs Miles: A Data-Driven Guide'",
       "priority": 13,
-      "passes": false,
+      "passes": true,
       "description": "Write a comparison article at /blog/cash-back-vs-points-vs-miles breaking down when each reward type wins. Use real math from the card catalog data. Target searches like 'cash back vs points credit card' and 'are credit card points worth it'.",
       "acceptanceCriteria": [
         "/blog/cash-back-vs-points-vs-miles renders the full article",
