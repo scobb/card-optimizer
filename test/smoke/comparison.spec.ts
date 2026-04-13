@@ -1,18 +1,18 @@
 import { test, expect } from '@playwright/test'
 
 const PAIRS = [
-  { slug: 'chase-sapphire-preferred-vs-amex-gold', cardAName: 'Chase Sapphire Preferred', cardBName: 'Amex Gold' },
+  { slug: 'chase-sapphire-preferred-vs-amex-gold', cardAName: 'Chase Sapphire Preferred', cardBName: 'American Express Gold Card' },
   { slug: 'chase-sapphire-preferred-vs-chase-sapphire-reserve', cardAName: 'Chase Sapphire Preferred', cardBName: 'Chase Sapphire Reserve' },
   { slug: 'chase-sapphire-preferred-vs-capital-one-venture-x', cardAName: 'Chase Sapphire Preferred', cardBName: 'Capital One Venture X' },
-  { slug: 'amex-gold-vs-amex-platinum', cardAName: 'Amex Gold', cardBName: 'Amex Platinum' },
+  { slug: 'amex-gold-vs-amex-platinum', cardAName: 'American Express Gold Card', cardBName: 'American Express Platinum' },
   { slug: 'chase-freedom-unlimited-vs-citi-double-cash', cardAName: 'Chase Freedom Unlimited', cardBName: 'Citi Double Cash' },
-  { slug: 'amex-blue-cash-preferred-vs-amex-blue-cash-everyday', cardAName: 'Amex Blue Cash Preferred', cardBName: 'Amex Blue Cash Everyday' },
-  { slug: 'chase-sapphire-reserve-vs-amex-platinum', cardAName: 'Chase Sapphire Reserve', cardBName: 'Amex Platinum' },
+  { slug: 'amex-blue-cash-preferred-vs-amex-blue-cash-everyday', cardAName: 'Blue Cash Preferred', cardBName: 'Blue Cash Everyday' },
+  { slug: 'chase-sapphire-reserve-vs-amex-platinum', cardAName: 'Chase Sapphire Reserve', cardBName: 'American Express Platinum' },
   { slug: 'capital-one-venture-vs-capital-one-venture-x', cardAName: 'Capital One Venture', cardBName: 'Capital One Venture X' },
   { slug: 'citi-double-cash-vs-wells-fargo-active-cash', cardAName: 'Citi Double Cash', cardBName: 'Wells Fargo Active Cash' },
   { slug: 'chase-freedom-flex-vs-citi-custom-cash', cardAName: 'Chase Freedom Flex', cardBName: 'Citi Custom Cash' },
   { slug: 'chase-sapphire-preferred-vs-capital-one-venture', cardAName: 'Chase Sapphire Preferred', cardBName: 'Capital One Venture' },
-  { slug: 'amex-gold-vs-capital-one-savor-one', cardAName: 'Amex Gold', cardBName: 'Capital One SavorOne' },
+  { slug: 'amex-gold-vs-capital-one-savor-one', cardAName: 'American Express Gold Card', cardBName: 'Capital One SavorOne' },
   { slug: 'chase-ink-cash-vs-chase-freedom-unlimited', cardAName: 'Chase Ink Business Cash', cardBName: 'Chase Freedom Unlimited' },
   { slug: 'discover-it-cash-back-vs-citi-double-cash', cardAName: 'Discover it Cash Back', cardBName: 'Citi Double Cash' },
   { slug: 'bank-of-america-customized-cash-vs-citi-custom-cash', cardAName: 'Bank of America Customized Cash Rewards', cardBName: 'Citi Custom Cash' },
@@ -24,7 +24,7 @@ test.describe('CO-017: Card Comparison Pages', () => {
     await page.goto('/compare/chase-sapphire-preferred-vs-amex-gold')
     await expect(page.locator('[data-comparison-page]')).toBeVisible()
     await expect(page.locator('[data-comparison-title]')).toContainText('Chase Sapphire Preferred')
-    await expect(page.locator('[data-comparison-title]')).toContainText('Amex Gold')
+    await expect(page.locator('[data-comparison-title]')).toContainText('American Express Gold Card')
   })
 
   // -------------------------------------------------------------------------
@@ -104,11 +104,11 @@ test.describe('CO-017: Card Comparison Pages', () => {
     await page.goto('/compare/chase-sapphire-preferred-vs-amex-gold')
     const title1 = await page.title()
     expect(title1).toContain('Chase Sapphire Preferred')
-    expect(title1).toContain('Amex Gold')
+    expect(title1).toContain('American Express Gold Card')
 
     await page.goto('/compare/amex-gold-vs-amex-platinum')
     const title2 = await page.title()
-    expect(title2).toContain('Amex Platinum')
+    expect(title2).toContain('American Express Platinum')
 
     expect(title1).not.toBe(title2)
   })
