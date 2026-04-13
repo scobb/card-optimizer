@@ -1,9 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Link } from 'react-router-dom'
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
 import { RecommendationsPage } from './pages/RecommendationsPage'
 import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
+import { LandingPage } from './pages/LandingPage'
 
 export function App() {
   return (
@@ -12,7 +13,7 @@ export function App() {
         <nav className="bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex items-center gap-6 h-14 overflow-x-auto">
-              <span className="font-bold text-lg flex-shrink-0">CardOptimizer</span>
+              <Link to="/" className="font-bold text-lg flex-shrink-0 text-gray-900 hover:text-blue-700 transition-colors">CardOptimizer</Link>
               <div className="flex items-center gap-1 text-sm flex-shrink-0">
                 <NavLink
                   to="/upload"
@@ -60,7 +61,7 @@ export function App() {
         </nav>
         <main className="max-w-4xl mx-auto px-4 py-6">
           <Routes>
-            <Route path="/" element={<Navigate to="/upload" replace />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/wallet" element={<WalletPage />} />
             <Route path="/recommendations" element={<RecommendationsPage />} />
