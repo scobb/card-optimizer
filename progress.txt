@@ -366,3 +366,21 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - CTAs in this article link to /builder (not /upload) per CO-022 acceptance criteria — verify CTA destination before writing tests
   - VERIFIED: mobile responsive at 375px (break-even table scrolls horizontally, no full-page overflow)
 ---
+
+## 2026-04-13 - CO-023
+- Email results feature deployed to prod. 262/269 prod smoke tests pass (7 CO-012 pre-existing; all 11 CO-023 tests pass).
+- What was implemented:
+  - functions/api/email-results.ts (new): POST /api/email-results — validates email, checks rate limit (3/day via email_rate_limit D1 table), sends formatted HTML email via Resend API, stores monthly digest opt-in in email_preferences D1 table
+  - database/migrations/0002_email_results.sql (new): email_rate_limit (email, date, count) and email_preferences (email, monthly_digest) tables
+  - src/pages/WalletPage.tsx: 'Email my results' section appended inside the optimization block (only visible when optimization results exist) — email input, Send Results button, monthly digest checkbox, success/error states
+  - functions/_middleware.ts: added POST to allowed CORS methods
+  - RESEND_API_KEY set as Cloudflare Pages secret (prod + preview environments)
+  - test/smoke/email.spec.ts (new): 11 smoke tests
+- Files changed: functions/api/email-results.ts (new), database/migrations/0002_email_results.sql (new), src/pages/WalletPage.tsx, functions/_middleware.ts, test/smoke/email.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Resend verified domain is `keylightdigital.dev`, NOT `keylightdigital.com` — always use `@keylightdigital.dev` as sender domain, otherwise get HTTP 403 from Resend
+  - D1 UPSERT pattern: `INSERT INTO ... ON CONFLICT(...) DO UPDATE SET ...` works in D1 (SQLite syntax)
+  - Pages secrets set with `wrangler pages secret put KEY --project-name card-optimizer` for prod; add `--env preview` for staging
+  - Rate limit test sends 3 real emails (to ralph-smoke-test@keylightdigital.com) then expects 429 on 4th — this creates 3 real Resend sends per test run; use a unique timestamp-based email address for rate limit tests to avoid interfering across runs
+  - VERIFIED: mobile responsive at 375px (email input and button stack vertically, all ≥44px)
+---
