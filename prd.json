@@ -372,7 +372,7 @@
       "id": "CO-024",
       "title": "Social launch kit — draft HN post, tweets, Reddit posts",
       "priority": 16,
-      "passes": false,
+      "passes": true,
       "description": "Create a launch kit document with ready-to-post content for Steve to use. Includes a Show HN post draft, 5 tweet drafts, 3 Reddit post drafts (r/personalfinance, r/creditcards, r/churning), and a Product Hunt listing draft. Steve can copy-paste and post. This is the highest-leverage action for getting first users.",
       "acceptanceCriteria": [
         "docs/launch-kit.md created in the card-optimizer worktree",
