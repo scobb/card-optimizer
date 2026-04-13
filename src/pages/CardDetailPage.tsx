@@ -71,6 +71,34 @@ export function CardDetailPage() {
         const desc = `${card.name} review: ${fmtRate(card.baseRate * card.pointValue)} base rewards, ${card.annualFee === 0 ? 'no annual fee' : fmt(card.annualFee) + '/yr fee'}${card.signUpBonus ? `, ${fmt(card.signUpBonus.amount)} sign-up bonus` : ''}. Full breakdown of reward rates, perks, and whether it belongs in your wallet.`
         metaDesc.setAttribute('content', desc.slice(0, 160))
       }
+
+      // FinancialProduct JSON-LD structured data (CO-028)
+      const jsonld = {
+        '@context': 'https://schema.org',
+        '@type': 'FinancialProduct',
+        name: card.name,
+        description: `${card.name} credit card by ${card.issuer}. ${fmtRate(card.baseRate * card.pointValue)} base rewards${card.annualFee === 0 ? ', no annual fee' : `, ${fmt(card.annualFee)} annual fee`}.${card.signUpBonus ? ` ${fmt(card.signUpBonus.amount)} welcome bonus.` : ''}`,
+        brand: {
+          '@type': 'Organization',
+          name: card.issuer,
+        },
+        provider: {
+          '@type': 'Organization',
+          name: card.issuer,
+        },
+        offers: {
+          '@type': 'Offer',
+          price: card.annualFee.toString(),
+          priceCurrency: 'USD',
+          name: 'Annual Fee',
+        },
+        url: card.url,
+      }
+      const script = document.createElement('script')
+      script.id = 'card-detail-jsonld'
+      script.type = 'application/ld+json'
+      script.textContent = JSON.stringify(jsonld)
+      document.head.appendChild(script)
     } else {
       document.title = 'Card Not Found | Card Optimizer'
     }
@@ -78,6 +106,8 @@ export function CardDetailPage() {
       document.title = 'Card Optimizer — Maximize Your Rewards'
       const metaDesc = document.querySelector('meta[name="description"]')
       if (metaDesc) metaDesc.setAttribute('content', 'Upload your transactions and discover which credit cards maximize your rewards based on your actual spending patterns.')
+      const existing = document.getElementById('card-detail-jsonld')
+      if (existing) existing.remove()
     }
   }, [card])
 
