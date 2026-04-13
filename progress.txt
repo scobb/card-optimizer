@@ -11,6 +11,26 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
 - CLOUDFLARE_API_TOKEN needs Pages:Edit permission for deploy (currently missing — see blocked-stories.json)
 - Email domain: keylightdigital.dev works with Resend; keylightdigital.com is NOT verified on Resend
 
+## 2026-04-13 - CO-002
+- **BLOCKED** — Same as CO-001: CLOUDFLARE_API_TOKEN lacks Pages:Edit; cannot deploy to staging/prod
+- What was implemented:
+  - CSV parser (`src/lib/csvParser.ts`) with auto-detection for Monarch, Copilot, Chase, Amex, Capital One, generic formats
+  - Merchant keyword categorization into 9 reward categories (`src/lib/categories.ts`)
+  - localStorage persistence (`src/lib/storage.ts`)
+  - UploadPage with drag-and-drop, file picker, format detection badge, spending breakdown table, manual column mapping fallback (`src/pages/UploadPage.tsx`)
+  - Nav bar with Upload/Wallet/Recommendations/Cards links wired up in App.tsx
+  - CSV test fixtures for Monarch, Chase, Capital One formats
+  - Smoke tests for all upload scenarios including localStorage persistence and mobile viewport check
+  - Build passes cleanly (no warnings)
+- Files changed: src/App.tsx, src/types.ts, src/lib/categories.ts, src/lib/csvParser.ts, src/lib/storage.ts, src/pages/UploadPage.tsx, test/smoke/upload.spec.ts, test/fixtures/monarch-transactions.csv, test/fixtures/chase-transactions.csv, test/fixtures/capital-one-transactions.csv
+- **Learnings for future iterations:**
+  - All CO-002 through CO-008 stories will hit the same Pages:Edit deploy blocker until Steve fixes the token — no point trying to deploy any of them
+  - PapaParse is imported statically in csvParser.ts; avoid dynamic `import('papaparse')` elsewhere to prevent build warnings
+  - The sample-transactions.csv uses generic format (Date, Description, Amount, Category) which the generic fallback auto-detects correctly
+  - For manual mapping fallback, use `parseRawCsv()` + `parseWithMapping()` from csvParser.ts instead of dynamic PapaParse import
+  - Playwright's `setInputFiles` method is the cleanest way to test file upload in smoke tests
+---
+
 ## 2026-04-12 - CO-001
 - **BLOCKED** — Cloudflare API token lacks Pages:Edit permission; cannot deploy to Cloudflare Pages
 - What was implemented:
