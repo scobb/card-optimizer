@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { CreditCard, Check, ChevronDown, ChevronUp, TrendingUp, Share2 } from 'lucide-react'
+import { CreditCard, Check, ChevronDown, ChevronUp, TrendingUp, Share2, Mail, CheckCircle, AlertCircle } from 'lucide-react'
 import type { Card } from '../types'
 import { ALL_CARDS, getCardsByIssuer } from '../lib/cards'
 import { loadSpendingData } from '../lib/storage'
@@ -29,6 +29,10 @@ export function WalletPage() {
     () => new Set(['Chase', 'American Express', 'Capital One', 'Citi']),
   )
   const [shareCopied, setShareCopied] = useState(false)
+  const [emailInput, setEmailInput] = useState('')
+  const [monthlyDigest, setMonthlyDigest] = useState(false)
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [emailError, setEmailError] = useState('')
 
   const spendingData = loadSpendingData()
   const cardsByIssuer = getCardsByIssuer()
@@ -58,6 +62,50 @@ export function WalletPage() {
       setShareCopied(true)
       setTimeout(() => setShareCopied(false), 2000)
     })
+  }
+
+  async function handleEmailResults(e: React.FormEvent) {
+    e.preventDefault()
+    if (!optimization || !emailInput.trim()) return
+    setEmailStatus('sending')
+    setEmailError('')
+    try {
+      const res = await fetch('/api/email-results', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: emailInput.trim(),
+          walletCards: selectedCards.map((c) => ({
+            name: c.name,
+            issuer: c.issuer,
+            annualFee: c.annualFee,
+          })),
+          categoryBreakdown: optimization.categoryBreakdown.map((c) => ({
+            category: c.category,
+            categoryLabel: c.categoryLabel,
+            bestCardName: c.bestCard?.name ?? null,
+            effectiveRate: c.effectiveRate,
+            annualSpend: c.annualSpend,
+            annualRewards: c.annualRewards,
+          })),
+          totalAnnualRewards: optimization.totalAnnualRewards,
+          totalAnnualFees: optimization.totalAnnualFees,
+          netAnnualValue: optimization.netAnnualValue,
+          topRecommendations: [],
+          monthlyDigestOptIn: monthlyDigest,
+        }),
+      })
+      if (res.ok) {
+        setEmailStatus('success')
+      } else {
+        const data = await res.json() as { error?: string }
+        setEmailError(data.error ?? 'Failed to send email')
+        setEmailStatus('error')
+      }
+    } catch {
+      setEmailError('Network error. Please try again.')
+      setEmailStatus('error')
+    }
   }
 
   function toggleIssuer(issuer: string) {
@@ -334,6 +382,71 @@ export function WalletPage() {
                   </button>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Email my results */}
+          <div
+            className="bg-white border border-gray-200 rounded-lg overflow-hidden"
+            data-email-results-section
+          >
+            <div className="px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+              <Mail size={18} className="text-blue-600" />
+              <span className="font-medium text-gray-900">Email My Results</span>
+            </div>
+            <div className="p-4">
+              {emailStatus === 'success' ? (
+                <div
+                  className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3 text-sm"
+                  data-email-success
+                >
+                  <CheckCircle size={16} />
+                  <span>Results sent! Check your inbox.</span>
+                </div>
+              ) : (
+                <form onSubmit={handleEmailResults} className="space-y-3" data-email-form>
+                  <p className="text-sm text-gray-600">
+                    Get a formatted summary of your wallet, per-category assignments, and projected rewards
+                    sent to your inbox.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <input
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      value={emailInput}
+                      onChange={(e) => setEmailInput(e.target.value)}
+                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[44px]"
+                      data-email-input
+                    />
+                    <button
+                      type="submit"
+                      disabled={emailStatus === 'sending'}
+                      className="flex-shrink-0 flex items-center gap-2 bg-blue-700 hover:bg-blue-800 disabled:bg-blue-400 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors min-h-[44px]"
+                      data-email-submit
+                    >
+                      <Mail size={14} />
+                      {emailStatus === 'sending' ? 'Sending…' : 'Send Results'}
+                    </button>
+                  </div>
+                  <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer" data-digest-label>
+                    <input
+                      type="checkbox"
+                      checked={monthlyDigest}
+                      onChange={(e) => setMonthlyDigest(e.target.checked)}
+                      className="w-4 h-4 rounded border-gray-300 text-blue-600"
+                      data-digest-checkbox
+                    />
+                    Send me monthly card deals and rewards tips
+                  </label>
+                  {emailStatus === 'error' && (
+                    <div className="flex items-center gap-2 text-red-600 text-sm" data-email-error>
+                      <AlertCircle size={14} />
+                      {emailError}
+                    </div>
+                  )}
+                </form>
+              )}
             </div>
           </div>
         </div>
