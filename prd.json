@@ -628,16 +628,19 @@
       "title": "Filter out non-purchase transactions from CSV imports",
       "priority": 1,
       "passes": false,
-      "description": "CSV imports currently include payments, balance transfers, interest charges, fees, and refunds alongside real purchases. These pollute the spending breakdown and skew recommendations. Filter them out during parsing so only actual purchase transactions are counted.",
+      "description": "CSV imports currently include income, transfers, payments, balance transfers, interest charges, fees, and refunds alongside real purchases. This is especially bad with Monarch Money exports which include ALL transactions (income, paychecks, Venmo/Zelle transfers, account transfers, etc.) — not just credit card charges. These pollute the spending breakdown and massively inflate annual totals. Filter them out during parsing so only actual purchase transactions are counted.",
       "acceptanceCriteria": [
-        "Payments to the card (e.g. PAYMENT THANK YOU, AUTOPAY, ONLINE PAYMENT) are excluded",
-        "Balance transfers are excluded",
-        "Interest charges and fees (INTEREST CHARGE, LATE FEE, ANNUAL FEE, FINANCE CHARGE) are excluded",
-        "Refunds and credits are excluded (negative amounts or descriptions containing REFUND, CREDIT, REVERSAL, RETURN)",
-        "Promotional credits (STATEMENT CREDIT, REWARD REDEMPTION, CASHBACK) are excluded",
+        "Income transactions excluded (payroll, direct deposits, employer payments, interest earned)",
+        "Account transfers excluded (TRANSFER, VENMO, ZELLE, ACH when clearly not a purchase)",
+        "Payments to credit cards excluded (PAYMENT THANK YOU, AUTOPAY, ONLINE PAYMENT)",
+        "Balance transfers excluded",
+        "Interest charges and fees excluded (INTEREST CHARGE, LATE FEE, ANNUAL FEE, FINANCE CHARGE)",
+        "Refunds and credits excluded (negative amounts or descriptions containing REFUND, CREDIT, REVERSAL, RETURN)",
+        "Promotional credits excluded (STATEMENT CREDIT, REWARD REDEMPTION, CASHBACK)",
+        "For Monarch exports: use the Category column to filter — categories like Income, Transfer, Payment should be excluded",
         "Filtering works across all supported CSV formats (Chase, Amex, Capital One, Monarch, Copilot, generic)",
-        "Filtered transaction count shown to user (e.g. 142 purchases from 168 transactions)",
-        "Existing spending breakdown accuracy improves — no phantom categories from non-purchase rows"
+        "Filtered vs total transaction count shown to user (e.g. 2,100 purchases from 4,136 transactions)",
+        "Annual spending total should match reasonable spending levels (e.g. real user with $430K/3yr total spending should show ~$140K/yr, not $2.8M/yr)"
       ]
     },
     {
