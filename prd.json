@@ -122,6 +122,132 @@
         "Share link contains no transaction-level data, only category totals",
         "Invalid share links degrade gracefully (ignored, no crash)"
       ]
+    },
+    {
+      "id": "CO-009",
+      "title": "SEO foundation — meta tags, OG, robots.txt, sitemap",
+      "priority": 1,
+      "passes": false,
+      "description": "Add essential SEO elements: meta description, Open Graph tags, Twitter card tags, canonical URL, robots.txt, sitemap.xml, and JSON-LD structured data. These are prerequisites for Google indexing and social sharing.",
+      "acceptanceCriteria": [
+        "index.html has meta description (under 160 chars, mentions credit card rewards optimizer)",
+        "index.html has OG tags: og:title, og:description, og:type, og:url, og:image",
+        "index.html has Twitter card tags: twitter:card=summary_large_image, twitter:title, twitter:description",
+        "index.html has canonical URL link tag",
+        "public/robots.txt served correctly (not SPA fallback) — allows all crawlers",
+        "public/sitemap.xml lists all public routes (/, /upload, /wallet, /recommendations, /builder, /catalog)",
+        "JSON-LD structured data for WebApplication (name, url, description, applicationCategory)",
+        "OG image exists at public/og-image.png (1200x630, generated or placeholder)",
+        "Favicon exists (public/favicon.ico or public/favicon.svg)"
+      ]
+    },
+    {
+      "id": "CO-010",
+      "title": "Landing page with value proposition and how-it-works",
+      "priority": 2,
+      "passes": false,
+      "description": "Replace the / → /upload redirect with a real landing page. The landing page is the most important page for SEO and conversion. It must explain what the tool does, how it works, privacy guarantees, and have a clear CTA. Must render meaningful content in the initial HTML for search engines.",
+      "acceptanceCriteria": [
+        "/ route renders a landing page component (not a redirect to /upload)",
+        "Hero section: headline, subheadline, CTA button ('Optimize My Rewards' → /upload)",
+        "How It Works section: 3-step visual (Upload → Analyze → Optimize)",
+        "Features section: highlights key capabilities (wallet optimizer, recommendations, card catalog, share links)",
+        "Privacy section: prominent callout that all data stays in browser, no server upload, no tracking",
+        "Stats section: shows number of cards in database (fetched from /api/cards count)",
+        "Mobile responsive at 375px — no overflow, readable, tappable CTAs",
+        "CTA button visible above the fold on mobile",
+        "Visually polished — not a generic template look"
+      ]
+    },
+    {
+      "id": "CO-011",
+      "title": "Privacy policy and about page",
+      "priority": 3,
+      "passes": false,
+      "description": "Add a privacy policy page and footer with about/legal info. Essential for legitimacy of a financial tool. The privacy story is a selling point — all processing is client-side.",
+      "acceptanceCriteria": [
+        "/privacy route renders a privacy policy page",
+        "Policy explains: no data sent to servers, localStorage only, no cookies, no tracking pixels",
+        "Policy states the tool is for informational purposes only, not financial advice",
+        "Footer added to all pages with links to Privacy and 'Built by Keylight Digital'",
+        "Mobile responsive"
+      ]
+    },
+    {
+      "id": "CO-012",
+      "title": "Push to GitHub and create README",
+      "priority": 4,
+      "passes": false,
+      "description": "Create scobb/card-optimizer GitHub repo with a polished README. GitHub is a distribution channel — developers searching for credit card optimization tools should find this.",
+      "acceptanceCriteria": [
+        "GitHub repo scobb/card-optimizer created (public)",
+        "README.md with: project description, live demo link, features list, tech stack, screenshot or demo GIF placeholder, how to run locally, license",
+        "MIT LICENSE file added",
+        ".gitignore covers node_modules, dist, .wrangler",
+        "Code pushed to main branch on GitHub",
+        "Repo description set on GitHub"
+      ]
+    },
+    {
+      "id": "CO-013",
+      "title": "PWA manifest and installability",
+      "priority": 5,
+      "passes": false,
+      "description": "Add a web app manifest so the tool is installable as a PWA on mobile. Credit card optimization is a repeat-use tool — users should be able to add it to their home screen.",
+      "acceptanceCriteria": [
+        "public/manifest.json with name, short_name, icons, start_url, display: standalone, theme_color",
+        "App icons at 192x192 and 512x512 (SVG-based or generated)",
+        "index.html links to manifest.json",
+        "index.html has theme-color meta tag",
+        "Chrome DevTools shows the app as installable (or Lighthouse PWA audit passes basic criteria)"
+      ]
+    },
+    {
+      "id": "CO-014",
+      "title": "Add Beam analytics",
+      "priority": 6,
+      "passes": false,
+      "description": "Integrate Beam analytics to track page views and usage patterns. We built Beam — we should use it. This gives us data on whether anyone is actually visiting.",
+      "acceptanceCriteria": [
+        "Beam tracking script added to index.html",
+        "Site registered in Beam dashboard (cards.keylightdigital.dev)",
+        "Page views tracked on navigation between routes",
+        "No PII collected (Beam is privacy-first by design)",
+        "Script loads asynchronously — no impact on page load performance"
+      ]
+    },
+    {
+      "id": "CO-015",
+      "title": "Individual card detail pages for SEO",
+      "priority": 7,
+      "passes": false,
+      "description": "Create /cards/:slug routes that render detailed card pages. Each card page is an SEO target — 'Chase Sapphire Preferred review', 'Amex Gold rewards rate', etc. These pages should have unique meta tags and be listed in the sitemap.",
+      "acceptanceCriteria": [
+        "/cards/:slug route renders a full detail page for each card",
+        "Card detail shows: name, issuer, annual fee, all reward rates by category, sign-up bonus, perks, pros/cons summary",
+        "Each card page has unique title and meta description",
+        "Sitemap updated to include all /cards/:slug routes",
+        "Back link to /catalog",
+        "'Add to Wallet' button that navigates to /wallet with card pre-selected",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-016",
+      "title": "Spending category guides for SEO content",
+      "priority": 8,
+      "passes": false,
+      "description": "Create /best-cards/:category pages (e.g., /best-cards/dining, /best-cards/groceries, /best-cards/travel). These are high-intent SEO pages targeting 'best credit card for X' searches. Content is generated from the card database.",
+      "acceptanceCriteria": [
+        "/best-cards/:category route renders a guide page",
+        "Pages exist for at least: dining, groceries, travel, gas, online-shopping, streaming",
+        "Each page lists top 5 cards for that category ranked by reward rate",
+        "Each card entry shows: name, category rate, annual fee, net value estimate",
+        "Unique title and meta description per category page",
+        "Sitemap includes all category guide pages",
+        "Internal links between guide pages and card detail pages",
+        "Mobile responsive at 375px"
+      ]
     }
   ]
 }
