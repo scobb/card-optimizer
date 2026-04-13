@@ -468,6 +468,11 @@ export function WalletPage() {
             </div>
           </div>
 
+          {/* Data freshness */}
+          <p className="text-xs text-gray-400 text-center" data-wallet-freshness>
+            Card data sourced from issuer websites · Last verified: April 2026
+          </p>
+
           {/* Email my results */}
           <div
             className="bg-white border border-gray-200 rounded-lg overflow-hidden"

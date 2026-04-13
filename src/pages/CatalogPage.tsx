@@ -13,6 +13,9 @@ function fmt(value: number): string {
   })
 }
 
+// Update monthly
+const DATA_LAST_VERIFIED = 'April 2026'
+
 const ALL_ISSUERS = Array.from(new Set(ALL_CARDS.map((c) => c.issuer))).sort()
 
 export function CatalogPage() {
@@ -33,7 +36,12 @@ export function CatalogPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Card Catalog</h1>
         <p className="text-sm text-gray-500 mt-1">
-          Browse all {ALL_CARDS.length} cards with full reward details.
+          Browse all{' '}
+          <span data-catalog-db-count>{ALL_CARDS.length} cards</span>
+          {' '}in our database with full reward details.
+        </p>
+        <p className="text-xs text-gray-400 mt-1" data-catalog-freshness>
+          Data sourced from card issuer websites · Last verified: {DATA_LAST_VERIFIED}
         </p>
       </div>
 

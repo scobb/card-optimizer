@@ -315,6 +315,11 @@ export function CardDetailPage() {
         )
       })()}
 
+      {/* Data freshness */}
+      <p className="text-xs text-gray-400 text-center" data-card-freshness>
+        Data sourced from card issuer websites · Last verified: April 2026
+      </p>
+
       {/* CTA footer */}
       <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>

@@ -571,7 +571,7 @@
       "id": "CO-035",
       "title": "Quick results preview on landing page — instant value for visitors",
       "priority": 27,
-      "passes": false,
+      "passes": true,
       "description": "Add a 'See it in action' section on the landing page with a pre-computed optimization for the Average American spending profile. Show top 3 recommended cards and estimated annual savings. This gives visitors instant value before they commit to uploading data. The preview should entice users to try with their own spending data.",
       "acceptanceCriteria": [
         "Landing page includes a 'See it in action' or 'Example results' section",
@@ -589,7 +589,7 @@
       "id": "CO-036",
       "title": "Error states and edge cases — graceful failure handling",
       "priority": 28,
-      "passes": false,
+      "passes": true,
       "description": "Audit and implement error handling for all user-facing flows: invalid CSV format, empty file upload, CSV with unrecognizable columns, no matching cards for spending profile, network errors during API calls, empty card catalog. Each error state should show a helpful message explaining what went wrong and what to try instead.",
       "acceptanceCriteria": [
         "Invalid CSV upload shows error message with format guidance",

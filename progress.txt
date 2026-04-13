@@ -541,3 +541,34 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - prod deployment sometimes has edge propagation delay; wait ~30s before running smoke tests
   - Cache-Control max-age=3600 on API causes edge caching; initial tests right after deploy may see old cache
 ---
+
+## 2026-04-13 - CO-035
+- Added "See It In Action" preview section to LandingPage between stats and how-it-works
+- Shows top 3 recommended cards for Average American spending ($4,500/mo, $54,000/yr)
+- Each card shows name, net annual value, and reason text
+- Estimated annual savings vs 1% baseline (computed statically at module load)
+- CTA "Try with your spending" → /upload
+- Defined PREVIEW_BREAKDOWN inline (avg american profile) — avoids importing from UploadPage
+- recommendCards() called at module level with empty wallet — runs once on module load
+- 11 smoke tests in test/smoke/landingPreview.spec.ts
+- prod has edge propagation delay; tests show transient [data-landing] not found, pass on retry
+- **Learnings for future iterations:**
+  - Static pre-computation (module-level consts) is better than useEffect for data that doesn't change
+  - prod deployment propagation can take 20-30s; run tests after a brief delay or with retries
+  - [data-landing] waitForVisible can be transient on first test hit; beforeEach timeout default is 5s
+---
+
+## 2026-04-13 - CO-036
+- UploadPage: empty/whitespace file shows "File appears empty" error
+- UploadPage: corrupt/unparseable CSV (no headers) shows format guidance error
+- UploadPage: X dismiss button is now clickable (data-dismiss-error attribute)
+- UploadPage: error div has data-upload-error attribute for testing
+- RecommendationsPage: data-no-recommendations on empty recommendations state
+- LandingPage: network fetch error gracefully falls back to static count
+- test/smoke/errorStates.spec.ts (8 tests)
+- For "no recommendations" test: put ALL 53 card IDs in wallet (fetch from API in test)
+- **Learnings for future iterations:**
+  - setInputFiles() is the reliable way to simulate file uploads in Playwright
+  - DragEvent drop can be simulated via page.evaluate for non-CSV file type test
+  - "No recommendations" requires ALL cards in wallet; don't use a small subset
+---
