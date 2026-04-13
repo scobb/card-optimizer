@@ -265,7 +265,7 @@ export function WalletPage() {
 
       {/* Optimization results */}
       {optimization && (
-        <div className="space-y-4">
+        <div className="space-y-4" data-wallet-optimization>
           {/* CO-031: Annual Savings Banner */}
           {savingsData && (
             <div
