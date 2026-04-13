@@ -18,8 +18,8 @@ test.describe('CO-033: Expanded Card Database (53+ cards)', () => {
 
   test('catalog page shows 50+ cards', async ({ page }) => {
     await page.goto('/catalog')
-    await expect(page.locator('[data-card-id]').first()).toBeVisible({ timeout: 10000 })
-    const cardCount = await page.locator('[data-card-id]').count()
+    await expect(page.locator('[data-catalog-card]').first()).toBeVisible({ timeout: 10000 })
+    const cardCount = await page.locator('[data-catalog-card]').count()
     expect(cardCount).toBeGreaterThanOrEqual(50)
   })
 
@@ -124,15 +124,15 @@ test.describe('CO-033: Expanded Card Database (53+ cards)', () => {
 
   test('catalog page filter by new issuer: Bilt Rewards', async ({ page }) => {
     await page.goto('/catalog')
-    await expect(page.locator('[data-card-id]').first()).toBeVisible({ timeout: 10000 })
+    await expect(page.locator('[data-catalog-card]').first()).toBeVisible({ timeout: 10000 })
     // Bilt Mastercard should appear in catalog
-    await expect(page.locator('[data-card-id="bilt-mastercard"]')).toBeVisible()
+    await expect(page.locator('[data-catalog-card="bilt-mastercard"]')).toBeVisible()
   })
 
   test('mobile responsive at 375px — catalog shows 50+ cards without overflow', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
     await page.goto('/catalog')
-    await expect(page.locator('[data-card-id]').first()).toBeVisible({ timeout: 10000 })
+    await expect(page.locator('[data-catalog-card]').first()).toBeVisible({ timeout: 10000 })
     const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth)
     const clientWidth = await page.evaluate(() => document.documentElement.clientWidth)
     expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 1)
