@@ -15,6 +15,12 @@
       "emailSent": true,
       "resolved": true,
       "resolvedAt": "2026-04-13"
+    },
+    {
+      "id": "CO-003",
+      "blocker": "Prod custom domain cards.keylightdigital.com returns HTTP 526 (Cloudflare SSL error). Staging works fine. All 24 prod smoke tests fail due to SSL handshake failure. Cloudflare Pages deploy succeeds but custom domain SSL is not configured.",
+      "blockedAt": "2026-04-12",
+      "emailSent": true
     }
   ]
 }

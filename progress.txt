@@ -8,8 +8,34 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
 - D1 staging DB ID: bf05e6d6-cef0-4b0c-bb69-9a81ff641264
 - Seed with: `npx tsx seed/seed.ts > /tmp/seed.sql && npx wrangler d1 execute card-optimizer-db --remote --file=/tmp/seed.sql`
 - Functions in `functions/api/` are Pages Functions — they receive `context: { env: Env; params: { id: string } }`, NOT `(request, env, ctx)` like Workers
-- CLOUDFLARE_API_TOKEN needs Pages:Edit permission for deploy (currently missing — see blocked-stories.json)
+- CLOUDFLARE_API_TOKEN token issue was RESOLVED by Steve on 2026-04-13 — deploys now work
 - Email domain: keylightdigital.dev works with Resend; keylightdigital.com is NOT verified on Resend
+- Capital One CSV detection MUST come before Chase in FORMAT_SIGNATURES — both have 'transaction date' header; Capital One must be matched first with more specific criteria (card no. + debit + credit)
+- Playwright smoke tests: always use `.first()` or `getByRole()` with specific names to avoid strict mode violations; text strings that appear in multiple places will cause failures
+- Playwright smoke tests: use `setInputFiles({ name, mimeType, buffer })` for programmatic file uploads instead of DataTransfer hacks
+- Static card data is bundled from seed/cards.json (imported directly in src/lib/cards.ts) — no API call needed for client-side features
+- Wallet persistence key: `co_wallet_cards` (array of card IDs) in localStorage
+- Prod custom domain cards.keylightdigital.com has SSL issue (HTTP 526) — Steve needs to configure custom domain in Cloudflare Pages
+
+## 2026-04-12 - CO-003
+- **BLOCKED on prod** — Staging deploy successful, all 24 smoke tests pass on staging. Prod domain cards.keylightdigital.com returns HTTP 526 (SSL error). Steve notified via email.
+- What was implemented:
+  - Card types added to src/types.ts (Card, CardCategoryRate, CardPerk, SignUpBonus, CategoryOptimization, WalletOptimization)
+  - src/lib/cards.ts: static card catalog from seed/cards.json + effectiveRate() function
+  - src/lib/optimizer.ts: per-category optimization engine — finds best card per spending category, computes net value after fees
+  - src/lib/storage.ts: wallet persistence via `co_wallet_cards` localStorage key
+  - src/pages/WalletPage.tsx: card picker grouped by issuer (Chase, Amex, Capital One, Citi, etc.), optimization table, real-time updates, Remove button in wallet summary
+  - src/App.tsx: WalletPage wired up at /wallet route
+  - test/smoke/wallet.spec.ts: 9 smoke tests
+  - Also fixed CO-002 pre-existing bugs: Capital One CSV detection order in csvParser.ts, smoke test __dirname ESM issue, multiple strict mode violations in test assertions
+- Files changed: src/types.ts, src/lib/cards.ts, src/lib/optimizer.ts, src/lib/storage.ts, src/pages/WalletPage.tsx, src/App.tsx, src/lib/csvParser.ts, test/smoke/wallet.spec.ts, test/smoke/upload.spec.ts, blocked-stories.json
+- **Learnings for future iterations:**
+  - Static card data (seed/cards.json) can be imported directly for client-side features — no API call needed
+  - Capital One CSV detection must precede Chase in FORMAT_SIGNATURES (both match 'transaction date')
+  - Playwright strict mode: any `getByText()` that could match multiple elements will fail — use specific roles or exact text
+  - Playwright file upload: `setInputFiles({ name, mimeType, buffer: Buffer.from(str) })` is the cleanest way to test programmatic CSV uploads
+  - Prod domain needs custom domain SSL configuration in Cloudflare Pages (HTTP 526 on prod, 200 on staging)
+---
 
 ## 2026-04-13 - CO-002
 - **BLOCKED** — Same as CO-001: CLOUDFLARE_API_TOKEN lacks Pages:Edit; cannot deploy to staging/prod
