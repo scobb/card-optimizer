@@ -317,3 +317,21 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - Cloudflare Pages custom domain provisioning: need CNAME in the zone pointing to <project>.pages.dev PLUS domain added to Pages project
   - Use keylightdigital.dev for future projects — it's the accessible domain
 ---
+
+## 2026-04-13 - CO-020
+- Blog listing page and first article deployed to prod. 215/225 prod smoke tests pass (7 CO-012 GitHub rate-limit failures are pre-existing; all 22 CO-020 blog tests pass, 3 were flaky on first run due to CDN warmup).
+- What was implemented:
+  - src/pages/BlogListingPage.tsx (new): /blog route — listing page with article cards showing title, description, category badge, date, reading time. CTA to /upload. Exports BLOG_POSTS metadata array for reuse.
+  - src/pages/BlogPostPage.tsx (new): /blog/:slug route — renders article header (title, description, meta, author, date, reading time), injects Article JSON-LD structured data via useEffect with id="blog-post-jsonld", back link to /blog. Redirects unknown slugs to /blog.
+  - src/pages/blog/HowToChooseBestCreditCard.tsx (new): 2000+ word article with H2/H3 structure, 4 inline ArticleCTA components linking to /upload, internal links to /best-cards/:category and /cards/:slug pages, related guides section at bottom.
+  - src/App.tsx: /blog and /blog/:slug routes added
+  - public/sitemap.xml: /blog (priority 0.8) and /blog/how-to-choose-best-credit-card (priority 0.9) added
+  - test/smoke/blog.spec.ts (new): 22 smoke tests
+- Files changed: src/pages/BlogListingPage.tsx (new), src/pages/BlogPostPage.tsx (new), src/pages/blog/HowToChooseBestCreditCard.tsx (new), src/App.tsx, public/sitemap.xml, test/smoke/blog.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Blog post routing: use a map of slug → component (POST_COMPONENTS record) in BlogPostPage so each post is a standalone TSX file — cleaner than a giant switch/case
+  - BLOG_POSTS metadata array exported from BlogListingPage is the single source of truth for blog post metadata — import it in BlogPostPage for title/description/date
+  - Article word count test: use `document.querySelector('[data-article-body]').textContent.trim().split(/\s+/).length` in page.evaluate() — reliable cross-browser approach
+  - CDN warmup flakiness: blog tests had 3 flaky tests on prod on first run after deploy — all passed on retry. Same pattern as FAQ/sitemap tests. CDN clears within ~30s.
+  - VERIFIED: mobile responsive at 375px (no overflow, all CTAs ≥44px, article text readable)
+---
