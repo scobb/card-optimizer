@@ -206,7 +206,7 @@
       "id": "CO-014",
       "title": "Add Beam analytics",
       "priority": 6,
-      "passes": false,
+      "passes": true,
       "description": "Integrate Beam analytics to track page views and usage patterns. We built Beam — we should use it. This gives us data on whether anyone is actually visiting.",
       "acceptanceCriteria": [
         "Beam tracking script added to index.html",

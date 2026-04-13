@@ -2,6 +2,22 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-12 - CO-014
+- Beam analytics deployed to prod. 128/128 smoke tests pass.
+- What was implemented:
+  - index.html: added `<script defer src="https://beam-privacy.com/js/beam.js" data-site-id="5587e834-9274-4f00-8c92-14d33018d847">` — handles initial pageview on load, async (no impact on page render)
+  - src/lib/BeamPageview.tsx: React component that fires SPA navigation pageviews to Beam's `/api/collect` endpoint on each route change; skips first render (beam.js handles that), respects `navigator.doNotTrack`
+  - src/App.tsx: `<BeamPageview />` mounted inside `<BrowserRouter>` (requires router context for `useLocation`)
+  - test/smoke/beam.spec.ts: 5 smoke tests (script present, site-id correct, defer attribute, pageview on initial load, pageview on SPA nav)
+  - Beam site registered in D1 directly: user `beam-analytics@keylightdigital.dev` (Pro), site ID `5587e834-9274-4f00-8c92-14d33018d847`, domain `cards.keylightdigital.dev`
+- Files changed: index.html, src/App.tsx, src/lib/BeamPageview.tsx (new), test/smoke/beam.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Beam is served at beam-privacy.com/js/beam.js — minified version auto-derives API host from script src origin (no hardcoded endpoint)
+  - SPA navigation tracking: BeamPageview component re-fires pageview payload (no `type` field) directly to Beam API — same format as initial beam.js load
+  - Beam sites can be registered directly via D1 (`beam-db` prod database) — `beam-analytics@keylightdigital.dev` is the Pro analytics account
+  - `BeamPageview` must be inside `<BrowserRouter>` to use `useLocation` — place it as first child of BrowserRouter, before layout wrappers
+---
+
 ## 2026-04-12 - CO-013 + CO-011
 - CO-013: PWA manifest deployed to prod. 122/122 smoke tests pass.
 - CO-011: Privacy page smoke tests also verified passing on prod — removing from blocked-stories.json and marking passes=true (code was already deployed in commit 79f53f6)
