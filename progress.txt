@@ -2,6 +2,21 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-019
+- FAQ page deployed to prod. 195/204 prod smoke tests pass (7 CO-012 GitHub API rate-limit failures are pre-existing and unrelated). All 20 CO-019 tests pass (2 were flaky on first run but passed on retry).
+- What was implemented:
+  - src/pages/FaqPage.tsx (new): /faq route — 20 expandable accordion questions grouped into 4 topic sections (About the Tool, Privacy & Data, Card Strategy, Rewards Basics). Accordion uses React state with aria-expanded semantics. Injects FAQPage JSON-LD structured data via useEffect (same pattern as ComparisonPage). Unique title + meta description. Internal links to /cards/:slug and /best-cards/:category from answers.
+  - src/App.tsx: /faq route added pointing to FaqPage
+  - test/smoke/faq.spec.ts: 20 smoke tests (page renders, 4 groups, 15+ questions, expand/collapse/multi-open, content checks, JSON-LD structure, CTA, sitemap, mobile no-overflow, tap targets ≥44px)
+- Files changed: src/pages/FaqPage.tsx (new), src/App.tsx, test/smoke/faq.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - When checking `page.title()` after a `page.goto()`, use `expect(page).toHaveTitle(pattern)` instead of `const title = await page.title()` — the former auto-retries while the latter snapshots immediately before useEffect fires
+  - Brand name is "CardOptimizer" (one word, no space) — match with `/cardoptimizer/i` not `/card optimizer/i`
+  - `waitForFunction(() => !!document.getElementById('faq-jsonld'))` is the reliable way to wait for useEffect-injected script tags before evaluating their content
+  - Adding a `gotoFaq()` helper in tests that waits for the root element prevents flaky locator timeouts when React is still hydrating
+  - VERIFIED: mobile responsive at 375px (no overflow, accordion buttons ≥44px height with py-4 padding)
+---
+
 ## 2026-04-13 - CO-018
 - IndexNow submission deployed to prod. 184/184 prod smoke tests pass. 49 URLs submitted successfully (HTTP 202).
 - What was implemented:

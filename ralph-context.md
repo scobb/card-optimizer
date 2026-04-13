@@ -1,18 +1,20 @@
 ## Last completed
-CO-018 - IndexNow submission — push all URLs for Google/Bing indexing (184/184 prod smoke tests pass, 49 URLs submitted HTTP 202)
+CO-019 - FAQ page with structured data for featured snippets (195/204 prod smoke tests pass; 7 CO-012 GitHub rate-limit failures are pre-existing; all 20 CO-019 tests pass)
 
 ## Next up
-CO-019 - FAQ page with structured data for featured snippets
-- Route: /faq — expandable questions, FAQPage JSON-LD, 15+ questions grouped by topic
-- /faq already in sitemap.xml (added in CO-018)
-- Pattern: inject JSON-LD via useEffect with cleanup (same as CO-017 comparison pages)
+CO-020 - Blog — 'How to Choose the Best Credit Card for Your Spending'
+- Route: /blog (listing page) + /blog/how-to-choose-best-credit-card (full article, 2000+ words)
+- Need: blog infrastructure (listing page), article route, Article JSON-LD, multiple CTAs to /upload
+- Internal links to category guides (/best-cards/:category) and card detail pages (/cards/:slug)
+- Sitemap update for blog routes
 
 ## Active issues
 - CO-012 GitHub API smoke tests are flaky due to unauthenticated API rate limiting (60 req/hr). Transient — not caused by any code change.
-- Cloudflare CDN caches static files briefly after deploy — if sitemap smoke tests fail on first run after deploy, wait ~30s and retry (CDN clears quickly)
+- Cloudflare CDN caches static files briefly after deploy — if sitemap smoke tests fail on first run after deploy, wait ~30s and retry
 
 ## Key decisions this session
-- IndexNow key: c7b4ca1d-7cf8-45e5-9f9a-5ee4c2caf71a (file at public/{key}.txt, served at root)
-- Submit script at scripts/submit-indexnow.mjs — run `node scripts/submit-indexnow.mjs` to resubmit after new content
-- 49 total URLs submitted: 8 static + 20 cards + 6 category guides + 15 comparisons
-- /privacy was missing from sitemap — fixed in CO-018 (added both /privacy and /faq)
+- FAQ page: 20 questions across 4 groups (About the Tool, Privacy & Data, Card Strategy, Rewards Basics)
+- FAQPage JSON-LD injected via useEffect with id="faq-jsonld" for easy cleanup — same pattern as CO-017
+- Brand is "CardOptimizer" (one word) — test regexes must use /cardoptimizer/i not /card optimizer/i
+- Test helper `gotoFaq()` waits for [data-faq-page] to prevent flaky locator timeouts
+- `expect(page).toHaveTitle()` auto-retries (use it); `await page.title()` is a one-shot snapshot (avoid for useEffect-set titles)

@@ -287,7 +287,7 @@
       "id": "CO-019",
       "title": "FAQ page with structured data for featured snippets",
       "priority": 11,
-      "passes": false,
+      "passes": true,
       "description": "Create /faq page answering common questions about credit card rewards and the tool. Use FAQPage structured data so answers can appear as Google featured snippets. This is a proven SEO technique — FAQ pages with schema.org markup get rich results.",
       "acceptanceCriteria": [
         "/faq route renders a FAQ page with expandable questions",
