@@ -2,6 +2,21 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-029
+- Tool comparison pages deployed to prod. 343/352 prod smoke tests pass (8 pre-existing: 1 email rate-limit + 7 GitHub API rate-limit; all 20 CO-029 tests pass, 1 flaky with CDN cold-start retry).
+- What was implemented:
+  - src/pages/VsPage.tsx (new): /vs/:competitor route handling both 'nerdwallet' and 'the-points-guy'. Each page has: gradient header with tagline, feature comparison table (10 rows, feature/CardOptimizer/them columns with win indicators), intro section, long-form body section (React.ReactNode with H2 headings and paragraphs, 800+ words), advantages sections (CardOptimizer wins / competitor wins), internal links section (upload, catalog, category guides, builder), blue CTA block linking to /upload, external competitor link with rel=noopener. Article JSON-LD structured data injected via useEffect with cleanup. Unique metaTitle + metaDescription per competitor. 404-style for unknown competitor slugs.
+  - src/App.tsx: /vs/:competitor route added, VsPage imported
+  - public/sitemap.xml: /vs/nerdwallet and /vs/the-points-guy added at priority 0.8
+  - test/smoke/vsPages.spec.ts (new): 20 smoke tests (renders both pages, unique titles, comparison table present and has columns, advantages section, intro 200+ chars, body 800+ words, CTA to /upload, internal links, external competitor link, Article JSON-LD, back link, sitemap includes both routes, different titles, 404 unknown slug, mobile 375px both pages). Required one test fix: title tests changed from page.title() to expect(page).toHaveTitle() for auto-retry.
+- Files changed: src/pages/VsPage.tsx (new), src/App.tsx, public/sitemap.xml, test/smoke/vsPages.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Use `expect(page).toHaveTitle(/pattern/i)` not `const title = await page.title()` — the former auto-retries for useEffect title updates, the latter snapshots the pre-useEffect default title (confirmed again in this story)
+  - Comparison table with `overflow-x-auto` wrapper handles mobile without causing page-level overflow — verified with scrollWidth === clientWidth at 375px
+  - GitHub API rate limits consistently hit when running full suite on prod; these are CO-012 pre-existing failures — 7 tests in github.spec.ts, not related to current story
+  - VERIFIED: mobile responsive at 375px (comparison table scrolls internally within overflow-x-auto, no page-level overflow, CTA visible)
+---
+
 ## 2026-04-13 - CO-028
 - FinancialProduct JSON-LD structured data deployed to all card detail pages on prod. 331/332 prod smoke tests pass (1 pre-existing email rate-limit failure; all 10 CO-028 tests pass with retry for CDN cold-start).
 - What was implemented:

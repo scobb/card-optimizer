@@ -456,7 +456,7 @@
       "id": "CO-029",
       "title": "Tool comparison pages — /vs/nerdwallet and /vs/the-points-guy",
       "priority": 21,
-      "passes": false,
+      "passes": true,
       "description": "Create comparison pages targeting 'NerdWallet alternative' and 'The Points Guy alternative' searches. These are the dominant credit card recommendation sites. Position card-optimizer's unique advantages: privacy (no server-side data), personalized to actual spending (not generic lists), free to use, open source. Each page should be honest — acknowledge competitor strengths while highlighting our differentiators.",
       "acceptanceCriteria": [
         "/vs/nerdwallet route renders comparison page",
