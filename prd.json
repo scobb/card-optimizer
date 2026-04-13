@@ -677,6 +677,26 @@
         "Seed data and D1 database both updated",
         "Changes documented in commit message with sources"
       ]
+    },
+    {
+      "id": "CO-041",
+      "title": "Realistic CSV test fixtures for all supported formats",
+      "priority": 1,
+      "passes": false,
+      "description": "Current test fixtures are synthetic with identical merchants and no edge cases. We need realistic fixtures that cover real-world messiness: payments, refunds, income, transfers, weird merchant names, varying date formats, etc. For formats where we cannot obtain real samples (Amex, Copilot), research the actual export format from documentation or user forums and create accurate synthetic fixtures. Each fixture must be validated against the parser with a dedicated test.",
+      "acceptanceCriteria": [
+        "test/fixtures/ has a realistic CSV for each supported format: Monarch, Copilot, Chase, Amex, Capital One, and generic",
+        "Each fixture has 30+ rows including: normal purchases, payments, refunds, transfers, fees, and edge cases",
+        "Monarch fixture includes income rows, transfers, and the Category column with non-purchase categories",
+        "Capital One fixture uses the Card No. column with multiple card numbers",
+        "Chase fixture uses negative amounts for purchases (their actual convention)",
+        "Amex fixture uses positive amounts for purchases (their actual convention)",
+        "Copilot fixture matches the real Copilot export format (research from docs/forums if needed)",
+        "No real PII in any fixture — use realistic but fake merchant names, dates, and amounts",
+        "Each fixture has a corresponding parser test that verifies: correct transaction count, correct category assignment, non-purchase rows filtered (once CO-038 lands), correct amount sign handling",
+        "Test suite runs against all fixtures on every build (npm test)"
+      ],
+      "notes": "Steve may provide real anonymized samples to supplement — check test/fixtures/ for any user-provided files before generating synthetic ones. Research real CSV formats at: Chase (creditcards.chase.com export docs), Amex (americanexpress.com statement download), Capital One (capitalone.com activity export), Monarch (monarchmoney.com CSV export), Copilot (copilot.money export). The formats MUST match what users actually get, not what we guess."
     }
   ]
 }
