@@ -335,3 +335,19 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - CDN warmup flakiness: blog tests had 3 flaky tests on prod on first run after deploy — all passed on retry. Same pattern as FAQ/sitemap tests. CDN clears within ~30s.
   - VERIFIED: mobile responsive at 375px (no overflow, all CTAs ≥44px, article text readable)
 ---
+
+## 2026-04-13 - CO-021
+- 'Cash Back vs Points vs Miles' article deployed to prod. 234/241 prod smoke tests pass (7 CO-012 GitHub rate-limit failures are pre-existing; all 16 CO-021 tests pass).
+- What was implemented:
+  - src/pages/blog/CashBackVsPointsVsMiles.tsx (new): 1500+ word article with 2 data tables (reward type overview + scenario decision matrix), real card examples (Citi Double Cash, Amex BCP, Amex Gold, CSP, Venture X), scenario analysis (5 scenarios), 3+ inline ArticleCTA components, internal links to /cards/:slug and /best-cards/:category
+  - src/pages/BlogListingPage.tsx: new BLOG_POSTS entry added (slug, title, description, date, readingMinutes, category)
+  - src/pages/BlogPostPage.tsx: 'cash-back-vs-points-vs-miles' added to POST_COMPONENTS map + title/description overrides
+  - public/sitemap.xml: /blog/cash-back-vs-points-vs-miles added at priority 0.9
+  - test/smoke/blog-co021.spec.ts (new): 16 smoke tests
+- Files changed: src/pages/blog/CashBackVsPointsVsMiles.tsx (new), src/pages/BlogListingPage.tsx, src/pages/BlogPostPage.tsx, public/sitemap.xml, test/smoke/blog-co021.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Blog pattern is now established: add to BLOG_POSTS (BlogListingPage.tsx), add to POST_COMPONENTS (BlogPostPage.tsx), create article file in src/pages/blog/, update sitemap.xml — all four steps required for each new article
+  - Table overflow: wrap tables in a `div.overflow-x-auto` for mobile — prevents full-page horizontal scroll on narrow viewports
+  - Word count test works well for both CO-020 and CO-021: `[data-article-body]` textContent split on whitespace
+  - VERIFIED: mobile responsive at 375px (tables scroll horizontally within container, no full-page overflow)
+---

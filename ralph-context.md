@@ -1,23 +1,22 @@
 ## Last completed
-CO-020 - Blog listing page + 'How to Choose Best Credit Card' article (215/225 prod smoke tests pass; 7 CO-012 GitHub rate-limit failures are pre-existing)
+CO-021 - 'Cash Back vs Points vs Miles: A Data-Driven Guide' article (234/241 prod smoke tests pass; 7 CO-012 GitHub rate-limit failures are pre-existing)
 
 ## Next up
-CO-021 - Blog — 'Cash Back vs Points vs Miles: A Data-Driven Guide'
-- Route: /blog/cash-back-vs-points-vs-miles (article only — /blog listing page already exists)
-- Need: add new BLOG_POSTS entry in BlogListingPage.tsx, create src/pages/blog/CashBackVsPointsVsMiles.tsx, add to POST_COMPONENTS in BlogPostPage.tsx
-- 1500+ words with data tables comparing reward types
-- Scenario analysis: when each type wins
-- Real examples from card catalog (Chase Freedom Unlimited 1.5% cash back, Amex Gold 4x dining)
-- CTA to /upload throughout
-- Update sitemap.xml with /blog/cash-back-vs-points-vs-miles
+CO-022 - Blog — 'Annual Fee Credit Cards: When They Are Worth It'
+- Route: /blog/annual-fee-worth-it (add to BLOG_POSTS, POST_COMPONENTS, sitemap)
+- 1500+ words with break-even analysis for 5+ annual-fee cards
+- Break-even table: minimum monthly spend needed to offset annual fee for each card
+- Compares each premium card against best no-annual-fee alternative
+- CTA to /builder ('Find your optimal wallet combination')
+- Article JSON-LD structured data
 
 ## Active issues
-- CO-012 GitHub API smoke tests are flaky due to unauthenticated API rate limiting (60 req/hr). Transient — not caused by any code change.
-- CDN warmup: blog tests had 3 flaky tests on first prod run after deploy. All passed on retry. CDN clears within ~30s — expect same for future blog posts.
+- CO-012 GitHub API smoke tests are flaky due to unauthenticated API rate limiting. Transient.
+- CDN warmup causes 1-4 flaky test failures on first prod run — all pass on retry. Normal behavior.
 
 ## Key decisions this session
-- Blog architecture: BLOG_POSTS metadata in BlogListingPage.tsx, POST_COMPONENTS map in BlogPostPage.tsx, individual article files in src/pages/blog/
-- Article JSON-LD injected via useEffect with id="blog-post-jsonld" — same cleanup pattern as FAQ/comparison pages
-- Article word count verified via page.evaluate() on [data-article-body] textContent
-- Inline ArticleCTA component defined inside article TSX file — keeps article self-contained
-- `expect(page).toHaveTitle()` auto-retries (use it); `await page.title()` is one-shot snapshot (avoid)
+- Blog architecture is established: BLOG_POSTS in BlogListingPage.tsx, POST_COMPONENTS in BlogPostPage.tsx, article TSX in src/pages/blog/
+- Each new article needs: BLOG_POSTS entry, POST_COMPONENTS entry, title/description override in BlogPostPage.tsx, sitemap entry, article file
+- Wrap tables in div.overflow-x-auto for mobile
+- `data-article-cta` on CTA buttons, `data-scenario-table` on scenario tables for smoke test targeting
+- Article word count test: `[data-article-body]` textContent split on whitespace
