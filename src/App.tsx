@@ -10,6 +10,8 @@ import { CardDetailPage } from './pages/CardDetailPage'
 import { CategoryGuidePage } from './pages/CategoryGuidePage'
 import { ComparisonPage } from './pages/ComparisonPage'
 import { FaqPage } from './pages/FaqPage'
+import { BlogListingPage } from './pages/BlogListingPage'
+import { BlogPostPage } from './pages/BlogPostPage'
 import { BeamPageview } from './lib/BeamPageview'
 
 export function App() {
@@ -79,6 +81,8 @@ export function App() {
             <Route path="/compare/:slug" element={<ComparisonPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/blog" element={<BlogListingPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
         </main>
         <footer className="border-t border-gray-200 bg-white mt-8" data-footer>
