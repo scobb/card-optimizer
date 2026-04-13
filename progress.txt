@@ -351,3 +351,18 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - Word count test works well for both CO-020 and CO-021: `[data-article-body]` textContent split on whitespace
   - VERIFIED: mobile responsive at 375px (tables scroll horizontally within container, no full-page overflow)
 ---
+
+## 2026-04-13 - CO-022
+- 'Annual Fee Credit Cards: When They Are Worth It' article deployed to prod. 251/258 prod smoke tests pass (7 CO-012 rate-limit failures are pre-existing; all 16 CO-022 tests pass).
+- What was implemented:
+  - src/pages/blog/AnnualFeeWorthIt.tsx (new): 1500+ word break-even analysis article with BreakEvenTable component (5 cards: CSP, Amex Gold, Amex BCP, Venture X, CSR), card-by-card analysis sections, when-to-avoid section, 3+ CTAs to /builder
+  - src/pages/BlogListingPage.tsx: CO-022 entry added to BLOG_POSTS
+  - src/pages/BlogPostPage.tsx: 'annual-fee-worth-it' added to POST_COMPONENTS + title/description overrides
+  - public/sitemap.xml: /blog/annual-fee-worth-it added at priority 0.9
+  - test/smoke/blog-co022.spec.ts (new): 16 smoke tests
+- Files changed: src/pages/blog/AnnualFeeWorthIt.tsx (new), src/pages/BlogListingPage.tsx, src/pages/BlogPostPage.tsx, public/sitemap.xml, test/smoke/blog-co022.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Break-even table row count: `tbody tr` selector on data- attribute correctly counts data rows (exclude header)
+  - CTAs in this article link to /builder (not /upload) per CO-022 acceptance criteria — verify CTA destination before writing tests
+  - VERIFIED: mobile responsive at 375px (break-even table scrolls horizontally, no full-page overflow)
+---
