@@ -58,7 +58,7 @@ test.describe('CO-011: Privacy policy and footer', () => {
   test('footer shows "Built by Keylight Digital"', async ({ page }) => {
     await page.goto('/')
     const footer = page.locator('[data-footer]')
-    await expect(footer.getByText(/keylight digital/i)).toBeVisible()
+    await expect(footer.getByText(/keylight digital/i).first()).toBeVisible()
   })
 
   test('mobile at 375px — privacy page no horizontal overflow', async ({ page }) => {
