@@ -74,7 +74,8 @@ test.describe('CO-004: Card Recommendations', () => {
     await page.reload()
 
     await expect(page.getByText(/Add cards you already hold/i)).toBeVisible()
-    await expect(page.getByRole('link', { name: 'Wallet' })).toBeVisible()
+    // Use main content area link to avoid strict mode (nav also has a Wallet link)
+    await expect(page.locator('main').getByRole('link', { name: 'Wallet' })).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -110,14 +111,14 @@ test.describe('CO-004: Card Recommendations', () => {
     // Click "Show category breakdown" on first recommendation
     await page.getByText('Show category breakdown').first().click()
 
-    // Category table visible with rate columns
-    await expect(page.getByText('Current').first()).toBeVisible()
-    await expect(page.getByText('New').first()).toBeVisible()
-    await expect(page.getByText('Extra/yr').first()).toBeVisible()
+    // Category table visible with rate columns (use table headers to avoid matching reason text)
+    await expect(page.locator('th', { hasText: 'Current' }).first()).toBeVisible()
+    await expect(page.locator('th', { hasText: 'New' }).first()).toBeVisible()
+    await expect(page.locator('th', { hasText: 'Extra/yr' }).first()).toBeVisible()
 
     // Collapse
     await page.getByText('Hide category breakdown').first().click()
-    await expect(page.getByText('Current').first()).not.toBeVisible({ timeout: 2000 })
+    await expect(page.locator('th', { hasText: 'Current' }).first()).not.toBeVisible({ timeout: 2000 })
   })
 
   // -------------------------------------------------------------------------
