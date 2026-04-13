@@ -1,20 +1,17 @@
 ## Last completed
-CO-009 - SEO foundation — meta tags, OG, robots.txt, sitemap
+CO-010 - Landing page with value proposition and how-it-works
 
 ## Next up
-CO-010 - Landing page with value proposition and how-it-works
-- Currently / redirects to /upload — replace with real landing page component
-- Must have hero, how-it-works, features, privacy, stats sections
-- Stats section should fetch /api/cards count (live data)
-- Must be mobile responsive at 375px
-- CTA button visible above the fold on mobile
+CO-011 - Privacy policy and about page
+- Add /privacy route with full privacy policy component
+- Footer with links to Privacy and 'Built by Keylight Digital' on ALL pages (update App.tsx)
+- Policy content: no data to servers, localStorage only, no cookies, no tracking, not financial advice
+- Mobile responsive
 
 ## Active issues
-- None — 85/85 smoke tests green on prod (https://cards.keylightdigital.dev)
+- None — 95/95 smoke tests green on prod (https://cards.keylightdigital.dev)
 
 ## Key decisions this session
-- Meta description changed from 164 to 156 chars to satisfy ≤160 AC
-- public/ directory created — all static assets (robots.txt, sitemap.xml, og-image.png, favicon.svg) go here; Vite copies verbatim to dist/
-- OG image is a 1200x630 gradient PNG generated with ImageMagick (magick command, not convert)
-- Favicon is SVG (credit card icon in #1d4ed8)
-- prod domain remains https://cards.keylightdigital.dev
+- Landing page lives inside existing max-w-4xl main container — no layout rework needed
+- Stats count uses static ALL_CARDS.length as default, updates from /api/cards fetch
+- Nav logo is now a <Link to="/"> — needs min-h-[44px] flex items-center to pass CO-007 tap target test

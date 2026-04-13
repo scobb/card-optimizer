@@ -2,6 +2,19 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-010
+- Landing page deployed to prod. 95/95 smoke tests pass.
+- What was implemented:
+  - src/pages/LandingPage.tsx: hero (gradient, headline, CTA), stats bar (card count from /api/cards, 100% free, 0 data uploaded), how-it-works (3-step visual), features (4 capability cards), privacy callout (green, Lock icon), bottom CTA
+  - src/App.tsx: replaced `<Navigate to="/upload">` at `/` with `<LandingPage />`, made brand logo a `<Link to="/">` with `min-h-[44px]` for tap target compliance
+  - test/smoke/landing.spec.ts: 9 smoke tests (not-a-redirect, hero visible, CTA navigates, 3 steps, features, privacy, stats, mobile no-overflow, CTA above fold, CTA ≥44px)
+- Files changed: src/pages/LandingPage.tsx (new), src/App.tsx, test/smoke/landing.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - When turning a `<span>` into a `<Link>` in the nav, immediately add `min-h-[44px] flex items-center` — the CO-007 tap-target smoke test checks all `nav a` elements
+  - Stats count can use static `ALL_CARDS.length` as default and update from fetch — graceful degradation with no loading state needed
+  - Landing page hero gradient: `bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-700` looks great with white text
+---
+
 ## 2026-04-12 - CO-009
 - SEO foundation deployed to prod. 85/85 smoke tests pass.
 - What was implemented:

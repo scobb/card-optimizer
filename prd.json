@@ -145,7 +145,7 @@
       "id": "CO-010",
       "title": "Landing page with value proposition and how-it-works",
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "description": "Replace the / → /upload redirect with a real landing page. The landing page is the most important page for SEO and conversion. It must explain what the tool does, how it works, privacy guarantees, and have a clear CTA. Must render meaningful content in the initial HTML for search engines.",
       "acceptanceCriteria": [
         "/ route renders a landing page component (not a redirect to /upload)",
