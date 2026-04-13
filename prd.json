@@ -513,7 +513,7 @@
       "id": "CO-032",
       "title": "LocalStorage wallet persistence — save and restore analysis",
       "priority": 24,
-      "passes": false,
+      "passes": true,
       "description": "Save uploaded spending data and optimization results to localStorage so returning visitors see their previous analysis. On return visit, show a 'Welcome back — view your last analysis?' prompt with options to continue or start fresh. This drives repeat engagement without requiring accounts.",
       "acceptanceCriteria": [
         "Spending data saved to localStorage after upload or preset selection",

@@ -1,17 +1,17 @@
 ## Last completed
-CO-031 - Annual savings calculator — show dollar impact of optimal wallet
+CO-032 - LocalStorage wallet persistence — save and restore analysis
 
 ## Next up
-CO-032 - LocalStorage wallet persistence — save and restore analysis
+CO-033 - Expand card database to 50+ cards
 
 ## Active issues
 - email.spec.ts "POST /api/email-results sends email and returns 200" fails on staging/prod with HTTP 429 when rate limit (3 emails/day) is exhausted; pre-existing transient
 - github.spec.ts CO-012 tests fail on prod with GitHub API rate limits (7 tests); pre-existing
-- CO-001 through CO-008 in blocked-stories.json — OLD SSL blockers, all stories now passes=true, ignore
 
 ## Key decisions this session
-- Savings banner on WalletPage has expandable category breakdown (data-savings-breakdown-toggle); RecommendationsPage shows banner only (no breakdown, since per-card breakdowns already exist there)
-- savingsData useMemo depends on `optimization` (memoized) and `spendingData` — avoids recomputing wallet optimization a second time on WalletPage
-- Banner not shown when no wallet cards selected (savings = 0 would be meaningless) or no spending data
-- data attributes: data-savings-banner (banner container), data-savings-amount (dollar span), data-savings-breakdown-toggle (toggle button), data-savings-breakdown (expanded table)
+- hasAnalysis() validates JSON shape (checks .breakdown is array) — not just key existence
+- ClearDataButton uses window.location.assign('/upload') for full page reload (React Router navigate to same route doesn't remount components)
+- Welcome back banner is above all other upload page content; shown only when BOTH spending + valid wallet cards exist
+- "Start fresh" clears both co_spending_data and co_wallet_cards keys
+- Existing keys (co_spending_data, co_wallet_cards) are kept — renaming would silently break existing users
 - SPENDING_PRESETS export from UploadPage.tsx is available for CO-035 (landing page preview)

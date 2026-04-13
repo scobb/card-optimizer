@@ -2,6 +2,21 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-032
+- LocalStorage wallet persistence "Welcome back" banner deployed to prod. 402/403 prod smoke tests pass (1 pre-existing: email rate-limit; all 18 CO-032 tests pass).
+- What was implemented:
+  - src/lib/storage.ts: added `clearWalletCards()` (removes `co_wallet_cards` key) and `hasAnalysis()` (validates both spending JSON shape — checks `.breakdown` is an array — and wallet cards exist and are non-empty). Gracefully returns `false` for corrupted data.
+  - src/pages/UploadPage.tsx: added `showWelcomeBack` state initialized from `hasAnalysis()`. When true, renders a `[data-welcome-back]` banner above all other content with "View my results" (`[data-view-results]` link to /wallet, min-h 44px) and "Start fresh" (`[data-start-fresh]` button that calls `handleStartFresh`). `handleStartFresh` clears both spending + wallet localStorage and resets all state. `handleClearData` updated to also call `clearWalletCards()`.
+  - src/App.tsx: added `ClearDataButton` component (rendered in footer alongside Privacy/Terms) — uses `window.location.assign('/upload')` (not React Router navigate) to force a full page reload after clearing, so UploadPage re-initializes its `showWelcomeBack` state.
+  - test/smoke/welcomeBack.spec.ts (new): 18 smoke tests covering banner visibility, view-results navigation, start-fresh flow, footer clear, corrupted-data graceful handling, mobile no-overflow at 375px, tap targets ≥44px.
+- Files changed: src/lib/storage.ts, src/pages/UploadPage.tsx, src/App.tsx, test/smoke/welcomeBack.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - `hasAnalysis()` must validate JSON shape (check `.breakdown` is array), not just key existence — `!!localStorage.getItem(key)` returns true for corrupted JSON strings too
+  - When navigating to the SAME route after a side-effect (clearing localStorage), React Router does NOT remount the component — `useState` initializer won't re-run. Use `window.location.assign(url)` to force a full reload when you need component re-initialization.
+  - `page.evaluate((k, v) => ..., arg)` passes ONE arg to browser context; for multiple values use `page.evaluate(([k, v]) => ..., [key, val] as const)`
+  - VERIFIED: mobile responsive at 375px — welcome back banner renders cleanly, both buttons stack in column on mobile, all tap targets ≥44px
+---
+
 ## 2026-04-13 - CO-031
 - Annual savings calculator deployed to prod. 383/384 prod smoke tests pass (1 pre-existing: email rate-limit; all 16 CO-031 tests pass).
 - What was implemented:
