@@ -2,6 +2,20 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-031
+- Annual savings calculator deployed to prod. 383/384 prod smoke tests pass (1 pre-existing: email rate-limit; all 16 CO-031 tests pass).
+- What was implemented:
+  - src/pages/WalletPage.tsx: added `savingsData` useMemo computing totalSavings = walletRewards - 1% baseline. Added `showSavingsBreakdown` state. Inserted savings banner (data-savings-banner) before the summary row grid inside `{optimization && (...)}`; shows "$X/year" in large green text (data-savings-amount), subtitle "vs. a 1% flat cashback baseline", and an expandable category breakdown table (data-savings-breakdown-toggle / data-savings-breakdown) showing Your Rewards / Baseline (1%) / Extra/yr per category sorted by savings desc. Shows "Your current setup is already optimized" when savings ≤ 0.
+  - src/pages/RecommendationsPage.tsx: imported `optimizeWallet`; added `savingsData` useMemo (no breakdown, just totalSavings + baseline). Savings banner renders after page header when walletCards.length > 0 and spending data exists — same design minus the category breakdown toggle.
+  - test/smoke/savingsCalculator.spec.ts (new): 16 smoke tests covering banner visibility on wallet/recommendations, dollar formatting, /year suffix, 1% mention, breakdown toggle expand/collapse, category rows visible, hidden when no cards/no spending, positive savings for known card combo, preset-to-wallet flow, mobile no-overflow at 375px on both pages.
+- Files changed: src/pages/WalletPage.tsx, src/pages/RecommendationsPage.tsx, test/smoke/savingsCalculator.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Savings calculation is simple: `spendingData.breakdown.reduce((sum, b) => sum + b.annualTotal * 0.01, 0)` gives the 1% baseline; subtract from `optimization.totalAnnualRewards` for savings
+  - The `savingsData` useMemo depends on `optimization` (already memoized) and `spendingData` — same pattern as the existing `optimization` useMemo in WalletPage
+  - Seeding both `co_spending_data` AND `co_wallet_cards` in localStorage before `page.goto()` is the right pattern for wallet/recommendations smoke tests that need optimization results
+  - VERIFIED: mobile responsive at 375px on both pages — savings banner wraps cleanly, breakdown table fits with overflow-x-auto, no page-level overflow
+---
+
 ## 2026-04-13 - CO-029
 - Tool comparison pages deployed to prod. 343/352 prod smoke tests pass (8 pre-existing: 1 email rate-limit + 7 GitHub API rate-limit; all 20 CO-029 tests pass, 1 flaky with CDN cold-start retry).
 - What was implemented:

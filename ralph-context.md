@@ -1,8 +1,8 @@
 ## Last completed
-CO-030 - Spending presets — one-click spending profiles without CSV upload
+CO-031 - Annual savings calculator — show dollar impact of optimal wallet
 
 ## Next up
-CO-031 - Annual savings calculator — show dollar impact of optimal wallet
+CO-032 - LocalStorage wallet persistence — save and restore analysis
 
 ## Active issues
 - email.spec.ts "POST /api/email-results sends email and returns 200" fails on staging/prod with HTTP 429 when rate limit (3 emails/day) is exhausted; pre-existing transient
@@ -10,7 +10,8 @@ CO-031 - Annual savings calculator — show dollar impact of optimal wallet
 - CO-001 through CO-008 in blocked-stories.json — OLD SSL blockers, all stories now passes=true, ignore
 
 ## Key decisions this session
-- Spending presets store to localStorage with format='generic' and formatLabel='[Preset Name] spending profile'
-- SpendingPresets component is in UploadPage.tsx alongside the SPENDING_PRESETS export constant (importable for future use in landing page CO-035)
-- "Optimize My Wallet →" CTA is a React Link (not a navigate button) — tests must scope to `nav` when clicking the plain 'Wallet' nav link to avoid strict mode violation
-- 4 preset IDs: 'average-american', 'frequent-traveler', 'online-shopper', 'foodie'
+- Savings banner on WalletPage has expandable category breakdown (data-savings-breakdown-toggle); RecommendationsPage shows banner only (no breakdown, since per-card breakdowns already exist there)
+- savingsData useMemo depends on `optimization` (memoized) and `spendingData` — avoids recomputing wallet optimization a second time on WalletPage
+- Banner not shown when no wallet cards selected (savings = 0 would be meaningless) or no spending data
+- data attributes: data-savings-banner (banner container), data-savings-amount (dollar span), data-savings-breakdown-toggle (toggle button), data-savings-breakdown (expanded table)
+- SPENDING_PRESETS export from UploadPage.tsx is available for CO-035 (landing page preview)

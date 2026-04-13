@@ -495,7 +495,7 @@
       "id": "CO-031",
       "title": "Annual savings calculator — show dollar impact of optimal wallet",
       "priority": 23,
-      "passes": false,
+      "passes": true,
       "description": "After wallet optimization, calculate and prominently display 'Estimated annual savings: $X' comparing the optimized wallet's rewards against a baseline 1% flat cashback card. Break down savings by category. This is the key 'aha moment' — users need to see a concrete dollar amount to understand the value. Show savings on both the wallet optimization page and the new card recommendations page.",
       "acceptanceCriteria": [
         "After optimization, a prominent savings banner shows 'Estimated annual savings: $X/year'",
