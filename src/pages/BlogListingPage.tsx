@@ -30,6 +30,15 @@ export const BLOG_POSTS: BlogPost[] = [
     readingMinutes: 8,
     category: 'Rewards Basics',
   },
+  {
+    slug: 'annual-fee-worth-it',
+    title: 'Annual Fee Credit Cards: When They Are Worth It',
+    description:
+      'Break-even analysis for 5 popular annual-fee cards. Includes a table showing minimum monthly spend needed to offset each fee, and a head-to-head comparison against the best no-annual-fee alternatives.',
+    publishedDate: '2026-04-13',
+    readingMinutes: 8,
+    category: 'Card Strategy',
+  },
 ]
 
 export function BlogListingPage() {
