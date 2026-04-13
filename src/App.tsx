@@ -6,10 +6,12 @@ import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
 import { LandingPage } from './pages/LandingPage'
 import { PrivacyPage } from './pages/PrivacyPage'
+import { BeamPageview } from './lib/BeamPageview'
 
 export function App() {
   return (
     <BrowserRouter>
+      <BeamPageview />
       <div className="min-h-screen bg-gray-50">
         <nav className="bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4">
