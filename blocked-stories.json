@@ -1,0 +1,10 @@
+{
+  "blockedStories": [
+    {
+      "id": "CO-001",
+      "blocker": "Cloudflare API token lacks Pages:Write permission — wrangler pages deploy fails with auth error 10000",
+      "blockedAt": "2026-04-12",
+      "emailSent": true
+    }
+  ]
+}
