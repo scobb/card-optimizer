@@ -2,6 +2,19 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-028
+- FinancialProduct JSON-LD structured data deployed to all card detail pages on prod. 331/332 prod smoke tests pass (1 pre-existing email rate-limit failure; all 10 CO-028 tests pass with retry for CDN cold-start).
+- What was implemented:
+  - src/pages/CardDetailPage.tsx: added FinancialProduct JSON-LD injection to existing useEffect. Creates `<script id="card-detail-jsonld" type="application/ld+json">` in document.head with schema.org/FinancialProduct including name, brand/provider (issuer), offers (annual fee as price/USD), description (derived from card data), and url. Cleaned up in useEffect return. Does not conflict with global WebApplication schema from index.html.
+  - test/smoke/cardDetailStructuredData.spec.ts (new): 9 smoke tests (JSON-LD injected, correct name/issuer, annual fee in offers, description, valid parseable JSON, dynamic per-card, 5 sample cards all have FinancialProduct, no conflict with global schema, cleaned up on navigation away, $0 fee card has price=0).
+- Files changed: src/pages/CardDetailPage.tsx, test/smoke/cardDetailStructuredData.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Use `script.id = 'card-detail-jsonld'` to give the injected script a stable ID for both test assertions and cleanup in the useEffect return function
+  - The global WebApplication JSON-LD from index.html has no ID attribute — use `page.locator('script[type="application/ld+json"]').first()` to reference it; the card-specific one is `script#card-detail-jsonld`
+  - `page.waitForFunction(() => !!document.getElementById('card-detail-jsonld'))` is the reliable wait pattern for useEffect-injected JSON-LD; works consistently after one retry for CDN cold-start
+  - For the "all cards" test loop, CDN cold-start timing can cause a timeout on the first card in the loop; with retries=1 configured this passes
+---
+
 ## 2026-04-13 - CO-027
 - Best Credit Cards of 2026 roundup page deployed to prod. 321/322 prod smoke tests pass (1 pre-existing email rate-limit failure unrelated to CO-027; all 25 CO-027 tests pass with retries for CDN cold-start).
 - What was implemented:

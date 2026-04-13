@@ -440,7 +440,7 @@
       "id": "CO-028",
       "title": "FinancialProduct structured data on card detail pages",
       "priority": 20,
-      "passes": false,
+      "passes": true,
       "description": "Add schema.org/FinancialProduct (or CreditCard) structured data to each card detail page (/cards/:slug). Google supports rich results for financial products — showing annual fee, interest rate, and reward info directly in search results. This supplements CO-009's WebApplication schema with per-page product markup.",
       "acceptanceCriteria": [
         "Each card detail page includes JSON-LD structured data",
