@@ -2,8 +2,8 @@ import { test, expect, Page } from '@playwright/test'
 
 const PAGES = [
   { path: '/upload', heading: 'Upload Transactions' },
-  { path: '/wallet', heading: 'Wallet Optimization' },
-  { path: '/recommendations', heading: 'Card Recommendations' },
+  { path: '/wallet', heading: 'My Wallet' },
+  { path: '/recommendations', heading: 'Recommendations' },
   { path: '/builder', heading: 'Optimal Wallet' },
   { path: '/catalog', heading: 'Card Catalog' },
 ]
