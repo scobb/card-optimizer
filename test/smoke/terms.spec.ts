@@ -44,7 +44,7 @@ test.describe('CO-025: Terms of Service page', () => {
   test('terms page covers limitation of liability', async ({ page }) => {
     await gotoTerms(page)
     const policy = page.locator('[data-terms-policy]')
-    await expect(policy.getByText(/limitation of liability/i)).toBeVisible()
+    await expect(policy.getByText(/limitation of liability/i).first()).toBeVisible()
   })
 
   test('terms page covers modification terms', async ({ page }) => {
