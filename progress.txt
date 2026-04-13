@@ -572,3 +572,18 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - DragEvent drop can be simulated via page.evaluate for non-CSV file type test
   - "No recommendations" requires ALL cards in wallet; don't use a small subset
 ---
+
+## 2026-04-13 - CO-037
+- CatalogPage: added DATA_LAST_VERIFIED = 'April 2026' constant
+- CatalogPage: 'N cards in our database' count (data-catalog-db-count)
+- CatalogPage: 'Data sourced from card issuer websites · Last verified: April 2026' (data-catalog-freshness)  
+- CardDetailPage: freshness text below CTA section (data-card-freshness)
+- WalletPage: freshness text in optimization results section (data-wallet-freshness)
+- WalletPage: added data-wallet-optimization attribute to results div
+- test/smoke/dataFreshness.spec.ts (8 tests)
+- 454/462 tests pass on prod (8 pre-existing failures)
+- **Learnings for future iterations:**
+  - Always add data-* attributes to the CONTAINER of each section, not just the freshness text
+  - data-wallet-optimization needed on the {optimization && <div>} wrapper for smoke tests to find the section
+  - First staging deploy may have cached old bundle; re-check attributes exist before writing test assertions
+---

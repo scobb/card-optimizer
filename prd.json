@@ -609,7 +609,7 @@
       "id": "CO-037",
       "title": "Card data freshness and trust indicators",
       "priority": 29,
-      "passes": false,
+      "passes": true,
       "description": "Show 'Card data last verified: April 2026' on the catalog page, card detail pages, and optimization results. Add 'Data sourced from card issuer websites' disclaimer. Show 'N cards in database' count on catalog page. These trust signals help users understand the data is maintained and sourced from real issuer information.",
       "acceptanceCriteria": [
         "'Card data last verified: April 2026' shown on catalog browse page",
