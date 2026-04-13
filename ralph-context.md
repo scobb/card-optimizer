@@ -1,14 +1,13 @@
 ## Last completed
-CO-014 - Add Beam analytics (128/128 prod smoke tests pass)
+CO-015 - Individual card detail pages for SEO (142/142 prod smoke tests pass)
 
 ## Next up
-CO-015 - Individual card detail pages for SEO — /cards/:slug routes with unique meta tags, full card detail, sitemap update, 'Add to Wallet' button, back link to /catalog.
+CO-016 - Spending category guides for SEO content — /best-cards/:category pages for dining, groceries, travel, gas, online-shopping, streaming. Content generated from card database (top 5 cards per category ranked by reward rate). Unique title/meta per page. Sitemap entries. Internal links to card detail pages (/cards/:slug). Mobile responsive.
 
 ## Active issues
 - None
 
 ## Key decisions this session
-- Beam site created via direct D1 insert (beam-analytics@keylightdigital.dev Pro account, beam-db prod database)
-- Beam site ID for cards.keylightdigital.dev: 5587e834-9274-4f00-8c92-14d33018d847
-- SPA nav tracking: BeamPageview component fires pageview payload (no `type` field) on each route change via useLocation; skips first render since beam.js script handles initial load
-- BeamPageview must be first child inside <BrowserRouter> (before layout divs) to have router context
+- Card IDs (e.g., `chase-sapphire-preferred`) are used directly as route slugs — no mapping needed
+- Pros/cons derived from card data (no separate field needed)
+- effectiveRate(card, category) returns base rate for unboosted categories — filter to only show boosted categories in rate table

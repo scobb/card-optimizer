@@ -220,7 +220,7 @@
       "id": "CO-015",
       "title": "Individual card detail pages for SEO",
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "description": "Create /cards/:slug routes that render detailed card pages. Each card page is an SEO target — 'Chase Sapphire Preferred review', 'Amex Gold rewards rate', etc. These pages should have unique meta tags and be listed in the sitemap.",
       "acceptanceCriteria": [
         "/cards/:slug route renders a full detail page for each card",

@@ -2,6 +2,25 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-015
+- Individual card detail pages deployed to prod. 142/142 smoke tests pass.
+- What was implemented:
+  - src/pages/CardDetailPage.tsx: /cards/:slug route — full card detail with reward rates table, sign-up bonus callout, perks section, derived pros/cons, gradient header with Add to Wallet + Apply buttons, CTA footer
+  - Updates `document.title` and meta description on mount for unique SEO per card; restores defaults on unmount
+  - "Add to Wallet" adds card to localStorage (co_wallet_cards) then navigates to /wallet
+  - src/App.tsx: added `/cards/:slug` route pointing to CardDetailPage
+  - src/pages/CatalogPage.tsx: card names now render as `<Link to="/cards/:id">` for easy navigation from catalog
+  - public/sitemap.xml: all 20 card detail URLs added at priority 0.8
+  - test/smoke/cardDetail.spec.ts: 14 smoke tests (page render, card name, back link navigation, add-to-wallet, apply link, reward rates, unique title, 404 for unknown slug, catalog link, catalog link navigation, sitemap, mobile no-overflow, all 20 cards accessible)
+- Files changed: src/pages/CardDetailPage.tsx (new), src/App.tsx, src/pages/CatalogPage.tsx, public/sitemap.xml, test/smoke/cardDetail.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Card IDs are already slug-formatted (e.g., `chase-sapphire-preferred`) — use them directly as route params, no separate slug mapping needed
+  - `document.title` + meta description updates via `useEffect` work for SPA SEO; always return cleanup to restore defaults on unmount
+  - `effectiveRate(card, category)` from cards.ts returns base rate for categories without a boost — filter to only boosted categories before rendering the rates table
+  - Pros/cons can be derived from card data (annualFee, firstYearFeeWaived, signUpBonus.amount, high category rates, perk values) — no need for separate data field
+  - VERIFIED: mobile responsive at 375px (no overflow, buttons stack vertically, tap targets ≥44px)
+---
+
 ## 2026-04-12 - CO-014
 - Beam analytics deployed to prod. 128/128 smoke tests pass.
 - What was implemented:
