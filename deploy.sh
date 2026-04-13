@@ -16,10 +16,12 @@ echo "=== Card Optimizer $ENV Deployment ==="
 
 if [ "$ENV" = "staging" ]; then
   DB_NAME="card-optimizer-db-staging"
+  DB_ENV_FLAG="--env preview"
   PAGES_BRANCH="staging"
   DEPLOY_URL="https://staging.card-optimizer.pages.dev"
 else
   DB_NAME="card-optimizer-db"
+  DB_ENV_FLAG=""
   PAGES_BRANCH="main"
   DEPLOY_URL="https://cards.keylightdigital.com"
 fi
@@ -31,7 +33,8 @@ echo "  Build complete"
 
 # Step 2: Apply D1 migrations
 echo "[2/4] Applying D1 migrations to $DB_NAME..."
-npx wrangler d1 migrations apply "$DB_NAME" --remote
+# shellcheck disable=SC2086
+npx wrangler d1 migrations apply "$DB_NAME" --remote $DB_ENV_FLAG
 echo "  Migrations applied"
 
 # Step 3: Deploy to Cloudflare Pages
