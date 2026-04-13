@@ -5,6 +5,7 @@ import { loadSpendingData, loadWalletCards } from '../lib/storage'
 import { getCardById, ALL_CARDS } from '../lib/cards'
 import { recommendCards } from '../lib/recommender'
 import type { CardRecommendation } from '../lib/recommender'
+import { optimizeWallet } from '../lib/optimizer'
 
 function fmt(value: number): string {
   return value.toLocaleString('en-US', {
@@ -149,6 +150,14 @@ export function RecommendationsPage() {
     return recommendCards(walletCards, spendingData.breakdown)
   }, [walletCards, spendingData])
 
+  const savingsData = useMemo(() => {
+    if (!spendingData || walletCards.length === 0) return null
+    const optimization = optimizeWallet(walletCards, spendingData.breakdown)
+    const baseline = spendingData.breakdown.reduce((sum, b) => sum + b.annualTotal * 0.01, 0)
+    const totalSavings = optimization.totalAnnualRewards - baseline
+    return { totalSavings, baseline }
+  }, [walletCards, spendingData])
+
   if (!spendingData) {
     return (
       <div className="space-y-4">
@@ -178,6 +187,37 @@ export function RecommendationsPage() {
           . Sign-up bonuses amortized over 2 years.
         </p>
       </div>
+
+      {/* CO-031: Annual Savings Banner */}
+      {savingsData && (
+        <div
+          data-savings-banner
+          className={`rounded-xl border p-5 text-center ${
+            savingsData.totalSavings > 0
+              ? 'bg-green-50 border-green-200'
+              : 'bg-gray-50 border-gray-200'
+          }`}
+        >
+          {savingsData.totalSavings > 0 ? (
+            <>
+              <div className="text-xs font-semibold text-green-600 uppercase tracking-widest mb-1">
+                Estimated Annual Savings
+              </div>
+              <div className="text-3xl font-bold text-green-700 leading-tight">
+                <span data-savings-amount>{fmt(savingsData.totalSavings)}</span>
+                <span className="text-lg font-normal text-green-600">/year</span>
+              </div>
+              <div className="text-sm text-green-600 mt-1">
+                your current wallet vs. a 1% flat cashback baseline
+              </div>
+            </>
+          ) : (
+            <div className="text-gray-700 font-medium">
+              Your current setup is already optimized
+            </div>
+          )}
+        </div>
+      )}
 
       {walletCards.length === 0 && (
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-700">

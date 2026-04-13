@@ -28,6 +28,7 @@ export function WalletPage() {
   const [expandedIssuers, setExpandedIssuers] = useState<Set<string>>(
     () => new Set(['Chase', 'American Express', 'Capital One', 'Citi']),
   )
+  const [showSavingsBreakdown, setShowSavingsBreakdown] = useState(false)
   const [shareCopied, setShareCopied] = useState(false)
   const [emailInput, setEmailInput] = useState('')
   const [monthlyDigest, setMonthlyDigest] = useState(false)
@@ -129,6 +130,20 @@ export function WalletPage() {
     if (!spendingData || selectedCards.length === 0) return null
     return optimizeWallet(selectedCards, spendingData.breakdown)
   }, [selectedCards, spendingData])
+
+  const savingsData = useMemo(() => {
+    if (!optimization || !spendingData) return null
+    const baseline = spendingData.breakdown.reduce((sum, b) => sum + b.annualTotal * 0.01, 0)
+    const totalSavings = optimization.totalAnnualRewards - baseline
+    const categorySavings = optimization.categoryBreakdown
+      .filter((c) => c.annualSpend > 0)
+      .map((c) => ({
+        ...c,
+        savings: c.annualRewards - c.annualSpend * 0.01,
+      }))
+      .sort((a, b) => b.savings - a.savings)
+    return { totalSavings, baseline, categorySavings }
+  }, [optimization, spendingData])
 
   return (
     <div className="space-y-6">
@@ -251,6 +266,74 @@ export function WalletPage() {
       {/* Optimization results */}
       {optimization && (
         <div className="space-y-4">
+          {/* CO-031: Annual Savings Banner */}
+          {savingsData && (
+            <div
+              data-savings-banner
+              className={`rounded-xl border p-5 ${
+                savingsData.totalSavings > 0
+                  ? 'bg-green-50 border-green-200'
+                  : 'bg-gray-50 border-gray-200'
+              }`}
+            >
+              {savingsData.totalSavings > 0 ? (
+                <div className="text-center">
+                  <div className="text-xs font-semibold text-green-600 uppercase tracking-widest mb-1">
+                    Estimated Annual Savings
+                  </div>
+                  <div className="text-3xl font-bold text-green-700 leading-tight">
+                    <span data-savings-amount>{fmt(savingsData.totalSavings)}</span>
+                    <span className="text-lg font-normal text-green-600">/year</span>
+                  </div>
+                  <div className="text-sm text-green-600 mt-1">vs. a 1% flat cashback baseline</div>
+                  <button
+                    data-savings-breakdown-toggle
+                    onClick={() => setShowSavingsBreakdown((v) => !v)}
+                    className="mt-3 flex items-center gap-1 text-xs text-green-700 hover:text-green-800 mx-auto min-h-[44px] px-3"
+                  >
+                    {showSavingsBreakdown ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+                    {showSavingsBreakdown ? 'Hide' : 'Show'} category breakdown
+                  </button>
+                  {showSavingsBreakdown && (
+                    <div className="mt-2 overflow-x-auto" data-savings-breakdown>
+                      <table className="w-full text-sm text-left">
+                        <thead>
+                          <tr className="text-xs text-gray-500 uppercase tracking-wide border-b border-green-200">
+                            <th className="py-2 pr-3 font-medium">Category</th>
+                            <th className="py-2 pr-3 text-right font-medium">Your Rewards</th>
+                            <th className="py-2 pr-3 text-right font-medium">Baseline (1%)</th>
+                            <th className="py-2 text-right font-medium">Extra/yr</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {savingsData.categorySavings.map((c) => (
+                            <tr key={c.category} className="border-b border-green-100 last:border-0">
+                              <td className="py-2 pr-3 text-gray-800">{c.categoryLabel}</td>
+                              <td className="py-2 pr-3 text-right text-gray-700">{fmt(c.annualRewards)}</td>
+                              <td className="py-2 pr-3 text-right text-gray-500">{fmt(c.annualSpend * 0.01)}</td>
+                              <td
+                                className={`py-2 text-right font-medium ${
+                                  c.savings >= 0 ? 'text-green-600' : 'text-red-500'
+                                }`}
+                              >
+                                {c.savings >= 0 ? '+' : ''}
+                                {fmt(c.savings)}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="text-center text-gray-700 font-medium py-2">
+                  Your current setup is already optimized
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Summary row */}
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
