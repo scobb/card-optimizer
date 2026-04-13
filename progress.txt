@@ -17,6 +17,11 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
 - Wallet persistence key: `co_wallet_cards` (array of card IDs) in localStorage
 - Prod custom domain cards.keylightdigital.com has SSL issue (HTTP 526) — Steve needs to configure custom domain in Cloudflare Pages
 
+## 2026-04-12 - CO-001 (retry)
+- **BLOCKED on prod** — Staging all 4 catalog smoke tests pass. Prod domain cards.keylightdigital.com returns HTTP 526 (same SSL issue as CO-003). No new email sent — Steve already notified.
+- Original token blocker was resolved (marked resolved: true in blocked-stories.json). Code is on staging and prod Cloudflare Pages instance.
+---
+
 ## 2026-04-12 - CO-003
 - **BLOCKED on prod** — Staging deploy successful, all 24 smoke tests pass on staging. Prod domain cards.keylightdigital.com returns HTTP 526 (SSL error). Steve notified via email.
 - What was implemented:

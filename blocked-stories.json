@@ -2,19 +2,17 @@
   "blockedStories": [
     {
       "id": "CO-001",
-      "blocker": "Cloudflare API token lacks Pages:Write permission — wrangler pages deploy fails with auth error 10000",
+      "blocker": "Prod custom domain cards.keylightdigital.com returns HTTP 526 (Cloudflare SSL error). Staging passes (all 4 catalog smoke tests). Same root cause as CO-003 — Steve already notified, no new email sent.",
       "blockedAt": "2026-04-12",
       "emailSent": true,
-      "resolved": true,
-      "resolvedAt": "2026-04-13"
+      "note": "Original Pages:Edit blocker resolved. Now blocked on prod SSL. Steve was already notified via CO-003 email."
     },
     {
       "id": "CO-002",
-      "blocker": "Same as CO-001: Cloudflare API token lacks Pages:Edit — cannot deploy to Cloudflare Pages. Code is fully implemented and committed.",
+      "blocker": "Prod custom domain cards.keylightdigital.com returns HTTP 526 (Cloudflare SSL error). Staging passes (all upload smoke tests). Same root cause as CO-003 — Steve already notified, no new email sent.",
       "blockedAt": "2026-04-13",
       "emailSent": true,
-      "resolved": true,
-      "resolvedAt": "2026-04-13"
+      "note": "Original Pages:Edit blocker resolved. Now blocked on prod SSL. Steve was already notified via CO-003 email."
     },
     {
       "id": "CO-003",
