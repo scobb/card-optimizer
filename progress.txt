@@ -17,6 +17,19 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
 - Wallet persistence key: `co_wallet_cards` (array of card IDs) in localStorage
 - Prod custom domain cards.keylightdigital.com has SSL issue (HTTP 526) — Steve needs to configure custom domain in Cloudflare Pages
 
+## 2026-04-12 - CO-004
+- **BLOCKED on prod** — Staging 34/34 smoke tests pass. Prod domain HTTP 526 (same SSL issue). No new email — Steve already notified via CO-003.
+- What was implemented:
+  - src/lib/recommender.ts: calculates incremental value per category vs current wallet, amortizes sign-up bonuses over 2 years, filters to positive net value only, sorts by net annual value
+  - src/pages/RecommendationsPage.tsx: ranked card list with value breakdown pills (extra rewards, sign-up bonus, annual fee), expandable category comparison table, apply link per card, excludes wallet cards
+  - test/smoke/recommendations.spec.ts: 9 smoke tests
+- Files changed: src/lib/recommender.ts, src/pages/RecommendationsPage.tsx, src/App.tsx, test/smoke/recommendations.spec.ts
+- **Learnings for future iterations:**
+  - When both nav and main content have same link name, use `page.locator('main').getByRole(...)` to avoid strict mode
+  - For table header matching, use `page.locator('th', { hasText })` to avoid matching text in other elements
+  - Recommendation engine: incremental = (new_rate - current_best_rate) * spend for each category where new card wins
+---
+
 ## 2026-04-12 - CO-001 (retry)
 - **BLOCKED on prod** — Staging all 4 catalog smoke tests pass. Prod domain cards.keylightdigital.com returns HTTP 526 (same SSL issue as CO-003). No new email sent — Steve already notified.
 - Original token blocker was resolved (marked resolved: true in blocked-stories.json). Code is on staging and prod Cloudflare Pages instance.
