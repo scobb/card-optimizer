@@ -88,25 +88,62 @@ export function App() {
           </Routes>
         </main>
         <footer className="border-t border-gray-200 bg-white mt-8" data-footer>
-          <div className="max-w-4xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
-            <span>
-              Built by{' '}
-              <a
-                href="https://keylightdigital.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline font-medium"
-              >
-                Keylight Digital
-              </a>
-            </span>
-            <div className="flex items-center gap-4">
-              <Link to="/privacy" className="hover:text-gray-900 transition-colors" data-footer-privacy>
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="hover:text-gray-900 transition-colors" data-footer-terms>
-                Terms of Service
-              </Link>
+          <div className="max-w-4xl mx-auto px-4 py-6 flex flex-col gap-4 text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <span>
+                Built by{' '}
+                <a
+                  href="https://keylightdigital.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Keylight Digital
+                </a>
+              </span>
+              <div className="flex items-center gap-4">
+                <Link to="/privacy" className="hover:text-gray-900 transition-colors" data-footer-privacy>
+                  Privacy Policy
+                </Link>
+                <Link to="/terms" className="hover:text-gray-900 transition-colors" data-footer-terms>
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+            <div className="border-t border-gray-100 pt-3" data-footer-cross-promo>
+              <p className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">Also from Keylight Digital</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-1">
+                <a
+                  href="https://beam-privacy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-900 transition-colors"
+                  data-footer-beam
+                >
+                  <span className="font-medium text-gray-600">Beam</span>
+                  <span> — Privacy-first analytics</span>
+                </a>
+                <a
+                  href="https://nexus.keylightdigital.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-900 transition-colors"
+                  data-footer-nexus
+                >
+                  <span className="font-medium text-gray-600">Nexus</span>
+                  <span> — AI command center</span>
+                </a>
+                <a
+                  href="https://profittracker.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gray-900 transition-colors"
+                  data-footer-profittracker
+                >
+                  <span className="font-medium text-gray-600">ProfitTracker</span>
+                  <span> — Business profit analytics</span>
+                </a>
+              </div>
             </div>
           </div>
         </footer>
