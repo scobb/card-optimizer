@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-do
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
 import { RecommendationsPage } from './pages/RecommendationsPage'
+import { WalletBuilderPage } from './pages/WalletBuilderPage'
 
 export function App() {
   return (
@@ -37,6 +38,14 @@ export function App() {
                   Recommendations
                 </NavLink>
                 <NavLink
+                  to="/builder"
+                  className={({ isActive }) =>
+                    `px-3 py-1.5 rounded transition-colors min-h-[44px] flex items-center ${isActive ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`
+                  }
+                >
+                  Builder
+                </NavLink>
+                <NavLink
                   to="/catalog"
                   className={({ isActive }) =>
                     `px-3 py-1.5 rounded transition-colors min-h-[44px] flex items-center ${isActive ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`
@@ -54,6 +63,7 @@ export function App() {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/wallet" element={<WalletPage />} />
             <Route path="/recommendations" element={<RecommendationsPage />} />
+            <Route path="/builder" element={<WalletBuilderPage />} />
             <Route path="/catalog" element={<div className="text-gray-500">Card catalog — coming in CO-006</div>} />
           </Routes>
         </main>
