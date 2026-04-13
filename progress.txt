@@ -2,6 +2,27 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-017
+- Card comparison pages deployed to prod. 175/175 prod smoke tests pass.
+- What was implemented:
+  - src/pages/ComparisonPage.tsx (new): /compare/:slug route (slug = "cardA-id-vs-cardB-id") — side-by-side comparison table (annual fee, base rate, sign-up bonus, reward type), category rates table with winner highlighted, perks section, verdict section (choose A/B if…), apply links for both cards, CTA to /upload, related comparisons widget
+  - 15 popular card pairs defined as `COMPARISON_PAIRS` export (e.g., chase-sapphire-preferred-vs-amex-gold)
+  - JSON-LD ItemList structured data injected into <head> per comparison page, cleaned up on unmount
+  - Unique title + meta description per page
+  - `getComparisonsForCard(cardId)` helper function exported from ComparisonPage.tsx
+  - src/pages/CardDetailPage.tsx: comparison links section added (data-card-comparisons, data-comparison-link={other.id})
+  - src/App.tsx: /compare/:slug route added
+  - public/sitemap.xml: 15 /compare/ URLs at priority 0.9
+  - test/smoke/comparison.spec.ts (new): 18 smoke tests
+- Files changed: src/pages/ComparisonPage.tsx (new), src/App.tsx, src/pages/CardDetailPage.tsx, public/sitemap.xml, test/smoke/comparison.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - Seed card names are full names: "American Express Gold Card" (not "Amex Gold"), "Blue Cash Preferred" (not "Amex Blue Cash Preferred") — always verify against `seed/cards.json` when writing tests
+  - URL slug parsing: `slug.indexOf('-vs-')` is safer than `split('-vs-')[0/1]` for finding the separator — avoids multi-split issues
+  - JSON-LD injection via `document.createElement('script')` with an `id` attribute makes it easy to remove in useEffect cleanup — always assign a stable id
+  - `getComparisonsForCard()` can be co-located in ComparisonPage.tsx and imported by CardDetailPage — no need for a separate lib file
+  - VERIFIED: mobile responsive at 375px (rates table scrolls horizontally within container, no full-page overflow)
+---
+
 ## 2026-04-13 - CO-016
 - Spending category guide pages deployed to prod. 150/157 prod smoke tests pass (7 CO-012 GitHub API tests fail due to rate limiting — pre-existing transient env issue, unrelated to CO-016; all 15 CO-016 tests pass).
 - What was implemented:

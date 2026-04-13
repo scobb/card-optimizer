@@ -4,7 +4,7 @@
   "branchName": "main",
   "description": "Credit card rewards optimizer \u2014 upload transactions, get personalized card recommendations",
   "createdAt": "2026-04-12",
-  "updatedAt": "2026-04-12",
+  "updatedAt": "2026-04-13",
   "userStories": [
     {
       "id": "CO-001",
@@ -247,6 +247,141 @@
         "Sitemap includes all category guide pages",
         "Internal links between guide pages and card detail pages",
         "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-017",
+      "title": "Card comparison pages — head-to-head /compare routes",
+      "priority": 9,
+      "passes": true,
+      "description": "Create /compare/:cardA-vs-:cardB pages that show side-by-side card comparisons. 'Chase Sapphire Preferred vs Amex Gold' is a high-volume, high-intent search query. Generate comparison pages for the 15 most popular card matchups from the catalog data. Each page has unique meta tags and structured data.",
+      "acceptanceCriteria": [
+        "/compare/:cardA-vs-:cardB route renders a side-by-side comparison page",
+        "Comparison shows: annual fee, reward rates by category, sign-up bonus, key perks side by side",
+        "Verdict section highlights which card wins for each spending category",
+        "'Which is better for you?' CTA links to /upload to let users test with real spending",
+        "At least 15 comparison pages generated for popular card pairs (e.g., chase-sapphire-preferred-vs-amex-gold)",
+        "Each page has unique title ('Chase Sapphire Preferred vs Amex Gold — 2026 Comparison') and meta description",
+        "Product structured data (JSON-LD) on each comparison page",
+        "Sitemap updated to include all /compare routes",
+        "Internal links from card detail pages to relevant comparisons",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-018",
+      "title": "IndexNow submission — push all URLs for Google/Bing indexing",
+      "priority": 10,
+      "passes": false,
+      "description": "Submit all card-optimizer URLs to search engines via IndexNow API for faster indexing. Include all card detail pages, category guides, comparison pages, and blog posts. Create a reusable script for future URL submissions.",
+      "acceptanceCriteria": [
+        "IndexNow API key file served at /.well-known/ or root path",
+        "Script submits all public URLs to IndexNow API (api.indexnow.org)",
+        "URLs submitted: /, /upload, /wallet, /recommendations, /builder, /catalog, /privacy, /faq, all /cards/:slug, all /best-cards/:category, all /compare/ pages",
+        "Script reports success/failure count",
+        "Bing IndexNow and Google (via indexnow.org) both receive submissions",
+        "Script is rerunnable for future content additions"
+      ]
+    },
+    {
+      "id": "CO-019",
+      "title": "FAQ page with structured data for featured snippets",
+      "priority": 11,
+      "passes": false,
+      "description": "Create /faq page answering common questions about credit card rewards and the tool. Use FAQPage structured data so answers can appear as Google featured snippets. This is a proven SEO technique — FAQ pages with schema.org markup get rich results.",
+      "acceptanceCriteria": [
+        "/faq route renders a FAQ page with expandable questions",
+        "At least 15 questions covering: how the tool works, data privacy, reward calculation methodology, common card strategy questions",
+        "FAQPage JSON-LD structured data on the page",
+        "Questions grouped by topic (Tool, Privacy, Card Strategy, Rewards Basics)",
+        "Internal links to relevant card detail pages and category guides from answers",
+        "Sitemap includes /faq",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-020",
+      "title": "Blog — 'How to Choose the Best Credit Card for Your Spending'",
+      "priority": 12,
+      "passes": false,
+      "description": "Write a long-form guide (2000+ words) at /blog/how-to-choose-best-credit-card. This is a foundational content piece targeting high-volume searches. Covers reward types, annual fee math, sign-up bonus strategy, category-based optimization. Links to the tool throughout. Blog infrastructure (listing page, routing) needed if not yet built.",
+      "acceptanceCriteria": [
+        "/blog route shows blog listing page with all posts",
+        "/blog/how-to-choose-best-credit-card renders the full article",
+        "Article is 2000+ words with proper H2/H3 structure",
+        "Covers: reward types (cash back, points, miles), annual fee break-even math, sign-up bonus amortization, category spending analysis, wallet size strategy",
+        "Multiple CTAs linking to /upload ('Try it with your spending')",
+        "Internal links to category guides and card detail pages",
+        "Article structured data (JSON-LD Article type) with author, datePublished",
+        "Unique meta title and description optimized for 'best credit card' searches",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-021",
+      "title": "Blog — 'Cash Back vs Points vs Miles: A Data-Driven Guide'",
+      "priority": 13,
+      "passes": false,
+      "description": "Write a comparison article at /blog/cash-back-vs-points-vs-miles breaking down when each reward type wins. Use real math from the card catalog data. Target searches like 'cash back vs points credit card' and 'are credit card points worth it'.",
+      "acceptanceCriteria": [
+        "/blog/cash-back-vs-points-vs-miles renders the full article",
+        "Article is 1500+ words with data tables comparing reward types",
+        "Includes real examples from the card catalog (e.g., 'The Chase Freedom Unlimited earns 1.5% cash back, while the Amex Gold earns 4x on dining')",
+        "Scenario analysis: when cash back wins, when points win, when miles win",
+        "CTA to /upload ('See which type is best for YOUR spending')",
+        "Article structured data (JSON-LD)",
+        "Unique title and meta description",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-022",
+      "title": "Blog — 'Annual Fee Credit Cards: When They Are Worth It'",
+      "priority": 14,
+      "passes": false,
+      "description": "Write an article at /blog/annual-fee-worth-it showing the break-even math for premium cards. Include a simple calculator or table showing how much spending is needed at each category rate to offset the fee. Targets 'is Chase Sapphire Preferred worth it' searches.",
+      "acceptanceCriteria": [
+        "/blog/annual-fee-worth-it renders the full article",
+        "Article is 1500+ words with break-even analysis for at least 5 popular annual-fee cards",
+        "Break-even table: for each card, shows minimum monthly spend needed to offset annual fee",
+        "Compares each premium card against the best no-annual-fee alternative",
+        "CTA to /builder ('Find your optimal wallet combination')",
+        "Article structured data (JSON-LD)",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-023",
+      "title": "Email results — send optimized wallet via Resend API",
+      "priority": 15,
+      "passes": false,
+      "description": "Add an 'Email my results' button on the wallet page. Users enter their email and receive a formatted summary of their optimized wallet, projected rewards, and top recommendations. Server-side endpoint sends via Resend API. Also offers opt-in to a monthly 'card deals' digest. Builds email list for future marketing.",
+      "acceptanceCriteria": [
+        "'Email my results' button on wallet page (visible when wallet has cards selected)",
+        "Modal or inline form captures email address",
+        "POST /api/email-results endpoint sends formatted email via Resend API",
+        "Email includes: current wallet cards, per-category assignment, projected annual rewards, top 3 new card recommendations",
+        "Email is well-formatted HTML with card logos/colors",
+        "Optional 'Send me monthly card deals' checkbox (stores email preference in D1)",
+        "Rate limited: max 3 emails per address per day",
+        "Success feedback shown to user",
+        "Mobile responsive"
+      ]
+    },
+    {
+      "id": "CO-024",
+      "title": "Social launch kit — draft HN post, tweets, Reddit posts",
+      "priority": 16,
+      "passes": false,
+      "description": "Create a launch kit document with ready-to-post content for Steve to use. Includes a Show HN post draft, 5 tweet drafts, 3 Reddit post drafts (r/personalfinance, r/creditcards, r/churning), and a Product Hunt listing draft. Steve can copy-paste and post. This is the highest-leverage action for getting first users.",
+      "acceptanceCriteria": [
+        "docs/launch-kit.md created in the card-optimizer worktree",
+        "Show HN post: title, body text explaining the tool, link to live site",
+        "5 tweet drafts: varied angles (privacy, savings, open source, data-driven, comparison)",
+        "3 Reddit post drafts: tailored to each subreddit's culture and rules (r/personalfinance, r/creditcards, r/churning)",
+        "Product Hunt listing draft: tagline, description, first comment, screenshots list",
+        "All drafts link to cards.keylightdigital.dev",
+        "Drafts are authentic and not spammy — value-first positioning"
       ]
     }
   ]

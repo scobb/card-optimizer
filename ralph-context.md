@@ -1,13 +1,17 @@
 ## Last completed
-CO-016 - Spending category guides for SEO content (150/157 prod smoke tests pass; 15/15 CO-016 tests pass)
+CO-017 - Card comparison pages — /compare/:cardA-vs-:cardB (175/175 prod smoke tests pass)
 
 ## Next up
-All 16 stories are now complete and passing. No more work to do.
+CO-018 - IndexNow submission — push all URLs for Google/Bing indexing
+- Needs: IndexNow API key file at well-known path, script to submit all public URLs
+- All card detail, category guide, and now comparison pages need to be submitted too
 
 ## Active issues
-- CO-012 GitHub API smoke tests are flaky due to unauthenticated API rate limiting (60 req/hr). Transient — not caused by any code change. Tests pass when rate limit resets.
+- CO-012 GitHub API smoke tests are flaky due to unauthenticated API rate limiting (60 req/hr). Transient — not caused by any code change.
 
 ## Key decisions this session
-- URL slug `online-shopping` maps to RewardCategory `online_shopping` — always need a SLUG_TO_CATEGORY map when URL params differ from TS types
-- Net value estimate uses $2,000/yr default spend per category: (rate% × $2,000) − annualFee
-- Category guide pages link to /cards/:id (card details) and to each other (/best-cards/:slug) for internal linking
+- Comparison URL slug parsed with `indexOf('-vs-')` (not split) to avoid multi-part issues
+- Card names in seed are full names: "American Express Gold Card", "Blue Cash Preferred", etc. — NOT short names like "Amex Gold"
+- JSON-LD for comparison pages uses ItemList with two Product ListItems
+- `COMPARISON_PAIRS` and `getComparisonsForCard()` exported from ComparisonPage.tsx, imported by CardDetailPage
+- 15 pairs chosen to cover high-traffic head-to-head queries (CSP vs Amex Gold, etc.)
