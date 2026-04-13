@@ -1,0 +1,368 @@
+[
+  {
+    "id": "chase-sapphire-preferred",
+    "name": "Chase Sapphire Preferred",
+    "issuer": "Chase",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.25,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "online_shopping", "multiplier": 3 },
+      { "category": "travel", "multiplier": 2 },
+      { "category": "streaming", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 750, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred"
+  },
+  {
+    "id": "chase-freedom-unlimited",
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "drugstores", "multiplier": 3 },
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited"
+  },
+  {
+    "id": "chase-freedom-flex",
+    "name": "Chase Freedom Flex",
+    "issuer": "Chase",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "drugstores", "multiplier": 3 },
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex"
+  },
+  {
+    "id": "amex-gold",
+    "name": "American Express Gold Card",
+    "issuer": "American Express",
+    "annualFee": 250,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 4 },
+      { "category": "groceries", "multiplier": 4 }
+    ],
+    "signUpBonus": { "amount": 600, "spendRequired": 6000, "timeMonths": 6 },
+    "perks": [
+      { "name": "Dining Credit", "annualValue": 120 },
+      { "name": "Uber Cash", "annualValue": 120 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/"
+  },
+  {
+    "id": "amex-platinum",
+    "name": "American Express Platinum",
+    "issuer": "American Express",
+    "annualFee": 695,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.1,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 800, "spendRequired": 8000, "timeMonths": 6 },
+    "perks": [
+      { "name": "Airline Fee Credit", "annualValue": 200 },
+      { "name": "Hotel Credit", "annualValue": 200 },
+      { "name": "Digital Entertainment Credit", "annualValue": 240 },
+      { "name": "Uber Cash", "annualValue": 200 },
+      { "name": "Saks Credit", "annualValue": 100 },
+      { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/platinum/"
+  },
+  {
+    "id": "amex-blue-cash-preferred",
+    "name": "Blue Cash Preferred",
+    "issuer": "American Express",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "groceries", "multiplier": 6 },
+      { "category": "streaming", "multiplier": 6 },
+      { "category": "transit", "multiplier": 3 },
+      { "category": "gas", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 250, "spendRequired": 3000, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/"
+  },
+  {
+    "id": "citi-double-cash",
+    "name": "Citi Double Cash",
+    "issuer": "Citi",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 200, "spendRequired": 1500, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card"
+  },
+  {
+    "id": "citi-custom-cash",
+    "name": "Citi Custom Cash",
+    "issuer": "Citi",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 5 },
+      { "category": "groceries", "multiplier": 5 },
+      { "category": "gas", "multiplier": 5 },
+      { "category": "travel", "multiplier": 5 },
+      { "category": "transit", "multiplier": 5 },
+      { "category": "streaming", "multiplier": 5 },
+      { "category": "drugstores", "multiplier": 5 },
+      { "category": "home_improvement", "multiplier": 5 },
+      { "category": "entertainment", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 1500, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card"
+  },
+  {
+    "id": "capital-one-venture-x",
+    "name": "Capital One Venture X",
+    "issuer": "Capital One",
+    "annualFee": 395,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 10 }
+    ],
+    "signUpBonus": { "amount": 750, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Travel Credit", "annualValue": 300 },
+      { "name": "Anniversary Bonus", "annualValue": 100 }
+    ],
+    "url": "https://www.capitalone.com/credit-cards/venture-x/"
+  },
+  {
+    "id": "capital-one-savor-one",
+    "name": "Capital One SavorOne",
+    "issuer": "Capital One",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "entertainment", "multiplier": 3 },
+      { "category": "streaming", "multiplier": 3 },
+      { "category": "groceries", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.capitalone.com/credit-cards/savorone-dining-rewards/"
+  },
+  {
+    "id": "discover-it-cash-back",
+    "name": "Discover it Cash Back",
+    "issuer": "Discover",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": null,
+    "perks": [],
+    "url": "https://www.discover.com/credit-cards/cash-back/it-card.html"
+  },
+  {
+    "id": "wells-fargo-active-cash",
+    "name": "Wells Fargo Active Cash",
+    "issuer": "Wells Fargo",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.wellsfargo.com/active-cash-credit-card"
+  },
+  {
+    "id": "capital-one-venture",
+    "name": "Capital One Venture",
+    "issuer": "Capital One",
+    "annualFee": 95,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 2,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "travel", "multiplier": 5 }
+    ],
+    "signUpBonus": { "amount": 750, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
+    ],
+    "url": "https://www.capitalone.com/credit-cards/venture/"
+  },
+  {
+    "id": "chase-sapphire-reserve",
+    "name": "Chase Sapphire Reserve",
+    "issuer": "Chase",
+    "annualFee": 550,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.5,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "travel", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 600, "spendRequired": 4000, "timeMonths": 3 },
+    "perks": [
+      { "name": "Travel Credit", "annualValue": 300 },
+      { "name": "DoorDash DashPass", "annualValue": 96 },
+      { "name": "Global Entry/TSA PreCheck", "annualValue": 17 }
+    ],
+    "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve"
+  },
+  {
+    "id": "amex-blue-cash-everyday",
+    "name": "Blue Cash Everyday",
+    "issuer": "American Express",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "groceries", "multiplier": 3 },
+      { "category": "online_shopping", "multiplier": 3 },
+      { "category": "gas", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 2000, "timeMonths": 6 },
+    "perks": [],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/"
+  },
+  {
+    "id": "bank-of-america-customized-cash",
+    "name": "Bank of America Customized Cash Rewards",
+    "issuer": "Bank of America",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "groceries", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.bankofamerica.com/credit-cards/products/customized-cash-back-credit-card/"
+  },
+  {
+    "id": "us-bank-altitude-go",
+    "name": "U.S. Bank Altitude Go",
+    "issuer": "U.S. Bank",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 4 },
+      { "category": "groceries", "multiplier": 2 },
+      { "category": "streaming", "multiplier": 2 },
+      { "category": "gas", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 200, "spendRequired": 1000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.usbank.com/credit-cards/altitude-go-visa-signature-credit-card.html"
+  },
+  {
+    "id": "amex-green",
+    "name": "American Express Green Card",
+    "issuer": "American Express",
+    "annualFee": 150,
+    "firstYearFeeWaived": false,
+    "rewardType": "points",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "dining", "multiplier": 3 },
+      { "category": "travel", "multiplier": 3 },
+      { "category": "transit", "multiplier": 3 }
+    ],
+    "signUpBonus": { "amount": 400, "spendRequired": 3000, "timeMonths": 6 },
+    "perks": [
+      { "name": "CLEAR Plus Credit", "annualValue": 100 }
+    ],
+    "url": "https://www.americanexpress.com/us/credit-cards/card/green/"
+  },
+  {
+    "id": "chase-ink-cash",
+    "name": "Chase Ink Business Cash",
+    "issuer": "Chase",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1,
+    "pointValue": 1.0,
+    "categoryRates": [
+      { "category": "online_shopping", "multiplier": 5 },
+      { "category": "gas", "multiplier": 2 },
+      { "category": "dining", "multiplier": 2 }
+    ],
+    "signUpBonus": { "amount": 750, "spendRequired": 6000, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://creditcards.chase.com/business-credit-cards/ink/cash"
+  },
+  {
+    "id": "capital-one-quicksilver",
+    "name": "Capital One Quicksilver",
+    "issuer": "Capital One",
+    "annualFee": 0,
+    "firstYearFeeWaived": false,
+    "rewardType": "cashback",
+    "baseRate": 1.5,
+    "pointValue": 1.0,
+    "categoryRates": [],
+    "signUpBonus": { "amount": 200, "spendRequired": 500, "timeMonths": 3 },
+    "perks": [],
+    "url": "https://www.capitalone.com/credit-cards/quicksilver/"
+  }
+]

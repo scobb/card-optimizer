@@ -8,7 +8,7 @@ pages_build_output_dir = "dist"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "card-optimizer-db"
-database_id = "PLACEHOLDER_PROD_DB_ID"
+database_id = "86f6b550-adcb-4955-a48a-a103998971af"
 migrations_dir = "database/migrations"
 
 [env.production.vars]
@@ -20,7 +20,7 @@ ENVIRONMENT = "production"
 [[env.preview.d1_databases]]
 binding = "DB"
 database_name = "card-optimizer-db-staging"
-database_id = "PLACEHOLDER_STAGING_DB_ID"
+database_id = "bf05e6d6-cef0-4b0c-bb69-9a81ff641264"
 migrations_dir = "database/migrations"
 
 [env.preview.vars]
@@ -30,7 +30,7 @@ ENVIRONMENT = "staging"
 [[d1_databases]]
 binding = "DB"
 database_name = "card-optimizer-db"
-database_id = "PLACEHOLDER_PROD_DB_ID"
+database_id = "86f6b550-adcb-4955-a48a-a103998971af"
 migrations_dir = "database/migrations"
 
 [vars]
