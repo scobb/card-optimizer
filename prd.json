@@ -127,7 +127,7 @@
       "id": "CO-009",
       "title": "SEO foundation — meta tags, OG, robots.txt, sitemap",
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "description": "Add essential SEO elements: meta description, Open Graph tags, Twitter card tags, canonical URL, robots.txt, sitemap.xml, and JSON-LD structured data. These are prerequisites for Google indexing and social sharing.",
       "acceptanceCriteria": [
         "index.html has meta description (under 160 chars, mentions credit card rewards optimizer)",

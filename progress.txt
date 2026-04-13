@@ -2,6 +2,24 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-12 - CO-009
+- SEO foundation deployed to prod. 85/85 smoke tests pass.
+- What was implemented:
+  - index.html: meta description (156 chars), OG tags (og:title/description/type/url/image), Twitter card tags, canonical URL, JSON-LD WebApplication structured data, favicon link, manifest link, theme-color
+  - public/robots.txt: allows all crawlers, references sitemap URL
+  - public/sitemap.xml: lists /, /upload, /wallet, /recommendations, /builder, /catalog with priorities
+  - public/og-image.png: 1200x630 branded gradient image (ImageMagick)
+  - public/favicon.svg: credit card icon in brand blue (#1d4ed8)
+  - test/smoke/seo.spec.ts: 8 smoke tests
+- Files changed: index.html, public/robots.txt, public/sitemap.xml, public/og-image.png, public/favicon.svg, test/smoke/seo.spec.ts
+- **Learnings for future iterations:**
+  - Vite copies `public/` directory verbatim to `dist/` — no extra build config needed for static files
+  - Cloudflare Pages serves static files from dist/ with correct content-type (PNG, SVG, TXT, XML all work)
+  - Meta description must be ≤ 160 chars — count carefully before deploying (use `echo -n "..." | wc -c`)
+  - `page.locator('meta[name="description"]').getAttribute('content')` works correctly in Playwright for head meta tags
+  - First deploy of new static files may have CDN propagation delay — add a second test run if flaky
+---
+
 ## Codebase Patterns
 - Use `--env preview` when running wrangler d1 commands against `card-optimizer-db-staging` (it lives in `[env.preview]` in wrangler.toml)
 - D1 prod DB ID: 86f6b550-adcb-4955-a48a-a103998971af

@@ -1,17 +1,20 @@
 ## Last completed
-ALL 8 stories — CO-001 through CO-008. All pass on prod (76/76 smoke tests at https://cards.keylightdigital.dev).
+CO-009 - SEO foundation — meta tags, OG, robots.txt, sitemap
 
-## SSL fix (resolved)
-- keylightdigital.com is NOT in the Cloudflare account (different account, inaccessible)
-- Fixed by using keylightdigital.dev instead (IS in account)
-- Added CNAME: cards.keylightdigital.dev → card-optimizer.pages.dev
-- Updated deploy.sh DEPLOY_URL to https://cards.keylightdigital.dev
+## Next up
+CO-010 - Landing page with value proposition and how-it-works
+- Currently / redirects to /upload — replace with real landing page component
+- Must have hero, how-it-works, features, privacy, stats sections
+- Stats section should fetch /api/cards count (live data)
+- Must be mobile responsive at 375px
+- CTA button visible above the fold on mobile
 
 ## Active issues
-- None — all stories passes=true, all 76 smoke tests green on prod
+- None — 85/85 smoke tests green on prod (https://cards.keylightdigital.dev)
 
 ## Key decisions this session
-- prod domain changed from cards.keylightdigital.com → cards.keylightdigital.dev
-- Use keylightdigital.dev for all future projects (accessible via the API token)
-- Share state restoration must be synchronous in main.tsx IIFE (not useEffect)
-- Hash navigation (/wallet → /wallet#share=...) doesn't reload page — navigate away first in tests
+- Meta description changed from 164 to 156 chars to satisfy ≤160 AC
+- public/ directory created — all static assets (robots.txt, sitemap.xml, og-image.png, favicon.svg) go here; Vite copies verbatim to dist/
+- OG image is a 1200x630 gradient PNG generated with ImageMagick (magick command, not convert)
+- Favicon is SVG (credit card icon in #1d4ed8)
+- prod domain remains https://cards.keylightdigital.dev
