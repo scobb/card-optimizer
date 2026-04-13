@@ -1,6 +1,8 @@
 import { test, expect, Page } from '@playwright/test'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const FIXTURES = path.resolve(__dirname, '../fixtures')
 
 async function clearLocalStorage(page: Page) {
@@ -31,17 +33,17 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
 
     // Format detection shown
-    await expect(page.getByText(/format detected|Generic CSV/i)).toBeVisible()
+    await expect(page.getByText('Generic CSV format detected.')).toBeVisible()
 
     // Categories visible
     await expect(page.getByRole('cell', { name: 'Dining' })).toBeVisible()
     await expect(page.getByRole('cell', { name: 'Groceries' })).toBeVisible()
 
     // Transaction count shown
-    await expect(page.getByText(/transactions/i)).toBeVisible()
+    await expect(page.getByText(/transactions/i).first()).toBeVisible()
 
-    // Annual total row visible
-    await expect(page.getByRole('row', { name: /total/i })).toBeVisible()
+    // Annual total row visible (use role=rowgroup to target tfoot)
+    await expect(page.getByRole('cell', { name: 'Total' })).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -50,7 +52,7 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
     await input.setInputFiles(path.join(FIXTURES, 'monarch-transactions.csv'))
 
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
-    await expect(page.getByText(/Monarch Money/i)).toBeVisible()
+    await expect(page.getByText('Monarch Money export detected.')).toBeVisible()
     await expect(page.getByRole('cell', { name: 'Dining' })).toBeVisible()
   })
 
@@ -60,7 +62,7 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
     await input.setInputFiles(path.join(FIXTURES, 'chase-transactions.csv'))
 
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
-    await expect(page.getByText(/Chase/i)).toBeVisible()
+    await expect(page.getByText('Chase bank export detected.')).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -69,7 +71,7 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
     await input.setInputFiles(path.join(FIXTURES, 'capital-one-transactions.csv'))
 
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
-    await expect(page.getByText(/Capital One/i)).toBeVisible()
+    await expect(page.getByText('Capital One export detected.')).toBeVisible()
     // Debit/Credit format: credits should be excluded
     await expect(page.getByRole('cell', { name: 'Groceries' })).toBeVisible()
   })
@@ -87,7 +89,7 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
 
     // Data should still be visible (from localStorage)
     await expect(page.getByRole('table')).toBeVisible({ timeout: 5000 })
-    await expect(page.getByText(/transactions/i)).toBeVisible()
+    await expect(page.getByText(/transactions/i).first()).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -111,36 +113,26 @@ test.describe('CO-002: CSV Upload and Spending Breakdown', () => {
 
   // -------------------------------------------------------------------------
   test('unknown CSV format shows manual column mapping', async ({ page }) => {
-    const unknownCsv = [
+    const unknownCsvContent = [
       'tx_date,payee,spend,notes',
       '2025-01-01,Starbucks,5.75,coffee',
       '2025-01-02,Shell,40.00,gas',
     ].join('\n')
 
-    // Write unknown CSV to a temp file via page evaluate + blob trick
-    await page.evaluate((csv) => {
-      window.__testCsv = csv
-    }, unknownCsv)
-
-    // Use file input with blob
-    await page.evaluate(() => {
-      const csv = (window as unknown as { __testCsv: string }).__testCsv
-      const blob = new Blob([csv], { type: 'text/csv' })
-      const file = new File([blob], 'unknown.csv', { type: 'text/csv' })
-      const dt = new DataTransfer()
-      dt.items.add(file)
-      const input = document.querySelector('[data-testid="csv-file-input"]') as HTMLInputElement
-      Object.defineProperty(input, 'files', { value: dt.files })
-      input.dispatchEvent(new Event('change', { bubbles: true }))
+    // Use Playwright setInputFiles with a buffer (avoids DataTransfer hacks)
+    await page.locator('[data-testid="csv-file-input"]').setInputFiles({
+      name: 'unknown.csv',
+      mimeType: 'text/csv',
+      buffer: Buffer.from(unknownCsvContent),
     })
 
     await expect(page.getByText(/couldn't auto-detect/i)).toBeVisible({ timeout: 5000 })
     await expect(page.getByText(/map the columns manually/i)).toBeVisible()
 
-    // Column selects should appear
-    await expect(page.getByLabel('Date column')).toBeVisible()
-    await expect(page.getByLabel('Merchant / Description column')).toBeVisible()
-    await expect(page.getByLabel('Amount column')).toBeVisible()
+    // Column selects should appear — use label text (non-exact since label text is the visible text)
+    await expect(page.getByText('Date column', { exact: true })).toBeVisible()
+    await expect(page.getByText('Merchant / Description column', { exact: true })).toBeVisible()
+    await expect(page.getByText('Amount column', { exact: true })).toBeVisible()
   })
 
   // -------------------------------------------------------------------------

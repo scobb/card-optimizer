@@ -1,6 +1,8 @@
 import { test, expect, Page } from '@playwright/test'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const FIXTURES = path.resolve(__dirname, '../fixtures')
 
 async function clearLocalStorage(page: Page) {
@@ -51,16 +53,17 @@ test.describe('CO-003: Wallet Optimization', () => {
   test('shows prompt to select cards when spending data exists but no cards selected', async ({ page }) => {
     await seedSpendingData(page)
     await page.reload()
+    // Look for the specific "no cards selected" prompt (not the optimization placeholder)
     await expect(page.getByText('Select one or more cards above to see per-category optimization.')).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
   test('card picker lists issuers with cards', async ({ page }) => {
-    // Chase should be visible as an issuer
-    await expect(page.getByText('Chase')).toBeVisible()
-    await expect(page.getByText('American Express')).toBeVisible()
-    await expect(page.getByText('Capital One')).toBeVisible()
-    await expect(page.getByText('Citi')).toBeVisible()
+    // Use exact issuer group button text patterns to avoid strict mode violations
+    await expect(page.getByRole('button', { name: /^Chase \d+ cards$/ })).toBeVisible()
+    await expect(page.getByRole('button', { name: /^American Express \d+ cards$/ })).toBeVisible()
+    await expect(page.getByRole('button', { name: /^Capital One \d+ cards$/ })).toBeVisible()
+    await expect(page.getByRole('button', { name: /^Citi \d+ cards$/ })).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
@@ -111,14 +114,12 @@ test.describe('CO-003: Wallet Optimization', () => {
     const csp = page.locator('[data-card-id="chase-sapphire-preferred"]')
     await csp.click()
 
-    // Read initial net value
+    // Optimization section appears
     await expect(page.getByText('Net Value')).toBeVisible()
 
-    // Select a second card (Amex Gold for dining/groceries) — Amex issuer may be collapsed
-    const amexCollapse = page.getByText('American Express').first()
-    await amexCollapse.click() // toggle open if collapsed
-
+    // Select a second card — Amex Gold is in American Express group (already expanded by default)
     const amexGold = page.locator('[data-card-id="amex-gold"]')
+    await expect(amexGold).toBeVisible()
     await amexGold.click()
 
     // Should now show 2 cards selected
@@ -157,8 +158,9 @@ test.describe('CO-003: Wallet Optimization', () => {
     // Click Remove button in the wallet summary
     await page.getByRole('button', { name: 'Remove' }).click()
 
-    // Optimization results should disappear
-    await expect(page.getByText('Per-Category Optimization')).not.toBeVisible()
+    // Net Value summary cards should disappear (optimization gone)
+    await expect(page.getByText('Annual Rewards')).not.toBeVisible({ timeout: 5000 })
+    // "Select cards" prompt should appear
     await expect(page.getByText('Select one or more cards above to see per-category optimization.')).toBeVisible()
   })
 

@@ -40,6 +40,19 @@ const FORMAT_SIGNATURES: Array<{
     },
   },
   {
+    // Capital One MUST come before Chase — both have 'transaction date', but Capital One is more specific
+    format: 'capital_one',
+    label: 'Capital One',
+    match: (h) => h.includes('debit') && h.includes('credit') && h.includes('card no.'),
+    mapping: {
+      date: 'transaction date',
+      merchant: 'description',
+      amount: 'debit',
+      amountType: 'debit_credit',
+      creditColumn: 'credit',
+    },
+  },
+  {
     format: 'chase',
     label: 'Chase',
     match: (h) => h.includes('transaction date') || (h.includes('description') && h.includes('post date')),
@@ -59,18 +72,6 @@ const FORMAT_SIGNATURES: Array<{
       merchant: 'description',
       amount: 'amount',
       amountType: 'signed',
-    },
-  },
-  {
-    format: 'capital_one',
-    label: 'Capital One',
-    match: (h) => h.includes('debit') && h.includes('credit') && h.includes('card no.'),
-    mapping: {
-      date: 'transaction date',
-      merchant: 'description',
-      amount: 'debit',
-      amountType: 'debit_credit',
-      creditColumn: 'credit',
     },
   },
 ]
