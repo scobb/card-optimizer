@@ -177,7 +177,7 @@
       "id": "CO-012",
       "title": "Push to GitHub and create README",
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "description": "Create scobb/card-optimizer GitHub repo with a polished README. GitHub is a distribution channel — developers searching for credit card optimization tools should find this.",
       "acceptanceCriteria": [
         "GitHub repo scobb/card-optimizer created (public)",
