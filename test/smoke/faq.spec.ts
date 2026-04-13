@@ -1,28 +1,34 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('CO-019: FAQ page with structured data', () => {
+  // Helper: wait for the FAQ page to fully render
+  async function gotoFaq(page: Parameters<Parameters<typeof test>[1]>[0]['page']) {
+    await page.goto('/faq')
+    await expect(page.locator('[data-faq-page]')).toBeVisible()
+  }
+
   // ---------------------------------------------------------------------------
   test('/faq route renders FAQ page', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     await expect(page.locator('[data-faq-page]')).toBeVisible()
   })
 
   // ---------------------------------------------------------------------------
   test('FAQ page has h1 heading', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/frequently asked questions/i)
   })
 
   // ---------------------------------------------------------------------------
   test('FAQ page has 4 topic groups', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const groups = page.locator('[data-faq-group]')
     await expect(groups).toHaveCount(4)
   })
 
   // ---------------------------------------------------------------------------
   test('FAQ groups are: About the Tool, Privacy & Data, Card Strategy, Rewards Basics', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     await expect(page.locator('[data-faq-group="About the Tool"]')).toBeVisible()
     await expect(page.locator('[data-faq-group="Privacy & Data"]')).toBeVisible()
     await expect(page.locator('[data-faq-group="Card Strategy"]')).toBeVisible()
@@ -31,7 +37,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQ page has at least 15 questions total', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     // Count all accordion buttons (each question is a button)
     const buttons = page.locator('[data-faq-page] button[aria-expanded]')
     const count = await buttons.count()
@@ -40,14 +46,14 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('accordion items are collapsed by default', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const answers = page.locator('[data-faq-answer]')
     await expect(answers).toHaveCount(0)
   })
 
   // ---------------------------------------------------------------------------
   test('accordion expands on click', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const firstButton = page.locator('[data-faq-page] button[aria-expanded]').first()
     await firstButton.click()
     await expect(page.locator('[data-faq-answer]').first()).toBeVisible()
@@ -56,7 +62,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('accordion collapses on second click', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const firstButton = page.locator('[data-faq-page] button[aria-expanded]').first()
     await firstButton.click()
     await expect(page.locator('[data-faq-answer]').first()).toBeVisible()
@@ -66,7 +72,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('multiple items can be open simultaneously', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const buttons = page.locator('[data-faq-page] button[aria-expanded]')
     await buttons.nth(0).click()
     await buttons.nth(1).click()
@@ -76,7 +82,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('Privacy & Data group mentions "transaction data" privacy answer', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     // Open the first question in the Privacy group
     const privacyGroup = page.locator('[data-faq-group="Privacy & Data"]')
     await privacyGroup.locator('button[aria-expanded]').first().click()
@@ -85,11 +91,12 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQ page has internal links to card detail pages', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     // Expand Card Strategy group to reveal card links
     const strategyGroup = page.locator('[data-faq-group="Card Strategy"]')
     const strategyButtons = strategyGroup.locator('button[aria-expanded]')
-    for (let i = 0; i < await strategyButtons.count(); i++) {
+    const count = await strategyButtons.count()
+    for (let i = 0; i < count; i++) {
       await strategyButtons.nth(i).click()
     }
     const cardLinks = strategyGroup.locator('a[href^="/cards/"]')
@@ -98,10 +105,11 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQ page has internal links to category guide pages', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const strategyGroup = page.locator('[data-faq-group="Card Strategy"]')
     const strategyButtons = strategyGroup.locator('button[aria-expanded]')
-    for (let i = 0; i < await strategyButtons.count(); i++) {
+    const count = await strategyButtons.count()
+    for (let i = 0; i < count; i++) {
       await strategyButtons.nth(i).click()
     }
     const guideLinks = strategyGroup.locator('a[href^="/best-cards/"]')
@@ -110,15 +118,17 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQ page has unique document title', async ({ page }) => {
-    await page.goto('/faq')
-    const title = await page.title()
-    expect(title).toMatch(/faq/i)
-    expect(title).toMatch(/card optimizer/i)
+    await gotoFaq(page)
+    // useEffect sets title asynchronously — use Playwright's built-in retry
+    await expect(page).toHaveTitle(/faq/i)
+    await expect(page).toHaveTitle(/cardoptimizer/i)
   })
 
   // ---------------------------------------------------------------------------
   test('FAQ page has FAQPage JSON-LD structured data', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
+    // Wait for useEffect to inject the JSON-LD script
+    await page.waitForFunction(() => !!document.getElementById('faq-jsonld'))
     const jsonld = await page.evaluate(() => {
       const el = document.getElementById('faq-jsonld')
       if (!el) return null
@@ -132,7 +142,8 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQPage JSON-LD has valid Question/Answer structure', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
+    await page.waitForFunction(() => !!document.getElementById('faq-jsonld'))
     const jsonld = await page.evaluate(() => {
       const el = document.getElementById('faq-jsonld')
       if (!el) return null
@@ -147,7 +158,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
 
   // ---------------------------------------------------------------------------
   test('FAQ page CTA links to /upload', async ({ page }) => {
-    await page.goto('/faq')
+    await gotoFaq(page)
     const cta = page.locator('[data-faq-cta]')
     await expect(cta).toBeVisible()
     await expect(cta.locator('a[href="/upload"]')).toBeVisible()
@@ -164,8 +175,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
   // ---------------------------------------------------------------------------
   test('mobile at 375px — no horizontal overflow', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/faq')
-    await expect(page.locator('[data-faq-page]')).toBeVisible()
+    await gotoFaq(page)
     const overflow = await page.evaluate(() => ({
       sw: document.documentElement.scrollWidth,
       cw: document.documentElement.clientWidth,
@@ -176,7 +186,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
   // ---------------------------------------------------------------------------
   test('mobile at 375px — accordion buttons have adequate tap targets', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/faq')
+    await gotoFaq(page)
     const firstButton = page.locator('[data-faq-page] button[aria-expanded]').first()
     const box = await firstButton.boundingBox()
     expect(box).not.toBeNull()
@@ -186,7 +196,7 @@ test.describe('CO-019: FAQ page with structured data', () => {
   // ---------------------------------------------------------------------------
   test('mobile — accordion expands and answer is readable', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 })
-    await page.goto('/faq')
+    await gotoFaq(page)
     await page.locator('[data-faq-page] button[aria-expanded]').first().click()
     await expect(page.locator('[data-faq-answer]').first()).toBeVisible()
     const overflow = await page.evaluate(() => ({
