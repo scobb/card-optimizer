@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate, NavLink } from 'react-router-dom'
 import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
+import { RecommendationsPage } from './pages/RecommendationsPage'
 
 export function App() {
   return (
@@ -52,7 +53,7 @@ export function App() {
             <Route path="/" element={<Navigate to="/upload" replace />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/wallet" element={<WalletPage />} />
-            <Route path="/recommendations" element={<div className="text-gray-500">Recommendations — coming in CO-004/005</div>} />
+            <Route path="/recommendations" element={<RecommendationsPage />} />
             <Route path="/catalog" element={<div className="text-gray-500">Card catalog — coming in CO-006</div>} />
           </Routes>
         </main>
