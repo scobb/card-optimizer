@@ -134,8 +134,14 @@ test.describe('CO-032: LocalStorage wallet persistence — welcome back', () => 
 
   test('corrupted localStorage wallet data does not crash the page', async ({ page }) => {
     await page.goto('/upload')
-    await page.evaluate((k) => { localStorage.setItem(k, SAMPLE_SPENDING) }, SPENDING_KEY)
-    await page.evaluate((k) => { localStorage.setItem(k, 'INVALID{') }, WALLET_KEY)
+    await page.evaluate(
+      ([k, v]) => { localStorage.setItem(k, v) },
+      [SPENDING_KEY, SAMPLE_SPENDING] as const,
+    )
+    await page.evaluate(
+      ([k, v]) => { localStorage.setItem(k, v) },
+      [WALLET_KEY, 'INVALID{'] as const,
+    )
     await page.reload()
     await expect(page.getByRole('heading', { name: 'Upload Transactions' })).toBeVisible()
     await expect(page.locator('[data-welcome-back]')).not.toBeVisible()
