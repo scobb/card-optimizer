@@ -435,6 +435,13 @@ export function UploadPage() {
     setError(null)
     setRawCsv(text)
     setFileName(name)
+
+    if (!text.trim()) {
+      setError('File appears empty. Please upload a CSV with transaction data.')
+      setParseResult(null)
+      return
+    }
+
     const result = parseCsv(text)
     setParseResult(result)
 
@@ -450,6 +457,11 @@ export function UploadPage() {
       setStoredData(data)
     } else if (result.transactions.length === 0 && !result.needsManualMapping) {
       setError('No transactions found. Check that your CSV has valid data rows.')
+    } else if (result.needsManualMapping && (!result.headers || result.headers.length === 0)) {
+      setError(
+        'Could not parse this file. Make sure it is a valid CSV exported from your bank or a supported app (Chase, Amex, Capital One, Monarch, Copilot).',
+      )
+      setParseResult(null)
     }
   }, [])
 
@@ -632,9 +644,16 @@ export function UploadPage() {
 
       {/* Error */}
       {error && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 flex items-start gap-2">
-          <X className="w-4 h-4 mt-0.5 flex-shrink-0" />
-          {error}
+        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 flex items-start gap-2" data-upload-error>
+          <span className="flex-1">{error}</span>
+          <button
+            onClick={() => setError(null)}
+            className="text-red-500 hover:text-red-700 flex-shrink-0 mt-0.5 min-w-[20px] min-h-[20px]"
+            aria-label="Dismiss error"
+            data-dismiss-error
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
       )}
 

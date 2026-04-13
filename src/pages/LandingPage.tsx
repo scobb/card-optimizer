@@ -47,7 +47,10 @@ export function LandingPage() {
 
   useEffect(() => {
     fetch('/api/cards')
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`)
+        return r.json()
+      })
       .then((cards: unknown[]) => {
         if (Array.isArray(cards) && cards.length > 0) setCardCount(cards.length)
       })

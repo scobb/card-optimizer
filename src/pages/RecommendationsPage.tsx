@@ -230,7 +230,7 @@ export function RecommendationsPage() {
       )}
 
       {recommendations.length === 0 && (
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-600">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-600" data-no-recommendations>
           No cards found with positive net value given your current wallet and spending. Try
           removing some cards from your wallet to see more options.
         </div>
