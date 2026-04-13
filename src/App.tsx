@@ -5,6 +5,7 @@ import { RecommendationsPage } from './pages/RecommendationsPage'
 import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
 import { LandingPage } from './pages/LandingPage'
+import { PrivacyPage } from './pages/PrivacyPage'
 
 export function App() {
   return (
@@ -67,8 +68,29 @@ export function App() {
             <Route path="/recommendations" element={<RecommendationsPage />} />
             <Route path="/builder" element={<WalletBuilderPage />} />
             <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
+        <footer className="border-t border-gray-200 bg-white mt-8" data-footer>
+          <div className="max-w-4xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+            <span>
+              Built by{' '}
+              <a
+                href="https://keylightdigital.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline font-medium"
+              >
+                Keylight Digital
+              </a>
+            </span>
+            <div className="flex items-center gap-4">
+              <Link to="/privacy" className="hover:text-gray-900 transition-colors" data-footer-privacy>
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </footer>
       </div>
     </BrowserRouter>
   )
