@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, CreditCard, Star, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
 import { getCardById, effectiveRate } from '../lib/cards'
 import { saveWalletCards, loadWalletCards } from '../lib/storage'
+import { getComparisonsForCard } from './ComparisonPage'
 import { CATEGORY_LABELS } from '../types'
 import type { RewardCategory } from '../types'
 
@@ -257,6 +258,29 @@ export function CardDetailPage() {
           )}
         </div>
       )}
+
+      {/* Comparison links */}
+      {(() => {
+        const comparisons = getComparisonsForCard(card.id)
+        if (comparisons.length === 0) return null
+        return (
+          <div className="bg-white border border-gray-200 rounded-xl p-5 space-y-3" data-card-comparisons>
+            <h2 className="font-semibold text-gray-900 text-sm">Compare {card.name}</h2>
+            <div className="flex flex-wrap gap-2">
+              {comparisons.map(({ url, other }) => (
+                <Link
+                  key={url}
+                  to={url}
+                  className="text-sm text-blue-600 hover:text-blue-800 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors min-h-[44px] flex items-center"
+                  data-comparison-link={other.id}
+                >
+                  vs {other.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )
+      })()}
 
       {/* CTA footer */}
       <div className="bg-blue-50 border border-blue-100 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

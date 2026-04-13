@@ -8,6 +8,7 @@ import { LandingPage } from './pages/LandingPage'
 import { PrivacyPage } from './pages/PrivacyPage'
 import { CardDetailPage } from './pages/CardDetailPage'
 import { CategoryGuidePage } from './pages/CategoryGuidePage'
+import { ComparisonPage } from './pages/ComparisonPage'
 import { BeamPageview } from './lib/BeamPageview'
 
 export function App() {
@@ -74,6 +75,7 @@ export function App() {
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/cards/:slug" element={<CardDetailPage />} />
             <Route path="/best-cards/:category" element={<CategoryGuidePage />} />
+            <Route path="/compare/:slug" element={<ComparisonPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
