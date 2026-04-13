@@ -472,6 +472,156 @@
         "800+ words per page",
         "Mobile responsive at 375px"
       ]
+    },
+    {
+      "id": "CO-030",
+      "title": "Spending presets — one-click spending profiles without CSV upload",
+      "priority": 22,
+      "passes": false,
+      "description": "Most visitors won't upload a CSV on first visit. Add pre-built spending profiles that populate the spending breakdown instantly: 'Average American' ($4,500/mo), 'Frequent Traveler' ($6,000/mo), 'Online Shopper' ($3,500/mo), 'Foodie' ($5,000/mo). Each preset includes realistic category-level breakdowns. Clicking a preset should populate the spending data and immediately show optimization results — zero friction path to value.",
+      "acceptanceCriteria": [
+        "4+ spending preset buttons on the upload/spending page",
+        "Each preset has a name, total monthly spend, and per-category breakdown",
+        "Clicking a preset populates the spending breakdown without file upload",
+        "Optimization runs immediately after preset selection",
+        "Presets appear prominently — above or alongside the CSV upload area",
+        "'Average American' preset uses realistic BLS Consumer Expenditure data breakdown",
+        "Each preset has a brief description of who it's for",
+        "Mobile responsive at 375px — presets are tappable cards",
+        "Smoke tests verify each preset loads and triggers optimization"
+      ]
+    },
+    {
+      "id": "CO-031",
+      "title": "Annual savings calculator — show dollar impact of optimal wallet",
+      "priority": 23,
+      "passes": false,
+      "description": "After wallet optimization, calculate and prominently display 'Estimated annual savings: $X' comparing the optimized wallet's rewards against a baseline 1% flat cashback card. Break down savings by category. This is the key 'aha moment' — users need to see a concrete dollar amount to understand the value. Show savings on both the wallet optimization page and the new card recommendations page.",
+      "acceptanceCriteria": [
+        "After optimization, a prominent savings banner shows 'Estimated annual savings: $X/year'",
+        "Savings calculated as: optimal wallet rewards minus 1% flat cashback baseline",
+        "Category-level breakdown shows where the biggest savings come from",
+        "Savings displayed on wallet optimization results AND new card recommendations",
+        "Dollar amounts formatted with commas and no cents (e.g., '$1,247')",
+        "If savings are negative (unlikely), show 'Your current setup is already optimized'",
+        "Savings number is visually prominent — large font, accent color",
+        "Mobile responsive at 375px",
+        "Smoke tests verify savings calculation and display for preset spending profiles"
+      ]
+    },
+    {
+      "id": "CO-032",
+      "title": "LocalStorage wallet persistence — save and restore analysis",
+      "priority": 24,
+      "passes": false,
+      "description": "Save uploaded spending data and optimization results to localStorage so returning visitors see their previous analysis. On return visit, show a 'Welcome back — view your last analysis?' prompt with options to continue or start fresh. This drives repeat engagement without requiring accounts.",
+      "acceptanceCriteria": [
+        "Spending data saved to localStorage after upload or preset selection",
+        "Optimization results saved to localStorage after computation",
+        "On page load with saved data, show 'Welcome back' prompt",
+        "Prompt offers 'View my results' and 'Start fresh' options",
+        "Clicking 'View my results' restores previous spending data and results",
+        "Clicking 'Start fresh' clears localStorage and shows empty state",
+        "'Clear saved data' option accessible from settings or footer",
+        "localStorage keys are namespaced (e.g., 'card-optimizer:spending')",
+        "Graceful handling of corrupted/outdated localStorage data",
+        "Mobile responsive at 375px",
+        "Smoke tests verify save, restore, and clear flows"
+      ]
+    },
+    {
+      "id": "CO-033",
+      "title": "Expand card database to 50+ cards",
+      "priority": 25,
+      "passes": false,
+      "description": "20 cards is thin for meaningful recommendations. Add 30+ more cards from major issuers: Chase (Freedom Unlimited, Freedom Flex, Ink Business), Amex (Platinum, Blue Cash Everyday, Delta cards), Citi (Custom Cash, Premier), Capital One (SavorOne, Quicksilver, Spark), Discover (it Miles), Bank of America (Customized Cash, Premium Rewards, Unlimited Cash), Wells Fargo (Active Cash, Autograph), US Bank (Altitude Go, Cash+). Include at least 5 business cards and 3 store cards (Amazon Prime Visa, Target RedCard, Costco). Ensure reward rates are current as of April 2026.",
+      "acceptanceCriteria": [
+        "GET /api/cards returns 50+ cards",
+        "Cards from at least 8 different issuers",
+        "At least 5 business cards included",
+        "At least 3 store/co-branded cards included",
+        "All cards have accurate reward rates, annual fees, and sign-up bonuses",
+        "New card detail pages generated for all new cards",
+        "Card catalog browse page shows all new cards with correct filtering",
+        "Sitemap updated with all new card detail page URLs",
+        "FinancialProduct structured data on all new card detail pages",
+        "Optimization algorithm works correctly with expanded catalog",
+        "Smoke tests verify catalog count and new card data"
+      ]
+    },
+    {
+      "id": "CO-034",
+      "title": "Card application links — make recommendations actionable",
+      "priority": 26,
+      "passes": false,
+      "description": "Add card issuer application/learn-more URLs to card data. Render 'Learn More' buttons on card detail pages and in recommendation results. Links open in new tab and go to the card's official page on the issuer website. Include a disclosure ('We link to card issuer websites. We are not compensated for referrals.') to build trust. Even without affiliate revenue, application links make the tool actionable — users can apply for recommended cards.",
+      "acceptanceCriteria": [
+        "Card data includes 'learnMoreUrl' field linking to issuer card page",
+        "Card detail pages show a prominent 'Learn More at [Issuer]' button",
+        "Recommendation results include 'Learn More' link for each recommended card",
+        "Links open in new tab (target=_blank rel=noopener)",
+        "Disclosure text visible on pages with application links",
+        "Links go to official issuer card pages (not affiliate links)",
+        "At least 30 cards have valid learnMoreUrl values",
+        "Mobile responsive at 375px — buttons are full-width on mobile",
+        "Smoke tests verify links render and have valid href values"
+      ]
+    },
+    {
+      "id": "CO-035",
+      "title": "Quick results preview on landing page — instant value for visitors",
+      "priority": 27,
+      "passes": false,
+      "description": "Add a 'See it in action' section on the landing page with a pre-computed optimization for the Average American spending profile. Show top 3 recommended cards and estimated annual savings. This gives visitors instant value before they commit to uploading data. The preview should entice users to try with their own spending data.",
+      "acceptanceCriteria": [
+        "Landing page includes a 'See it in action' or 'Example results' section",
+        "Section shows pre-computed results for Average American spending ($4,500/mo)",
+        "Top 3 recommended cards displayed with names, key reward rates, and why they're recommended",
+        "Estimated annual savings prominently shown (from CO-031 calculation)",
+        "CTA: 'Try with your spending' links to the upload/optimizer page",
+        "Results look like a condensed version of the real optimization output",
+        "Section is below the hero and above the how-it-works section",
+        "Mobile responsive at 375px",
+        "Smoke tests verify section renders with card names and savings amount"
+      ]
+    },
+    {
+      "id": "CO-036",
+      "title": "Error states and edge cases — graceful failure handling",
+      "priority": 28,
+      "passes": false,
+      "description": "Audit and implement error handling for all user-facing flows: invalid CSV format, empty file upload, CSV with unrecognizable columns, no matching cards for spending profile, network errors during API calls, empty card catalog. Each error state should show a helpful message explaining what went wrong and what to try instead.",
+      "acceptanceCriteria": [
+        "Invalid CSV upload shows error message with format guidance",
+        "Empty file upload shows 'File appears empty' message",
+        "CSV with no recognizable columns shows 'Could not detect spending categories' with supported format examples",
+        "Zero matching cards for a spending profile shows 'No cards match' with suggestion to adjust",
+        "Network error on API call shows 'Connection error — please try again'",
+        "Loading spinner during optimization computation",
+        "Loading spinner during card catalog API fetch",
+        "Error messages are dismissible",
+        "No console errors or unhandled promise rejections in error paths",
+        "Mobile responsive at 375px",
+        "Smoke tests verify at least 3 error states render correctly"
+      ]
+    },
+    {
+      "id": "CO-037",
+      "title": "Card data freshness and trust indicators",
+      "priority": 29,
+      "passes": false,
+      "description": "Show 'Card data last verified: April 2026' on the catalog page, card detail pages, and optimization results. Add 'Data sourced from card issuer websites' disclaimer. Show 'N cards in database' count on catalog page. These trust signals help users understand the data is maintained and sourced from real issuer information.",
+      "acceptanceCriteria": [
+        "'Card data last verified: April 2026' shown on catalog browse page",
+        "'Card data last verified' shown on card detail pages",
+        "'Card data last verified' shown on optimization results",
+        "'Data sourced from card issuer websites' disclaimer on catalog page",
+        "'N cards in our database' count shown on catalog page header",
+        "Freshness date is stored as a constant (easy to update monthly)",
+        "Trust indicators are subtle — small text, not visually dominant",
+        "Mobile responsive at 375px",
+        "Smoke tests verify freshness text and card count render"
+      ]
     }
   ]
 }
