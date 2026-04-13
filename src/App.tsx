@@ -13,7 +13,7 @@ export function App() {
         <nav className="bg-white border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex items-center gap-6 h-14 overflow-x-auto">
-              <Link to="/" className="font-bold text-lg flex-shrink-0 text-gray-900 hover:text-blue-700 transition-colors">CardOptimizer</Link>
+              <Link to="/" className="font-bold text-lg flex-shrink-0 text-gray-900 hover:text-blue-700 transition-colors min-h-[44px] flex items-center">CardOptimizer</Link>
               <div className="flex items-center gap-1 text-sm flex-shrink-0">
                 <NavLink
                   to="/upload"
