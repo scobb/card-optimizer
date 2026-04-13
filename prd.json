@@ -2,7 +2,7 @@
   "project": "card-optimizer",
   "codename": "card-optimizer",
   "branchName": "main",
-  "description": "Credit card rewards optimizer \u2014 upload transactions, get personalized card recommendations",
+  "description": "Credit card rewards optimizer — upload transactions, get personalized card recommendations",
   "createdAt": "2026-04-12",
   "updatedAt": "2026-04-13",
   "userStories": [
@@ -42,7 +42,7 @@
     },
     {
       "id": "CO-003",
-      "title": "Wallet optimization \u2014 per-category card assignment",
+      "title": "Wallet optimization — per-category card assignment",
       "priority": 3,
       "passes": true,
       "description": "User selects cards they hold from the catalog. System assigns each spending category to the best card and shows total projected rewards.",
@@ -71,7 +71,7 @@
     },
     {
       "id": "CO-005",
-      "title": "Wallet builder \u2014 optimal N-card combination",
+      "title": "Wallet builder — optimal N-card combination",
       "priority": 5,
       "passes": true,
       "description": "Find the optimal 2-4 card combination from the full catalog for the user's spending pattern.",
@@ -115,7 +115,7 @@
       "title": "Share link with encoded state",
       "priority": 8,
       "passes": true,
-      "description": "Users can generate a share link that encodes their spending summary and wallet selection in the URL hash. No PII \u2014 just category totals and card IDs.",
+      "description": "Users can generate a share link that encodes their spending summary and wallet selection in the URL hash. No PII — just category totals and card IDs.",
       "acceptanceCriteria": [
         "Share button generates URL with #share= hash",
         "Opening shared URL restores spending summary and wallet selection",
@@ -621,6 +621,40 @@
         "Trust indicators are subtle — small text, not visually dominant",
         "Mobile responsive at 375px",
         "Smoke tests verify freshness text and card count render"
+      ]
+    },
+    {
+      "id": "CO-038",
+      "title": "Filter out non-purchase transactions from CSV imports",
+      "priority": 1,
+      "passes": false,
+      "description": "CSV imports currently include payments, balance transfers, interest charges, fees, and refunds alongside real purchases. These pollute the spending breakdown and skew recommendations. Filter them out during parsing so only actual purchase transactions are counted.",
+      "acceptanceCriteria": [
+        "Payments to the card (e.g. PAYMENT THANK YOU, AUTOPAY, ONLINE PAYMENT) are excluded",
+        "Balance transfers are excluded",
+        "Interest charges and fees (INTEREST CHARGE, LATE FEE, ANNUAL FEE, FINANCE CHARGE) are excluded",
+        "Refunds and credits are excluded (negative amounts or descriptions containing REFUND, CREDIT, REVERSAL, RETURN)",
+        "Promotional credits (STATEMENT CREDIT, REWARD REDEMPTION, CASHBACK) are excluded",
+        "Filtering works across all supported CSV formats (Chase, Amex, Capital One, Monarch, Copilot, generic)",
+        "Filtered transaction count shown to user (e.g. 142 purchases from 168 transactions)",
+        "Existing spending breakdown accuracy improves — no phantom categories from non-purchase rows"
+      ]
+    },
+    {
+      "id": "CO-039",
+      "title": "Auto-detect cards user holds from CSV transaction data",
+      "priority": 2,
+      "passes": false,
+      "description": "Many bank CSV exports contain card identifiers — last 4 digits, card names, account labels, or issuer-specific patterns. Use these signals to pre-populate the user wallet instead of requiring manual card selection. This reduces friction and makes the optimizer work immediately after upload.",
+      "acceptanceCriteria": [
+        "Capital One CSVs: read Card No. column, group transactions by last-4, infer card from spending pattern (e.g. heavy dining = SavorOne, flat spend = Quicksilver)",
+        "Chase CSVs: detect card type from filename pattern or description prefixes if present",
+        "Monarch/Copilot: read account column if present, match account names to known cards",
+        "Amex CSVs: infer card from reward category patterns in the data (e.g. 4x groceries = Gold)",
+        "When card cannot be confidently identified, show inferred suggestion with confidence level and let user confirm or change",
+        "Inferred cards auto-populate the wallet page selections",
+        "User can always override inferred cards manually",
+        "Works gracefully when no card signals are present (falls back to manual selection, no errors)"
       ]
     }
   ]
