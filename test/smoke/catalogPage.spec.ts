@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test'
 test.describe('CO-006: Card Catalog Page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/catalog')
+    // Wait for card grid to be fully rendered before each test
+    await expect(page.locator('[data-catalog-count]')).toBeVisible()
   })
 
   // -------------------------------------------------------------------------
