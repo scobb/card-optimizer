@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { CreditCard, Search } from 'lucide-react'
 import { ALL_CARDS } from '../lib/cards'
 import { CATEGORY_LABELS } from '../types'
@@ -91,7 +92,13 @@ export function CatalogPage() {
               {/* Header */}
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <h2 className="font-semibold text-gray-900 text-sm">{card.name}</h2>
+                  <Link
+                    to={`/cards/${card.id}`}
+                    className="font-semibold text-gray-900 text-sm hover:text-blue-700 transition-colors"
+                    data-catalog-card-link={card.id}
+                  >
+                    {card.name}
+                  </Link>
                   <p className="text-xs text-gray-500 mt-0.5">
                     {card.issuer} ·{' '}
                     {card.annualFee === 0 ? 'No annual fee' : `${fmt(card.annualFee)}/yr`}

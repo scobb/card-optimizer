@@ -6,6 +6,7 @@ import { WalletBuilderPage } from './pages/WalletBuilderPage'
 import { CatalogPage } from './pages/CatalogPage'
 import { LandingPage } from './pages/LandingPage'
 import { PrivacyPage } from './pages/PrivacyPage'
+import { CardDetailPage } from './pages/CardDetailPage'
 import { BeamPageview } from './lib/BeamPageview'
 
 export function App() {
@@ -70,6 +71,7 @@ export function App() {
             <Route path="/recommendations" element={<RecommendationsPage />} />
             <Route path="/builder" element={<WalletBuilderPage />} />
             <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/cards/:slug" element={<CardDetailPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
           </Routes>
         </main>
