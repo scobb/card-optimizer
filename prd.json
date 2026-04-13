@@ -383,6 +383,95 @@
         "All drafts link to cards.keylightdigital.dev",
         "Drafts are authentic and not spammy — value-first positioning"
       ]
+    },
+    {
+      "id": "CO-025",
+      "title": "Terms of Service page",
+      "priority": 17,
+      "passes": false,
+      "description": "A financial tool that processes transaction data and recommends cards needs Terms of Service. Table-stakes for legal legitimacy. Cover: service description, data handling (client-side only), no financial advice disclaimer, Stripe billing terms, acceptable use, liability limitations. Link from footer alongside existing Privacy Policy.",
+      "acceptanceCriteria": [
+        "/terms route renders a Terms of Service page",
+        "Covers: service description, data handling (processed client-side), no financial advice disclaimer",
+        "Covers: acceptable use, limitation of liability, modification terms",
+        "References Keylight Digital LLC as the operating entity",
+        "Footer updated to include Terms of Service link alongside Privacy Policy",
+        "Sitemap updated to include /terms",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-026",
+      "title": "Cross-promotion footer — link all Keylight Digital products",
+      "priority": 18,
+      "passes": false,
+      "description": "Add an 'Also from Keylight Digital' section in the footer linking to all Keylight products: Beam (beam-privacy.com), Nexus (nexus.keylightdigital.dev), and ProfitTracker (profittracker.io). Cross-domain backlinks between our own properties are free SEO value and improve discoverability across the portfolio.",
+      "acceptanceCriteria": [
+        "Footer includes 'Also from Keylight Digital' section",
+        "Links to Beam (beam-privacy.com) with one-line description",
+        "Links to Nexus (nexus.keylightdigital.dev) with one-line description",
+        "Links to ProfitTracker (profittracker.io) with one-line description",
+        "Links open in new tab (target=_blank rel=noopener)",
+        "Visually consistent with existing footer style",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-027",
+      "title": "Best Credit Cards of 2026 — evergreen roundup page",
+      "priority": 19,
+      "passes": false,
+      "description": "Create a comprehensive roundup page at /best-cards-2026 targeting the highest-volume credit card search query. Pick top cards from the database across categories (best overall, best cash back, best travel, best dining, best no annual fee, best for students). Each pick includes why it wins, key stats, and a CTA to try the optimizer with that card. Links internally to card detail pages and category guides. Include Article structured data.",
+      "acceptanceCriteria": [
+        "/best-cards-2026 route renders the roundup page",
+        "Minimum 6 category picks: best overall, best cash back, best travel, best dining, best no annual fee, best sign-up bonus",
+        "Each pick shows card name, why it wins, annual fee, top reward rates, sign-up bonus",
+        "Each pick links to the individual card detail page",
+        "CTA at each pick to try the optimizer tool",
+        "Introduction section explaining methodology (data-driven, based on reward rates)",
+        "Article structured data (schema.org/Article) in page head",
+        "Internal links to relevant category guides (/best-cards/:category)",
+        "Sitemap updated with /best-cards-2026",
+        "1000+ words of content",
+        "Mobile responsive at 375px"
+      ]
+    },
+    {
+      "id": "CO-028",
+      "title": "FinancialProduct structured data on card detail pages",
+      "priority": 20,
+      "passes": false,
+      "description": "Add schema.org/FinancialProduct (or CreditCard) structured data to each card detail page (/cards/:slug). Google supports rich results for financial products — showing annual fee, interest rate, and reward info directly in search results. This supplements CO-009's WebApplication schema with per-page product markup.",
+      "acceptanceCriteria": [
+        "Each card detail page includes JSON-LD structured data",
+        "Schema type: FinancialProduct or CreditCard (schema.org)",
+        "Includes: name, provider (issuer), annualPercentageRate or fees, description",
+        "Includes: offers (annual fee as price), brand (issuer)",
+        "Valid JSON-LD — passes Google Rich Results Test format validation",
+        "All 20 card pages get the markup dynamically from card data",
+        "No duplicate structured data (doesn't conflict with CO-009 global schema)"
+      ]
+    },
+    {
+      "id": "CO-029",
+      "title": "Tool comparison pages — /vs/nerdwallet and /vs/the-points-guy",
+      "priority": 21,
+      "passes": false,
+      "description": "Create comparison pages targeting 'NerdWallet alternative' and 'The Points Guy alternative' searches. These are the dominant credit card recommendation sites. Position card-optimizer's unique advantages: privacy (no server-side data), personalized to actual spending (not generic lists), free to use, open source. Each page should be honest — acknowledge competitor strengths while highlighting our differentiators.",
+      "acceptanceCriteria": [
+        "/vs/nerdwallet route renders comparison page",
+        "/vs/the-points-guy route renders comparison page",
+        "Each page has a comparison table: feature, us, them",
+        "Honest positioning — acknowledge competitor strengths (content depth, editorial team)",
+        "Highlight card-optimizer advantages: privacy, personalization, free, open source",
+        "CTA to try the optimizer tool",
+        "Each page has unique meta title and description targeting '[competitor] alternative' searches",
+        "Article structured data on each page",
+        "Sitemap updated with /vs/nerdwallet and /vs/the-points-guy",
+        "Internal links to card detail pages and category guides",
+        "800+ words per page",
+        "Mobile responsive at 375px"
+      ]
     }
   ]
 }
