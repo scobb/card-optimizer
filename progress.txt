@@ -2,6 +2,19 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-026
+- Cross-promotion footer deployed to prod. 297/297 prod smoke tests pass (including all 12 new CO-026 tests).
+- What was implemented:
+  - src/App.tsx: footer restructured to add "Also from Keylight Digital" section below the existing built-by/links row. New section has 3 external links: Beam (beam-privacy.com), Nexus (nexus.keylightdigital.dev), ProfitTracker (profittracker.io). All open in new tab with rel=noopener. Visually consistent with existing footer (text-sm, text-gray-500, border-t separator).
+  - test/smoke/crossPromo.spec.ts (new): 12 smoke tests covering section visibility, link hrefs, target/rel attributes, cross-page presence, existing links coexistence, mobile no-overflow, mobile all three links visible.
+  - test/smoke/privacy.spec.ts: fixed strict mode violation — `footer.getByText(/keylight digital/i)` now matches 2 elements (the link + the new "Also from" heading), added `.first()` to disambiguate.
+- Files changed: src/App.tsx, test/smoke/crossPromo.spec.ts (new), test/smoke/privacy.spec.ts, prd.json
+- **Learnings for future iterations:**
+  - Adding cross-domain text to the footer that contains "keylight digital" (or any existing footer text) can cause strict mode violations in tests that used `getByText` on the footer element — always use `.first()` when the footer now has multiple matches
+  - email.spec.ts test "POST /api/email-results sends email and returns 200" will fail on staging with HTTP 429 if the rate limit (3 emails/day per address) for `ralph-smoke-test@keylightdigital.com` is exhausted from multiple suite runs; it passes fresh on prod
+  - VERIFIED: mobile responsive at 375px (all 3 cross-promo links visible after scroll, no overflow, links wrap gracefully with flex-wrap)
+---
+
 ## 2026-04-13 - CO-025
 - Terms of Service page deployed to prod. 16/16 CO-025 smoke tests pass (9 flaky on first run due to CDN cold start after deploy — all pass on retry, consistent with known CDN behavior from CO-018 onwards).
 - What was implemented:

@@ -404,7 +404,7 @@
       "id": "CO-026",
       "title": "Cross-promotion footer — link all Keylight Digital products",
       "priority": 18,
-      "passes": false,
+      "passes": true,
       "description": "Add an 'Also from Keylight Digital' section in the footer linking to all Keylight products: Beam (beam-privacy.com), Nexus (nexus.keylightdigital.dev), and ProfitTracker (profittracker.io). Cross-domain backlinks between our own properties are free SEO value and improve discoverability across the portfolio.",
       "acceptanceCriteria": [
         "Footer includes 'Also from Keylight Digital' section",
