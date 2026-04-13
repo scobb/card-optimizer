@@ -3,6 +3,7 @@ import { UploadPage } from './pages/UploadPage'
 import { WalletPage } from './pages/WalletPage'
 import { RecommendationsPage } from './pages/RecommendationsPage'
 import { WalletBuilderPage } from './pages/WalletBuilderPage'
+import { CatalogPage } from './pages/CatalogPage'
 
 export function App() {
   return (
@@ -64,7 +65,7 @@ export function App() {
             <Route path="/wallet" element={<WalletPage />} />
             <Route path="/recommendations" element={<RecommendationsPage />} />
             <Route path="/builder" element={<WalletBuilderPage />} />
-            <Route path="/catalog" element={<div className="text-gray-500">Card catalog — coming in CO-006</div>} />
+            <Route path="/catalog" element={<CatalogPage />} />
           </Routes>
         </main>
       </div>
