@@ -93,3 +93,50 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - Use --env preview for wrangler d1 commands targeting staging DB
   - Email must use from: ralph@keylightdigital.dev (keylightdigital.com domain not verified on Resend)
 ---
+
+## 2026-04-12 - CO-005
+- **BLOCKED on prod** — Staging 45/45 smoke tests pass. Prod domain HTTP 526 (same SSL issue). No new email.
+- What was implemented:
+  - src/lib/walletBuilder.ts: C(n,k) brute-force enumeration with pre-computed rate matrix, finds best combo by net value, per-card category role assignment
+  - src/pages/WalletBuilderPage.tsx: 2/3/4 card selector (data-max-cards), results grid, card role list (data-card-role), apply links (data-builder-apply), compute time badge
+  - src/App.tsx: /builder route + Builder nav link
+  - test/smoke/walletBuilder.spec.ts: 10 smoke tests
+- Files changed: src/lib/walletBuilder.ts, src/pages/WalletBuilderPage.tsx, src/App.tsx, test/smoke/walletBuilder.spec.ts
+- **Learnings for future iterations:**
+  - C(n,k) enumeration with rate matrix: pre-compute rates[cardIdx][catIdx] outside the loop, then inner loop is just array indexing (fast)
+  - Wallet result section shows 3 distinct data-testid attributes: data-card-role, data-builder-apply, and summary stats
+---
+
+## 2026-04-12 - CO-006
+- **BLOCKED on prod** — Staging 58/58 smoke tests pass. Prod domain HTTP 526 (same SSL issue). No new email.
+- What was implemented:
+  - src/pages/CatalogPage.tsx: searchable, filterable grid of all 20 cards; shows base+category rates, sign-up bonus, perks, apply links; data-catalog-card/data-catalog-search/data-catalog-issuer-filter/data-catalog-apply attributes
+  - src/App.tsx: replaced placeholder /catalog route with CatalogPage component
+  - test/smoke/catalogPage.spec.ts: 13 smoke tests (with beforeEach waiting for data-catalog-count to avoid flakiness)
+- Files changed: src/pages/CatalogPage.tsx, src/App.tsx, test/smoke/catalogPage.spec.ts
+- **Learnings for future iterations:**
+  - Add `await expect(page.locator('[data-catalog-count]')).toBeVisible()` in beforeEach to prevent flaky tests on page-load race conditions
+---
+
+## 2026-04-12 - CO-007
+- **BLOCKED on prod** — Staging 68/68 smoke tests pass. Prod domain HTTP 526 (same SSL issue). No new email.
+- What was implemented:
+  - test/smoke/mobile.spec.ts: 10 dedicated mobile smoke tests covering all 5 pages for no horizontal overflow, nav link reachability + 44px tap targets, inter-page navigation on mobile, catalog search and builder card selector on mobile
+- Files changed: test/smoke/mobile.spec.ts
+- **Learnings for future iterations:**
+  - The headings in pages: /upload = "Upload Transactions", /wallet = "My Wallet", /recommendations = "Recommendations", /builder = "Optimal Wallet", /catalog = "Card Catalog"
+  - All pages pass 375px mobile overflow check and nav tap target check
+---
+
+## 2026-04-12 - CO-008
+- **BLOCKED on prod** — Staging 76/76 smoke tests pass. Prod domain HTTP 526 (same SSL issue). No new email.
+- What was implemented:
+  - src/lib/shareState.ts: encodeShareState() (base64url JSON with category totals + card IDs), decodeShareHash() with graceful invalid hash handling
+  - src/main.tsx: synchronous IIFE that reads #share= hash and restores localStorage before React mounts
+  - src/pages/WalletPage.tsx: Share button in "Cards in Wallet" header (data-share-button), copies URL to clipboard, shows "Copied!" feedback
+  - test/smoke/share.spec.ts: 8 smoke tests covering: share button visibility, clipboard URL, hash format, URL restoration for spending+wallet, hash removal after load, graceful invalid hash handling, no-PII validation
+- Files changed: src/lib/shareState.ts, src/main.tsx, src/pages/WalletPage.tsx, test/smoke/share.spec.ts
+- **Learnings for future iterations:**
+  - Hash navigation (/wallet → /wallet#share=...) does NOT trigger a full page reload — must navigate to a different path first before navigating to the share URL in tests
+  - Share state restoration must be synchronous (before React mounts) not in useEffect — useEffect fires after components render, so useState initializers already read stale localStorage
+---

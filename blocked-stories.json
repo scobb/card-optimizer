@@ -40,6 +40,20 @@
       "blockedAt": "2026-04-12",
       "emailSent": true,
       "note": "No new email — same SSL root cause as CO-003."
+    },
+    {
+      "id": "CO-007",
+      "blocker": "Prod custom domain cards.keylightdigital.com returns HTTP 526 (Cloudflare SSL error). Staging passes (68/68 smoke tests including all 10 CO-007 mobile tests). Same root cause — Steve already notified via CO-003 email, no new email sent.",
+      "blockedAt": "2026-04-12",
+      "emailSent": true,
+      "note": "No new email — same SSL root cause as CO-003."
+    },
+    {
+      "id": "CO-008",
+      "blocker": "Prod custom domain cards.keylightdigital.com returns HTTP 526 (Cloudflare SSL error). Staging passes (76/76 smoke tests including all 8 share tests). Same root cause — Steve already notified via CO-003 email, no new email sent.",
+      "blockedAt": "2026-04-12",
+      "emailSent": true,
+      "note": "No new email — same SSL root cause as CO-003."
     }
   ]
 }
