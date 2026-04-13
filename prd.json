@@ -656,6 +656,24 @@
         "User can always override inferred cards manually",
         "Works gracefully when no card signals are present (falls back to manual selection, no errors)"
       ]
+    },
+    {
+      "id": "CO-040",
+      "title": "Audit and update card catalog data for accuracy",
+      "priority": 1,
+      "passes": false,
+      "description": "Several cards in the catalog have outdated fees, reward rates, or sign-up bonuses. Audit all cards against current issuer websites and update. Chase Sapphire Reserve annual fee is known to be wrong (currently shows $550, actual is $695 as of 2025). Check all cards systematically.",
+      "acceptanceCriteria": [
+        "All card annual fees match current issuer pricing",
+        "All category reward rates match current card terms",
+        "All sign-up bonuses match current offers",
+        "All point valuations use current consensus estimates (TPG/Bankrate)",
+        "Chase Sapphire Reserve annual fee updated to $695",
+        "Perks and credits updated to current values",
+        "Cards that have been discontinued are removed",
+        "Seed data and D1 database both updated",
+        "Changes documented in commit message with sources"
+      ]
     }
   ]
 }
