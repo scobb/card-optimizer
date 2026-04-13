@@ -388,7 +388,7 @@
       "id": "CO-025",
       "title": "Terms of Service page",
       "priority": 17,
-      "passes": false,
+      "passes": true,
       "description": "A financial tool that processes transaction data and recommends cards needs Terms of Service. Table-stakes for legal legitimacy. Cover: service description, data handling (client-side only), no financial advice disclaimer, Stripe billing terms, acceptable use, liability limitations. Link from footer alongside existing Privacy Policy.",
       "acceptanceCriteria": [
         "/terms route renders a Terms of Service page",

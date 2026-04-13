@@ -2,6 +2,20 @@
 Started: Sun Apr 12 08:03:17 PM PDT 2026
 ---
 
+## 2026-04-13 - CO-025
+- Terms of Service page deployed to prod. 16/16 CO-025 smoke tests pass (9 flaky on first run due to CDN cold start after deploy — all pass on retry, consistent with known CDN behavior from CO-018 onwards).
+- What was implemented:
+  - src/pages/TermsPage.tsx (new): /terms route — full ToS content in 10 numbered sections (service description, data handling, no financial advice, acceptable use, limitation of liability, intellectual property, third-party links, modification terms, governing law, contact). Blue/indigo gradient header with FileText icon. 3-card highlights section. Amber disclaimer banner matching PrivacyPage pattern.
+  - src/App.tsx: /terms route added; footer updated with `data-footer-terms` link alongside existing `data-footer-privacy` link
+  - public/sitemap.xml: /terms URL added at priority 0.6
+  - test/smoke/terms.spec.ts (new): 16 smoke tests (render, heading, content sections, footer links, navigation, sitemap, mobile no-overflow, mobile footer visibility, highlights count)
+- Files changed: src/pages/TermsPage.tsx (new), src/App.tsx, public/sitemap.xml, test/smoke/terms.spec.ts (new), prd.json
+- **Learnings for future iterations:**
+  - When `getByText(/pattern/i)` matches multiple elements (e.g., heading + paragraph both containing the phrase), use `.first()` to avoid strict mode violations
+  - CDN cold-start flakiness on prod is pre-existing and affects all terms/privacy-style pages — Playwright retries (1 retry configured) handle it reliably
+  - VERIFIED: mobile responsive at 375px (no overflow, all sections stack vertically, footer links visible after scroll)
+---
+
 ## 2026-04-13 - CO-019
 - FAQ page deployed to prod. 195/204 prod smoke tests pass (7 CO-012 GitHub API rate-limit failures are pre-existing and unrelated). All 20 CO-019 tests pass (2 were flaky on first run but passed on retry).
 - What was implemented:
