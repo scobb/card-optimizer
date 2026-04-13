@@ -23,7 +23,7 @@ else
   DB_NAME="card-optimizer-db"
   DB_ENV_FLAG=""
   PAGES_BRANCH="main"
-  DEPLOY_URL="https://cards.keylightdigital.com"
+  DEPLOY_URL="https://cards.keylightdigital.dev"
 fi
 
 # Step 1: Build

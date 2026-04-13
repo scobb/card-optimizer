@@ -1,19 +1,17 @@
 ## Last completed
-CO-008 — Share link with encoded state. Staging 76/76 pass. Blocked on prod SSL (HTTP 526).
+ALL 8 stories — CO-001 through CO-008. All pass on prod (76/76 smoke tests at https://cards.keylightdigital.dev).
 
-## Next up
-All 8 stories implemented. All blocked on prod SSL — cards.keylightdigital.com returns HTTP 526.
-Steve notified via CO-003 email. Once Steve fixes the custom domain SSL in Cloudflare Pages, all stories need to be re-verified against prod.
+## SSL fix (resolved)
+- keylightdigital.com is NOT in the Cloudflare account (different account, inaccessible)
+- Fixed by using keylightdigital.dev instead (IS in account)
+- Added CNAME: cards.keylightdigital.dev → card-optimizer.pages.dev
+- Updated deploy.sh DEPLOY_URL to https://cards.keylightdigital.dev
 
 ## Active issues
-- ALL prod deploys blocked: cards.keylightdigital.com returns HTTP 526 (SSL error)
-- Steve notified ONCE via CO-003 email — do NOT send more emails for same SSL issue
-- All 8 stories now in blocked-stories.json with emailSent: true
-- Staging fully working: 76/76 smoke tests pass
+- None — all stories passes=true, all 76 smoke tests green on prod
 
 ## Key decisions this session
-- Capital One CSV detection MUST come before Chase in FORMAT_SIGNATURES
-- Playwright smoke tests: navigate to a DIFFERENT path before navigating to hash-based URL (hash-only nav doesn't reload page)
-- Share state restoration must be synchronous in main.tsx IIFE (not useEffect) — React components read localStorage during initial render
-- All mobile smoke tests pass at 375px, all tap targets ≥ 44px confirmed
-- Headings per page: /upload="Upload Transactions", /wallet="My Wallet", /recommendations="Recommendations", /builder="Optimal Wallet", /catalog="Card Catalog"
+- prod domain changed from cards.keylightdigital.com → cards.keylightdigital.dev
+- Use keylightdigital.dev for all future projects (accessible via the API token)
+- Share state restoration must be synchronous in main.tsx IIFE (not useEffect)
+- Hash navigation (/wallet → /wallet#share=...) doesn't reload page — navigate away first in tests

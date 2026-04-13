@@ -2,7 +2,7 @@
   "project": "card-optimizer",
   "codename": "card-optimizer",
   "branchName": "main",
-  "description": "Credit card rewards optimizer — upload transactions, get personalized card recommendations",
+  "description": "Credit card rewards optimizer \u2014 upload transactions, get personalized card recommendations",
   "createdAt": "2026-04-12",
   "updatedAt": "2026-04-12",
   "userStories": [
@@ -10,7 +10,7 @@
       "id": "CO-001",
       "title": "Card catalog API with 20+ cards",
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "description": "D1-backed API serving credit card data. GET /api/cards returns full catalog, GET /api/cards/:id returns single card. Create the D1 database (card-optimizer-db and card-optimizer-db-staging), update wrangler.toml PLACEHOLDER IDs, create the schema migration, seed with 20+ real credit cards, and implement the Pages Functions endpoints. Also create the Cloudflare Pages project.",
       "acceptanceCriteria": [
         "D1 databases created (card-optimizer-db and card-optimizer-db-staging) and wrangler.toml IDs updated",
@@ -28,7 +28,7 @@
       "id": "CO-002",
       "title": "CSV upload with auto-detection and spending breakdown",
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "description": "Client-side CSV parsing with Papa Parse. Auto-detects format from Monarch, Copilot, Chase, Amex, Capital One, and generic CSVs. Shows spending breakdown by reward category.",
       "acceptanceCriteria": [
         "Drag-and-drop and file picker both work for CSV upload",
@@ -42,9 +42,9 @@
     },
     {
       "id": "CO-003",
-      "title": "Wallet optimization — per-category card assignment",
+      "title": "Wallet optimization \u2014 per-category card assignment",
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "description": "User selects cards they hold from the catalog. System assigns each spending category to the best card and shows total projected rewards.",
       "acceptanceCriteria": [
         "Card picker shows all cards grouped by issuer",
@@ -58,7 +58,7 @@
       "id": "CO-004",
       "title": "New card recommendations ranked by net annual value",
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "description": "Based on spending and current wallet, recommend new cards ranked by net annual value. Include sign-up bonus amortized over 2 years and category-level breakdown.",
       "acceptanceCriteria": [
         "Recommendations exclude cards user already holds",
@@ -71,9 +71,9 @@
     },
     {
       "id": "CO-005",
-      "title": "Wallet builder — optimal N-card combination",
+      "title": "Wallet builder \u2014 optimal N-card combination",
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "description": "Find the optimal 2-4 card combination from the full catalog for the user's spending pattern.",
       "acceptanceCriteria": [
         "User can select max cards (2, 3, or 4)",
@@ -86,7 +86,7 @@
       "id": "CO-006",
       "title": "Card catalog browse page with search and filter",
       "priority": 6,
-      "passes": false,
+      "passes": true,
       "description": "Searchable, filterable view of all cards in the database with full reward structure details.",
       "acceptanceCriteria": [
         "Shows all cards in a grid layout",
@@ -100,7 +100,7 @@
       "id": "CO-007",
       "title": "Mobile responsive at 375px",
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "description": "All pages must be mobile-responsive with no horizontal overflow at 375px width.",
       "acceptanceCriteria": [
         "No horizontal scroll on any page at 375px",
@@ -114,8 +114,8 @@
       "id": "CO-008",
       "title": "Share link with encoded state",
       "priority": 8,
-      "passes": false,
-      "description": "Users can generate a share link that encodes their spending summary and wallet selection in the URL hash. No PII — just category totals and card IDs.",
+      "passes": true,
+      "description": "Users can generate a share link that encodes their spending summary and wallet selection in the URL hash. No PII \u2014 just category totals and card IDs.",
       "acceptanceCriteria": [
         "Share button generates URL with #share= hash",
         "Opening shared URL restores spending summary and wallet selection",

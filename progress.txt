@@ -140,3 +140,15 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - Hash navigation (/wallet → /wallet#share=...) does NOT trigger a full page reload — must navigate to a different path first before navigating to the share URL in tests
   - Share state restoration must be synchronous (before React mounts) not in useEffect — useEffect fires after components render, so useState initializers already read stale localStorage
 ---
+
+## 2026-04-13 - SSL Fix + All Stories Complete
+- Root cause identified: keylightdigital.com zone was in a DIFFERENT Cloudflare account (not accessible via the project API token)
+- Fix: added cards.keylightdigital.dev custom domain to Pages project (keylightdigital.dev IS in the account), added CNAME record via Cloudflare API
+- Updated deploy.sh DEPLOY_URL from cards.keylightdigital.com → cards.keylightdigital.dev
+- Prod smoke tests: 76/76 pass at https://cards.keylightdigital.dev
+- All 8 stories marked passes=true
+- **Learnings for future iterations:**
+  - When a custom domain fails SSL: check if the zone is in the SAME Cloudflare account — keylightdigital.com is NOT, keylightdigital.dev IS
+  - Cloudflare Pages custom domain provisioning: need CNAME in the zone pointing to <project>.pages.dev PLUS domain added to Pages project
+  - Use keylightdigital.dev for future projects — it's the accessible domain
+---
