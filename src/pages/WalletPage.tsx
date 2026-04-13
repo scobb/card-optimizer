@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { CreditCard, Check, ChevronDown, ChevronUp, TrendingUp } from 'lucide-react'
+import { CreditCard, Check, ChevronDown, ChevronUp, TrendingUp, Share2 } from 'lucide-react'
 import type { Card } from '../types'
 import { ALL_CARDS, getCardsByIssuer } from '../lib/cards'
 import { loadSpendingData } from '../lib/storage'
 import { saveWalletCards, loadWalletCards } from '../lib/storage'
 import { optimizeWallet } from '../lib/optimizer'
+import { encodeShareState } from '../lib/shareState'
 
 function fmt(value: number): string {
   return value.toLocaleString('en-US', {
@@ -27,6 +28,7 @@ export function WalletPage() {
   const [expandedIssuers, setExpandedIssuers] = useState<Set<string>>(
     () => new Set(['Chase', 'American Express', 'Capital One', 'Citi']),
   )
+  const [shareCopied, setShareCopied] = useState(false)
 
   const spendingData = loadSpendingData()
   const cardsByIssuer = getCardsByIssuer()
@@ -46,6 +48,15 @@ export function WalletPage() {
         next.add(id)
       }
       return next
+    })
+  }
+
+  function handleShare() {
+    if (!spendingData) return
+    const url = encodeShareState(spendingData.breakdown, Array.from(selectedIds))
+    navigator.clipboard.writeText(url).then(() => {
+      setShareCopied(true)
+      setTimeout(() => setShareCopied(false), 2000)
     })
   }
 
@@ -294,8 +305,16 @@ export function WalletPage() {
 
           {/* Selected cards summary */}
           <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
-            <div className="px-4 py-3 border-b border-gray-200">
+            <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
               <span className="font-medium text-gray-900">Cards in Wallet</span>
+              <button
+                onClick={handleShare}
+                data-share-button
+                className="flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-800 font-medium px-2 py-1 rounded hover:bg-blue-50 transition-colors min-h-[44px]"
+              >
+                <Share2 size={14} />
+                {shareCopied ? 'Copied!' : 'Share'}
+              </button>
             </div>
             <div className="divide-y divide-gray-100">
               {selectedCards.map((card) => (
