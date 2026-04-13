@@ -466,3 +466,16 @@ Started: Sun Apr 12 08:03:17 PM PDT 2026
   - CO-024 is docs-only — no smoke tests, no deploy needed. Just create the file, mark passes=true, commit.
   - Launch kit lives in docs/ directory — check for existing docs/ before creating
 ---
+
+## 2026-04-13 - CO-030
+- Spending presets deployed to prod. 358/368 prod smoke tests pass (8 pre-existing: 1 email rate-limit + 7 GitHub API rate-limit; all 16 CO-030 tests pass; 2 blog mobile tests flaky but pass on retry).
+- What was implemented:
+  - src/pages/UploadPage.tsx: added 4 spending presets (Average American $4,500/mo, Frequent Traveler $6,000/mo, Online Shopper $3,500/mo, Foodie $5,000/mo) with per-category breakdowns. SpendingPresets component shows 4 tappable cards above the CSV upload zone (with "or upload CSV" divider). Clicking a preset saves to localStorage, sets storedData state, and shows the breakdown + blue "Optimize My Wallet →" CTA linking to /wallet. "Try a different profile" button resets all state and shows presets again.
+  - test/smoke/presets.spec.ts (new): 16 smoke tests covering all 4 presets, breakdown display, CTA presence, localStorage persistence, page reload persistence, reset flow, presets above upload zone, mobile 375px responsiveness, tap targets ≥44px.
+  - test/smoke/wallet.spec.ts: fixed "CSV upload then wallet flow" test — scoped 'Wallet' link click to `nav` to avoid strict mode violation with new 'Optimize My Wallet →' CTA link.
+- Files changed: src/pages/UploadPage.tsx, test/smoke/presets.spec.ts (new), test/smoke/wallet.spec.ts, prd.json
+- **Learnings for future iterations:**
+  - When a new link is added to a page that already has tests clicking a nav 'Wallet' link, scope the locator to `page.locator('nav').getByRole('link', { name: 'Wallet' })` — Playwright getByRole name matching is substring-based and will match 'Optimize My Wallet' as well
+  - For presets where the description contains the same dollar amount as the badge (e.g. "$4,500/mo"), use `.first()` in tests to avoid strict mode violation when `getByText('$4,500/mo')` matches both the badge span and the description paragraph
+  - VERIFIED: mobile responsive at 375px — presets stack in single column, all 4 buttons visible, tap targets ≥44px, no overflow, CTA visible after selecting preset
+---

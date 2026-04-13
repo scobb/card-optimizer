@@ -477,7 +477,7 @@
       "id": "CO-030",
       "title": "Spending presets — one-click spending profiles without CSV upload",
       "priority": 22,
-      "passes": false,
+      "passes": true,
       "description": "Most visitors won't upload a CSV on first visit. Add pre-built spending profiles that populate the spending breakdown instantly: 'Average American' ($4,500/mo), 'Frequent Traveler' ($6,000/mo), 'Online Shopper' ($3,500/mo), 'Foodie' ($5,000/mo). Each preset includes realistic category-level breakdowns. Clicking a preset should populate the spending data and immediately show optimization results — zero friction path to value.",
       "acceptanceCriteria": [
         "4+ spending preset buttons on the upload/spending page",
