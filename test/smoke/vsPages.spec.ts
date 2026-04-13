@@ -37,16 +37,14 @@ test.describe('CO-029: Tool comparison pages /vs/nerdwallet and /vs/the-points-g
   // -------------------------------------------------------------------------
   test('/vs/nerdwallet title and meta target nerdwallet alternative searches', async ({ page }) => {
     await page.goto('/vs/nerdwallet')
-    const title = await page.title()
-    expect(title.toLowerCase()).toContain('nerdwallet')
-    expect(title.toLowerCase()).toContain('cardoptimizer')
+    await expect(page).toHaveTitle(/nerdwallet/i)
+    await expect(page).toHaveTitle(/cardoptimizer/i)
   })
 
   // -------------------------------------------------------------------------
   test('/vs/the-points-guy title and meta target the-points-guy alternative searches', async ({ page }) => {
     await page.goto('/vs/the-points-guy')
-    const title = await page.title()
-    expect(title.toLowerCase()).toMatch(/points guy/i)
+    await expect(page).toHaveTitle(/points guy/i)
   })
 
   // -------------------------------------------------------------------------
@@ -170,8 +168,10 @@ test.describe('CO-029: Tool comparison pages /vs/nerdwallet and /vs/the-points-g
   // -------------------------------------------------------------------------
   test('the two pages have different titles', async ({ page }) => {
     await page.goto('/vs/nerdwallet')
+    await expect(page).toHaveTitle(/nerdwallet/i)
     const title1 = await page.title()
     await page.goto('/vs/the-points-guy')
+    await expect(page).toHaveTitle(/points guy/i)
     const title2 = await page.title()
     expect(title1).not.toBe(title2)
   })
